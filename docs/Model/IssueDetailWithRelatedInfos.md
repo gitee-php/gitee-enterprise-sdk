@@ -1,0 +1,53 @@
+# IssueDetailWithRelatedInfos
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **int** | 任务 ID | [optional] 
+**rootId** | **int** | 根结点 ID | [optional] 
+**parentId** | **int** | 父任务 ID | [optional] 
+**projectId** | **int** | 关联项目 ID | [optional] 
+**ident** | **string** | 任务全局唯一标识符 | [optional] 
+**title** | **string** | 任务标题 | [optional] 
+**issueStateId** | **int** | 任务状态id | [optional] 
+**programId** | **int** | 项目id | [optional] 
+**state** | **string** | 任务状态标识符: open, progressing, closed, rejected | [optional] 
+**commentsCount** | **int** | 评论数量 | [optional] 
+**priority** | **int** | 优先级标识符 | [optional] 
+**branch** | **string** | 关联的分支名 | [optional] 
+**priorityHuman** | **string** | 优先级中文名称 | [optional] 
+**duration** | **int** | 预计工时。（单位：分钟） | [optional] 
+**collaborators** | [**\GiteeEnterprise\Model\UserWithRemark[]**](UserWithRemark.md) | 任务协作者 | [optional] 
+**author** | [**\GiteeEnterprise\Model\UserWithRemark**](UserWithRemark.md) | 任务创建者 | [optional] 
+**milestone** | [**\GiteeEnterprise\Model\Milestone**](Milestone.md) | 关联的里程碑 | [optional] 
+**issueState** | [**\GiteeEnterprise\Model\IssueState**](IssueState.md) | 任务状态 | [optional] 
+**issueType** | [**\GiteeEnterprise\Model\IssueType**](IssueType.md) | 任务类型 | [optional] 
+**labels** | [**\GiteeEnterprise\Model\Label**](Label.md) | 任务关联的标签 | [optional] 
+**securityHole** | **bool** | 是否是私有Issue | [optional] 
+**isStar** | **bool** | 当前用户是否收藏过此任务 | [optional] 
+**scrumSprint** | [**\GiteeEnterprise\Model\ScrumSprint**](ScrumSprint.md) | 关联迭代 | [optional] 
+**description** | **string** | 任务内容(markdown 格式) | [optional] 
+**descriptionHtml** | **string** | 任务内容(html 格式) | [optional] 
+**descriptionJson** | **string** | 工作项 JSON 格式内容 | [optional] 
+**descriptionType** | **string** | 工作项描述文本类型 | [optional] 
+**issueUrl** | **string** | PC的任务详情链接 | [optional] 
+**program** | [**\GiteeEnterprise\Model\ProgramWithComponents**](ProgramWithComponents.md) | 关联的项目 | [optional] 
+**project** | [**\GiteeEnterprise\Model\Project**](Project.md) | 关联的仓库 | [optional] 
+**parent** | [**\GiteeEnterprise\Model\Issue**](Issue.md) | 父级任务 | [optional] 
+**operateLogsCount** | **int** | 操作日志的数量 | [optional] 
+**reactions** | **object** | 表态 | [optional] 
+**attachFileIds** | **int** | issue附件id列表 | [optional] 
+**securityHoleOperater** | **bool** | 私有issue操作者 | [optional] 
+**scrumVersion** | [**\GiteeEnterprise\Model\EnterpriseScrumVersion**](EnterpriseScrumVersion.md) | 关联版本 | [optional] 
+**triggerExecuteInfo** | **bool** | 是否有异步执行的触发器 | [optional] 
+**isInheritSatisfying** | **bool** | 子工作项是否符合层级关系 | [optional] 
+**version** | [**null[]**](.md) | 版本号集合 | [optional] 
+**children** | [**\GiteeEnterprise\Model\Issue**](Issue.md) | 子任务 | [optional] 
+**childrenCount** | **int** | 子任务数量 | [optional] 
+**refType** | **string** | 关联关系 | [optional] 
+**direction** | **string** | 关联顺序 | [optional] 
+**directionCn** | **string** |  | [optional] 
+
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+
+
