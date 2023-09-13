@@ -249,6 +249,18 @@ class ObjectSerializer
             $subClass = substr($class, 0, -2);
             $values = [];
             foreach ($data as $key => $value) {
+                if ($key === 'total_count') {
+                    $values[$key] = $value;
+                    continue;
+                }
+
+                if ($key === 'data') {
+                    foreach ($value as $item) {
+                        $values[$key][] = self::deserialize($item, $subClass, null);
+                    }
+                    continue;
+                }
+
                 $values[] = self::deserialize($value, $subClass, null);
             }
             return $values;
