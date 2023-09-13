@@ -255,6 +255,7 @@ class ObjectSerializer
                 }
 
                 if ($key === 'data') {
+                    $values[$key] = [];
                     foreach ($value as $item) {
                         $values[$key][] = self::deserialize($item, $subClass, null);
                     }
