@@ -10,7 +10,10 @@ Name | Type | Description | Notes
 **editor** | [**\GiteeEnterprise\Model\UserWithRemark**](UserWithRemark.md) | 最后编辑者 | [optional] 
 **fileType** | **int** | 文件类型(文件: 1; 文件夹: 2) | [optional] 
 **version** | **string** | 文件的最后一次版本号 | [optional] 
+**lastEditTime** | **string** | 文件的最后编辑时间 | [optional] 
 **contentType** | **string** | 文件的内容类型 | [optional] 
+**createdAt** | **string** | 创建时间 | [optional] 
+**updatedAt** | **string** | 更新时间 | [optional] 
 **content** | **string** | 文件内容 | [optional] 
 **contentHtml** | **string** | 文件详情 html | [optional] 
 

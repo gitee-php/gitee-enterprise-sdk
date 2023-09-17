@@ -23,6 +23,8 @@ Name | Type | Description | Notes
 **giteegoPipeline** | [**\GiteeEnterprise\Model\GiteegoPipeline**](GiteegoPipeline.md) | Gitee Go 流水线 | [optional] 
 **adminRules** | **string** |  | [optional] 
 **access** | **object** | 能否访问企业 | [optional] 
+**createdAt** | **string** | 角色创建时间 | [optional] 
+**updatedAt** | **string** | 角色更新时间 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -11,7 +11,13 @@ Name | Type | Description | Notes
 **commentsCount** | **int** | 评论数量 | [optional] 
 **priority** | **int** | 优先级标识符 | [optional] 
 **priorityHuman** | **string** | 优先级中文名称 | [optional] 
+**assignee** | [**\GiteeEnterprise\Model\UserWithRemark**](UserWithRemark.md) | 任务负责人 | [optional] 
 **duration** | **int** | 预计工时。（单位：分钟） | [optional] 
+**createdAt** | **string** | 任务创建时间 | [optional] 
+**updatedAt** | **string** | 任务更新时间 | [optional] 
+**finishedAt** | **string** | 任务完成时间 | [optional] 
+**planStartedAt** | **string** | 计划开始时间 | [optional] 
+**deadline** | **string** | 截止时间 | [optional] 
 **isOverdue** | **bool** | 是否过期 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

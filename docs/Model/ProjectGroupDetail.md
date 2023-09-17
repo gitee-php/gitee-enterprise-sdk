@@ -10,8 +10,11 @@ Name | Type | Description | Notes
 **parentId** | **int** | 仓库组上级id | [optional] 
 **path** | **string** | 仓库组路径 | [optional] 
 **description** | **string** | 仓库组简介 | [optional] 
+**createdAt** | **string** | 创建时间 | [optional] 
+**updatedAt** | **string** | 更新时间 | [optional] 
 **owner** | [**\GiteeEnterprise\Model\User**](User.md) | 负责人 | [optional] 
 **root** | [**\GiteeEnterprise\Model\ModelNamespace**](ModelNamespace.md) | 归属团队或企业 | [optional] 
+**creator** | [**\GiteeEnterprise\Model\UserWithRemark**](UserWithRemark.md) | 创建者 | [optional] 
 **parent** | [**\GiteeEnterprise\Model\ModelNamespace**](ModelNamespace.md) | 父级 namespace | [optional] 
 **completeNameWithoutNamespace** | **string** | 不包含归属名称的全名称 | [optional] 
 

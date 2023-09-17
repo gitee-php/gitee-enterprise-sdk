@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**date** | **string** | 创建日期 | [optional] 
 **id** | **int** | 仓库id | [optional] 
 **name** | **string** | 仓库名称 | [optional] 
 **public** | **int** | 仓库公开与否 | [optional] 

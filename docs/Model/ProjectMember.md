@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **projectAccessName** | **string** | 用户在仓库中的级别名称 | [optional] 
 **projectCreator** | **bool** | 是否是仓库创建者 | [optional] 
 **projectOwner** | **bool** | 是否是仓库拥有者 | [optional] 
+**joinAt** | **string** | 加入时间 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

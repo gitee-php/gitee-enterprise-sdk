@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **system** | **bool** | 是否是系统公钥 | [optional] 
 **isBae** | **bool** | 是否是bae公钥 | [optional] 
 **isPages** | **bool** | 是否是pages公钥 | [optional] 
+**createdAt** | **string** | 创建时间 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

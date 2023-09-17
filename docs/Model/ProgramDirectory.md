@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **creator** | [**\GiteeEnterprise\Model\UserWithRemark**](UserWithRemark.md) | 创建者 | [optional] 
 **category** | **string** | 项目属性 | [optional] 
 **ident** | **string** | 项目编号 | [optional] 
+**createdAt** | **string** | 创建时间 | [optional] 
+**updatedAt** | **string** | 更新时间 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

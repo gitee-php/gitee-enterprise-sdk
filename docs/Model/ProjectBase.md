@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **path** | **string** | 仓库路径 | [optional] 
 **pathWithNamespace** | **string** | namespace/path | [optional] 
 **public** | **int** | 仓库的公开选项。0: 私有; 1: 公开; 2: 内部公开; | [optional] 
+**createdAt** | **string** | 仓库创建时间 | [optional] 
+**updatedAt** | **string** | 仓库更新时间 | [optional] 
 **isGvp** | **bool** | 是否为GVP仓库 | [optional] 
 **forkEnabled** | **bool** | 是否允许 fork | [optional] 
 **nameWithNamespace** | **string** | namespace_name/path | [optional] 

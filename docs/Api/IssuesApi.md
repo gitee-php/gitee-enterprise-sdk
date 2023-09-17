@@ -1669,7 +1669,7 @@ $kanbanId = 56; // int | 看板ID
 $kanbanColumnId = 56; // int | 看板的栏ID
 $estimatedDuration = 3.4; // float | 预估工时(单位：小时， 支持两位小数)
 $duration = 56; // int | 预估工时。（单位：分钟）
-$changeStates = new \stdClass; // object | 变更的状态 {source_id1: target_id1, source_id2: target_id2}
+$changeStates = array('key' => "changeStates_example"); // map[string,string] | 变更的状态 {source_id1: target_id1, source_id2: target_id2}
 $hierarchyChangeMethod = "hierarchyChangeMethod_example"; // string | 选择的层级结构（relevance: 改为关联关系, independence: 取消父子关系）
 
 try {
@@ -1712,7 +1712,7 @@ Name | Type | Description  | Notes
  **kanbanColumnId** | **int**| 看板的栏ID | [optional]
  **estimatedDuration** | **float**| 预估工时(单位：小时， 支持两位小数) | [optional]
  **duration** | **int**| 预估工时。（单位：分钟） | [optional]
- **changeStates** | [**object**](../Model/.md)| 变更的状态 {source_id1: target_id1, source_id2: target_id2} | [optional]
+ **changeStates** | [**map[string,string]**](../Model/string.md)| 变更的状态 {source_id1: target_id1, source_id2: target_id2} | [optional]
  **hierarchyChangeMethod** | **string**| 选择的层级结构（relevance: 改为关联关系, independence: 取消父子关系） | [optional]
 
 ### Return type

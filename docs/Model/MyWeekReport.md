@@ -7,6 +7,10 @@ Name | Type | Description | Notes
 **year** | **int** | 周报所属年 | [optional] 
 **month** | **int** | 周报所属月份 | [optional] 
 **weekIndex** | **int** | 处于本年的第几周 | [optional] 
+**beginDay** | **string** | 起始日期 | [optional] 
+**endDay** | **string** | 结束日期 | [optional] 
+**createdAt** | **string** | 创建日期 | [optional] 
+**updatedAt** | **string** | 更新日期 | [optional] 
 **content** | **string** | 周报内容 | [optional] 
 **contentHtml** | **string** | 周报(html 格式) | [optional] 
 

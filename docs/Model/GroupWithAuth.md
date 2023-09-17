@@ -11,6 +11,9 @@ Name | Type | Description | Notes
 **groupType** | **int** | deprecated.团队的类型值。0: 内部 1:公开 2:外包 | [optional] 
 **groupTypeHumanName** | **string** | 团队的类型名称 | [optional] 
 **public** | **int** | 团队的类型值。0: 内部 1:公开 2:外包 | [optional] 
+**creator** | [**\GiteeEnterprise\Model\UserWithRemark**](UserWithRemark.md) | 创建者 | [optional] 
+**createdAt** | **string** | 创建时间 | [optional] 
+**updatedAt** | **string** | 更新时间 | [optional] 
 **canQuit** | **bool** | 能否编辑退出 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
