@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **isDefault** | **bool** | 是否企业默认角色 | [optional] 
 **memberCount** | **int** | 归属于该角色下的成员数量 | [optional] 
 **canSetDefault** | **bool** | 能否设置为默认角色 | [optional] 
+**createdAt** | **string** | 角色创建时间 | [optional] 
+**updatedAt** | **string** | 角色更新时间 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **operator** | **string** | 操作者 | [optional] 
 **roleId** | **int** | 角色 ID | [optional] 
 **access** | **int** | 权限属性 | [optional] 
+**createdAt** | **string** | 创建时间/申请时间 | [optional] 
+**updatedAt** | **string** | 更新时间 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

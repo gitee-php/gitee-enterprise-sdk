@@ -10,6 +10,9 @@ Name | Type | Description | Notes
 **contentHtml** | **string** | 评论内容(html 格式) | [optional] 
 **suggestions** | [**null[]**](.md) | 代码建议汇集信息{changed: boolean 代码是否不一致, raw: string 建议的code} | [optional] 
 **reactions** | [**\GiteeEnterprise\Model\Reaction**](Reaction.md) | 表态 | [optional] 
+**operating** | **object** | 评论编辑、删除权限 | [optional] 
+**createdAt** | **string** | 创建时间 | [optional] 
+**updatedAt** | **string** | 更新时间 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

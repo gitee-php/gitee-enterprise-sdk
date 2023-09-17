@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **status** | **int** | 项目状态（0:开始 1:暂停 2:关闭） | [optional] 
 **outsourced** | **bool** | 是否外包项目 | [optional] 
 **type** | **string** | 项目类型（内部、外包） | [optional] 
+**createdAt** | **string** | 创建时间 | [optional] 
 **color** | **string** | 颜色 | [optional] 
 **category** | **string** | 项目类型 | [optional] 
 **programExtraFields** | [**\GiteeEnterprise\Model\ProgramExtraField**](ProgramExtraField.md) | 项目自定义字段值 | [optional] 

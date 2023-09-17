@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **fileType** | **string** | 关联类型。(目录：DocDirectory，文档：WikiInfo，附件：AttachFile) | [optional] 
 **fileId** | **string** | 关联类型的 id | [optional] 
 **children** | **string** |  | [optional] 
+**createdAt** | **string** | 创建时间 | [optional] 
+**updatedAt** | **string** | 更新时间 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

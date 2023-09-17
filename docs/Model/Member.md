@@ -15,9 +15,12 @@ Name | Type | Description | Notes
 **email** | **string** | 邮箱 | [optional] 
 **user** | [**\GiteeEnterprise\Model\User**](User.md) | 用户的基础信息 | [optional] 
 **enterpriseRole** | [**\GiteeEnterprise\Model\EnterpriseRoleBase**](EnterpriseRoleBase.md) | 成员在企业的角色 | [optional] 
+**createdAt** | **string** | 加入企业的时间 | [optional] 
+**feedbackTime** | **string** | 成员新版问卷反馈时间 | [optional] 
 **isFeedback** | **bool** | 成员是否填写过 | [optional] 
 **isGuided** | **bool** | 是否完成引导 | [optional] 
 **userGuideClosed** | **bool** | 是否关闭了新手引导 | [optional] 
+**userGuideStepsFinished** | [**null[]**](.md) | 新手引导的步骤指示 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

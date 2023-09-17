@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **path** | **string** | 仓库路径 | [optional] 
 **pathWithNamespace** | **string** | namespace/path | [optional] 
 **public** | **string** | 仓库开源属性，0:私有，1:开源，2:内部开源 | [optional] 
+**createdAt** | **string** | 仓库创建时间 | [optional] 
+**updatedAt** | **string** | 仓库更新时间 | [optional] 
 **isGvp** | **bool** | 是否为GVP仓库 | [optional] 
 **forkEnabled** | **bool** | 是否允许仓库被Fork | [optional] 
 **nameWithNamespace** | **string** | namespace_name/path | [optional] 
@@ -44,6 +46,7 @@ Name | Type | Description | Notes
 **mergeEnabled** | **bool** | 是否开启 merge 合并选项 | [optional] 
 **squashEnabled** | **bool** | 是否开启 squash 合并选项 | [optional] 
 **rebaseEnabled** | **bool** | 是否开启 rebase 合并选项 | [optional] 
+**defaultMergeMethod** | **string** | 选择默认合并 Pull Request 的方法，0表示merge（合并所有提交）、1表示squash（扁平化分支合并）和2表示rebase（变基并合并）。默认为0merge | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

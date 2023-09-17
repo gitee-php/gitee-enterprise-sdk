@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**date** | **string** | 更新日期 | [optional] 
 **id** | **int** | 仓库id | [optional] 
 **enterpriseProjectPath** | **string** | 企业仓库路径 | [optional] 
 **name** | **string** | 仓库名称 | [optional] 

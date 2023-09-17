@@ -20,6 +20,9 @@ Name | Type | Description | Notes
 **editorType** | **string** | 编辑器类型 | [optional] 
 **needPassword** | **bool** | 需要密码访问 | [optional] 
 **isTop** | **bool** | 是否置顶 | [optional] 
+**createdAt** | **string** | 创建时间 | [optional] 
+**updatedAt** | **string** | 更新时间 | [optional] 
+**deletedAt** | **string** | 删除时间 | [optional] 
 **scrumSprint** | [**\GiteeEnterprise\Model\ScrumSprint**](ScrumSprint.md) | 文档所属的迭代详情 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

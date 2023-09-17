@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **head** | **string** | diff head | [optional] 
 **content** | **string** | diff 内容 | [optional] 
 **viewed** | **string** | 已阅 | [optional] 
+**codeOwners** | **object** | code owner | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
