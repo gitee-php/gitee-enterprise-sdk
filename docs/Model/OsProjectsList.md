@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **projectIds** | [**null[]**](.md) | 仓库id列表 | [optional] 
 **projects** | [**\GiteeEnterprise\Model\OsProject**](OsProject.md) |  | [optional] 
 **starsCount** | [**null[]**](.md) | star数 | [optional] 
-**startDate** | [**\DateTime**](\DateTime.md) | 起始日期 | [optional] 
-**endDate** | [**\DateTime**](\DateTime.md) | 终止日期 | [optional] 
+**startDate** | [**\DateTime**](https://www.php.net/class.datetime) | 起始日期 | [optional] 
+**endDate** | [**\DateTime**](https://www.php.net/class.datetime) | 终止日期 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

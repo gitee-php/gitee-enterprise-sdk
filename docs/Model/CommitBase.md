@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **messageHtml** | **string** | Commit Html Message | [optional] 
 **author** | [**\GiteeEnterprise\Model\UserWithRemark**](UserWithRemark.md) | Commit 作者 | [optional] 
 **committer** | [**\GiteeEnterprise\Model\UserWithRemark**](UserWithRemark.md) | Commit 提交人 | [optional] 
-**authoredDate** | [**\DateTime**](\DateTime.md) | 推送时间 | [optional] 
-**committedDate** | [**\DateTime**](\DateTime.md) | 提交时间 | [optional] 
+**authoredDate** | [**\DateTime**](https://www.php.net/class.datetime) | 推送时间 | [optional] 
+**committedDate** | [**\DateTime**](https://www.php.net/class.datetime) | 提交时间 | [optional] 
 **signature** | [**\GiteeEnterprise\Model\CommitSignature**](CommitSignature.md) | 签名 | [optional] 
 **buildState** | **object** | Gitee Go构建状态 | [optional] 
 

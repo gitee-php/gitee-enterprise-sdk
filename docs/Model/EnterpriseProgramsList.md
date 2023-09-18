@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **dateList** | [**null[]**](.md) | 时间列表 | [optional] 
 **programIds** | [**null[]**](.md) | 项目id | [optional] 
 **programs** | [**\GiteeEnterprise\Model\EnterpriseProgram**](EnterpriseProgram.md) | 项目列表 | [optional] 
-**startDate** | [**\DateTime**](\DateTime.md) | 开始时间 | [optional] 
-**endDate** | [**\DateTime**](\DateTime.md) | 结束时间 | [optional] 
+**startDate** | [**\DateTime**](https://www.php.net/class.datetime) | 开始时间 | [optional] 
+**endDate** | [**\DateTime**](https://www.php.net/class.datetime) | 结束时间 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
