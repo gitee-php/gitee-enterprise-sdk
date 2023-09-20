@@ -1,6 +1,7 @@
 # DiffPosition
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **diffPositionId** | **int** | 评论引用的代码块id | [optional] 

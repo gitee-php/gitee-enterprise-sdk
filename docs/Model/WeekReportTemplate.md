@@ -1,6 +1,7 @@
 # WeekReportTemplate
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | 模版ID | [optional] 

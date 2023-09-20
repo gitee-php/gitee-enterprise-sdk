@@ -1,6 +1,7 @@
 # Diff
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sha** | **string** | Commit ID | [optional] 

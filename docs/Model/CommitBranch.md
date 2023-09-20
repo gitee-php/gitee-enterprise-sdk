@@ -1,6 +1,7 @@
 # CommitBranch
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **branches** | **null[]** | 分支 | [optional] 

@@ -1,6 +1,7 @@
 # UserStatistic
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | 唯一标示 | [optional] 

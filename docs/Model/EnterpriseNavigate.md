@@ -1,6 +1,7 @@
 # EnterpriseNavigate
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | 导航卡 id | [optional] 

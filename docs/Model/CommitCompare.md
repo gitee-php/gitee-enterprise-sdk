@@ -1,6 +1,7 @@
 # CommitCompare
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tooMoreCommits** | **int** | commits 数量超出限制 | [optional] 

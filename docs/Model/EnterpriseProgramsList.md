@@ -1,6 +1,7 @@
 # EnterpriseProgramsList
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **closeIssueCount** | **null[]** | 实际完成任务数 | [optional] 

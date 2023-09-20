@@ -1,6 +1,7 @@
 # IssueAuth
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **read** | **bool** | 是否可查看此任务 | [optional] 

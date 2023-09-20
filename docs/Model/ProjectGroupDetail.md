@@ -1,6 +1,7 @@
 # ProjectGroupDetail
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | 仓库组 id | [optional] 

@@ -1,6 +1,7 @@
 # EnterpriseScrumVersion
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | 版本ID | [optional] 

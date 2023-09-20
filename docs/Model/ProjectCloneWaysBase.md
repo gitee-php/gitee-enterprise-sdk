@@ -1,6 +1,7 @@
 # ProjectCloneWaysBase
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **httpsUrl** | **string** | https克隆url | [optional] 

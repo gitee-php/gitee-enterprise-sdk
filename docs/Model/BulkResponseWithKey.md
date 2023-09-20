@@ -1,6 +1,7 @@
 # BulkResponseWithKey
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fields** | **null[]** | 消息数组模版[&#39;key&#39;, &#39;message&#39;] | [optional] 

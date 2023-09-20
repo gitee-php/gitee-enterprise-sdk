@@ -1,6 +1,7 @@
 # EnterpriseAuth
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **readMember** | **bool** | 是否可查看成员列表 | [optional] 

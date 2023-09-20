@@ -1,6 +1,7 @@
 # WeekReportDetail
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | 周报的 id | [optional] 

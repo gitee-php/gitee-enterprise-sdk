@@ -1,6 +1,7 @@
 # ScrumStage
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | 阶段ID | [optional] 

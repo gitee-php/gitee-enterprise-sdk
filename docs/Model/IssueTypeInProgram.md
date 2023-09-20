@@ -1,6 +1,7 @@
 # IssueTypeInProgram
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | 任务类型 ID | [optional] 

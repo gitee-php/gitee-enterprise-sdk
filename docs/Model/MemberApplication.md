@@ -1,6 +1,7 @@
 # MemberApplication
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | 成员申请的 id | [optional] 

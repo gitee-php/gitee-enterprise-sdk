@@ -1,6 +1,7 @@
 # ProjectTagBase
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | id | [optional] 

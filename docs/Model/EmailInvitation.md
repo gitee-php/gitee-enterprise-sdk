@@ -1,6 +1,7 @@
 # EmailInvitation
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **email** | **string** | 邮箱 | [optional] 

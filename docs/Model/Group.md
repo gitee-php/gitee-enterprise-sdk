@@ -1,6 +1,7 @@
 # Group
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | 团队 id | [optional] 

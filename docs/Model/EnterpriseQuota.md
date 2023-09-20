@@ -1,6 +1,7 @@
 # EnterpriseQuota
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **groupsCount** | **int** | 当前企业的团队总数 | [optional] 

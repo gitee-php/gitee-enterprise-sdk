@@ -1,6 +1,7 @@
 # PullRequestDetail
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | PR 的 id | [optional] 

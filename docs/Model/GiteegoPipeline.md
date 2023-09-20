@@ -1,6 +1,7 @@
 # GiteegoPipeline
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **general** | **object** | 与我相关 | [optional] 

@@ -1,6 +1,7 @@
 # Branch
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** | 分支名称 | [optional] 

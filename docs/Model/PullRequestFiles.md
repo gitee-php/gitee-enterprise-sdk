@@ -1,6 +1,7 @@
 # PullRequestFiles
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **commentsCount** | **int** | 文件评论数 | [optional] 

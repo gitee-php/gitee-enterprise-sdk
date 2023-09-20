@@ -1,6 +1,7 @@
 # PullRequestNoteTree
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **prId** | **int** | Pull Request id | [optional] 

@@ -1,6 +1,7 @@
 # CommitSignature
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **isVerified** | **bool** | 是否验证 | [optional] 

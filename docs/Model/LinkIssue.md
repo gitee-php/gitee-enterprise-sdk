@@ -1,6 +1,7 @@
 # LinkIssue
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | 任务 ID | [optional] 

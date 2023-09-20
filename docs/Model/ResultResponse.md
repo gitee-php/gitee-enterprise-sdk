@@ -1,6 +1,7 @@
 # ResultResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **result** | **string** | private: 私有, success: 成功, duplicate: 仓库已经导入(仓库信息：project) | [optional] 

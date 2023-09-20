@@ -1,6 +1,7 @@
 # WeekReportRelation
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **issues** | [**\GiteeEnterprise\Model\IssueMain**](IssueMain.md) | 关联Pull request | [optional] 

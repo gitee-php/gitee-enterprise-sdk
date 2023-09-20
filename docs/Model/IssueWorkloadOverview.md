@@ -1,6 +1,7 @@
 # IssueWorkloadOverview
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **estimatedDuration** | **float** | 预预估工时 | [optional] 

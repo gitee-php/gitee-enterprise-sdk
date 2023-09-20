@@ -1,6 +1,7 @@
 # Enterprise
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | 企业 id | [optional] 

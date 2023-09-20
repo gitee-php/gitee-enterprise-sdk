@@ -1,6 +1,7 @@
 # EnterpriseProjectsList
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **closeIssueCount** | **null[]** |  | [optional] 

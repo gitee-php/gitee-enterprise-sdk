@@ -1,6 +1,7 @@
 # EnterpriseProgram
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assigneeId** | **int** | 所有者id | [optional] 

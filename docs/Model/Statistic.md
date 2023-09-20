@@ -1,6 +1,7 @@
 # Statistic
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **read** | **object** | 查看统计 | [optional] 

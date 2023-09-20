@@ -1,6 +1,7 @@
 # CherryPick
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cherryBranch** | **string** | 自动创建的 cherry pick 分支名 | [optional] 

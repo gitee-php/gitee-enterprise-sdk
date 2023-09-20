@@ -1,6 +1,7 @@
 # MemberBulkModify
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **removedIds** | **null[]** | 成功删除id | [optional] 

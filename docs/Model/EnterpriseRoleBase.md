@@ -1,6 +1,7 @@
 # EnterpriseRoleBase
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | 角色 id | [optional] 

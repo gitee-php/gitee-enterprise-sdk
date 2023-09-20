@@ -1,6 +1,7 @@
 # Release
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **release** | **object** | release | [optional] 

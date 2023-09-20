@@ -1,6 +1,7 @@
 # PrAssigner
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assigners** | **string** | 审查人员id列表 | [optional] 

@@ -1,6 +1,7 @@
 # IssueState
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | 任务状态 ID | [optional] 

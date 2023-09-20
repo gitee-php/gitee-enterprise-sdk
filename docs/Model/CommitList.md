@@ -1,6 +1,7 @@
 # CommitList
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **day** | [**\DateTime**](https://www.php.net/class.datetime) | 日期 | [optional] 
