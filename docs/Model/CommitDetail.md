@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **committedDate** | [**\DateTime**](https://www.php.net/class.datetime) | 提交时间 | [optional] 
 **signature** | [**\GiteeEnterprise\Model\CommitSignature**](CommitSignature.md) | 签名 | [optional] 
 **buildState** | **object** | Gitee Go构建状态 | [optional] 
-**parents** | [**null[]**](.md) | 父节点 | [optional] 
+**parents** | **null[]** | 父节点 | [optional] 
 **diffFilesSize** | **int** | diff 文件大小 | [optional] 
 **limitDiffFilesSize** | **int** | 可渲染的diff文件大小 | [optional] 
 **isOverflow** | **bool** | diff大小是否超出限制 | [optional] 

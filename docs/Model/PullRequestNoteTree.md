@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **prId** | **int** | Pull Request id | [optional] 
 **count** | **int** | Pull Request的评论数量 | [optional] 
-**list** | [**null[]**](.md) | Pull Request的操作日志、普通评论、文件行评论包含代码建议的集合 | [optional] 
+**list** | **null[]** | Pull Request的操作日志、普通评论、文件行评论包含代码建议的集合 | [optional] 
 **diffPositionContextPath** | **string** | Pull Request的diff position社区版请求地址 | [optional] 
 **canClosePr** | **bool** | 是否能关闭Pull Request | [optional] 
 

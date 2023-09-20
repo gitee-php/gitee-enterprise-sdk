@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **isFeedback** | **bool** | 成员是否填写过 | [optional] 
 **isGuided** | **bool** | 是否完成引导 | [optional] 
 **userGuideClosed** | **bool** | 是否关闭了新手引导 | [optional] 
-**userGuideStepsFinished** | [**null[]**](.md) | 新手引导的步骤指示 | [optional] 
+**userGuideStepsFinished** | **null[]** | 新手引导的步骤指示 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

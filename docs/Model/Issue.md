@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **issueState** | [**\GiteeEnterprise\Model\IssueState**](IssueState.md) | 任务状态 | [optional] 
 **issueType** | [**\GiteeEnterprise\Model\IssueType**](IssueType.md) | 任务类型 | [optional] 
 **labels** | [**\GiteeEnterprise\Model\Label[]**](Label.md) | 任务关联的标签 | [optional] 
-**issueExtra** | [**null[]**](.md) | 任务自定义字段值 | [optional] 
+**issueExtra** | **null[]** | 任务自定义字段值 | [optional] 
 **planStartedAt** | **string** | 计划开始时间 | [optional] 
 **deadline** | **string** | 计划完成时间 | [optional] 
 **finishedAt** | **string** | 实际完成时间 | [optional] 
