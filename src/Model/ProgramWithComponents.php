@@ -68,7 +68,7 @@ class ProgramWithComponents implements ModelInterface, ArrayAccess
         'color' => 'string',
         'category' => 'string',
         'programExtraFields' => '\GiteeEnterprise\Model\ProgramExtraField',
-        'components' => '\GiteeEnterprise\Model\ProgramComponent'
+        'components' => '\GiteeEnterprise\Model\ProgramComponent[]'
     ];
 
     /**
@@ -537,7 +537,7 @@ class ProgramWithComponents implements ModelInterface, ArrayAccess
     /**
      * Gets components
      *
-     * @return \GiteeEnterprise\Model\ProgramComponent
+     * @return \GiteeEnterprise\Model\ProgramComponent[]
      */
     public function getComponents()
     {
@@ -547,7 +547,7 @@ class ProgramWithComponents implements ModelInterface, ArrayAccess
     /**
      * Sets components
      *
-     * @param \GiteeEnterprise\Model\ProgramComponent $components 项目组件列表
+     * @param \GiteeEnterprise\Model\ProgramComponent[] $components 项目组件列表
      *
      * @return $this
      */
