@@ -36,7 +36,7 @@ use \GiteeEnterprise\ObjectSerializer;
  * IssueNote Class Doc Comment
  *
  * @category Class
- * @description 修改任务下的评论
+ * @description 任务下的评论
  * @package  GiteeEnterprise
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen

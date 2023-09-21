@@ -2902,7 +2902,7 @@ class IssuesApi
      *
      * @throws \GiteeEnterprise\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \GiteeEnterprise\Model\AttachFile
+     * @return \GiteeEnterprise\Model\AttachFile[]
      */
     public function getEnterpriseIdIssuesIssueIdAttachFiles($enterpriseId, $issueId, $accessToken = null)
     {
@@ -2921,11 +2921,11 @@ class IssuesApi
      *
      * @throws \GiteeEnterprise\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \GiteeEnterprise\Model\AttachFile, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \GiteeEnterprise\Model\AttachFile[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getEnterpriseIdIssuesIssueIdAttachFilesWithHttpInfo($enterpriseId, $issueId, $accessToken = null)
     {
-        $returnType = '\GiteeEnterprise\Model\AttachFile';
+        $returnType = '\GiteeEnterprise\Model\AttachFile[]';
         $request = $this->getEnterpriseIdIssuesIssueIdAttachFilesRequest($enterpriseId, $issueId, $accessToken);
 
         try {
@@ -2977,7 +2977,7 @@ class IssuesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\GiteeEnterprise\Model\AttachFile',
+                        '\GiteeEnterprise\Model\AttachFile[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3023,7 +3023,7 @@ class IssuesApi
      */
     public function getEnterpriseIdIssuesIssueIdAttachFilesAsyncWithHttpInfo($enterpriseId, $issueId, $accessToken = null)
     {
-        $returnType = '\GiteeEnterprise\Model\AttachFile';
+        $returnType = '\GiteeEnterprise\Model\AttachFile[]';
         $request = $this->getEnterpriseIdIssuesIssueIdAttachFilesRequest($enterpriseId, $issueId, $accessToken);
 
         return $this->client
@@ -4399,7 +4399,7 @@ class IssuesApi
      *
      * @throws \GiteeEnterprise\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \GiteeEnterprise\Model\IssueNote
+     * @return \GiteeEnterprise\Model\IssueNote[]
      */
     public function getEnterpriseIdIssuesIssueIdNotes($enterpriseId, $issueId, $accessToken = null, $sort = null, $direction = 'desc', $page = '1', $perPage = null)
     {
@@ -4422,11 +4422,11 @@ class IssuesApi
      *
      * @throws \GiteeEnterprise\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \GiteeEnterprise\Model\IssueNote, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \GiteeEnterprise\Model\IssueNote[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getEnterpriseIdIssuesIssueIdNotesWithHttpInfo($enterpriseId, $issueId, $accessToken = null, $sort = null, $direction = 'desc', $page = '1', $perPage = null)
     {
-        $returnType = '\GiteeEnterprise\Model\IssueNote';
+        $returnType = '\GiteeEnterprise\Model\IssueNote[]';
         $request = $this->getEnterpriseIdIssuesIssueIdNotesRequest($enterpriseId, $issueId, $accessToken, $sort, $direction, $page, $perPage);
 
         try {
@@ -4478,7 +4478,7 @@ class IssuesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\GiteeEnterprise\Model\IssueNote',
+                        '\GiteeEnterprise\Model\IssueNote[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4532,7 +4532,7 @@ class IssuesApi
      */
     public function getEnterpriseIdIssuesIssueIdNotesAsyncWithHttpInfo($enterpriseId, $issueId, $accessToken = null, $sort = null, $direction = 'desc', $page = '1', $perPage = null)
     {
-        $returnType = '\GiteeEnterprise\Model\IssueNote';
+        $returnType = '\GiteeEnterprise\Model\IssueNote[]';
         $request = $this->getEnterpriseIdIssuesIssueIdNotesRequest($enterpriseId, $issueId, $accessToken, $sort, $direction, $page, $perPage);
 
         return $this->client
