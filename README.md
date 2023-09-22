@@ -63,8 +63,8 @@ try {
 ```
 
 > [!WARNING]  
-> 由于 Gitee 官方提供的 `swagger.json` 存在错误，所以本 `SDK` 中存在部分 `API` 的返回值 `Model` 未能正确返回内容，如果发现可以提交 [Issue](https://github.com/gitee-php/gitee-enterprise-sdk/issues/new/choose) 或提交 `Pull Request`。
-> 同时为了减少影响，也可以使用 `SDK` 提供的 `ResponseHandler` 来获取到原始响应。
+> 由于 Gitee 官方提供的 `swagger.json` 存在错误，所以本 `SDK` 中存在部分 `API` 的返回值 `Model` 未能正确返回内容，如果发现可以提交 [Issue](https://github.com/gitee-php/gitee-enterprise-sdk/issues/new/choose) 或提交 `Pull Request`。  
+> 同时为了减小影响，可以使用 `SDK` 提供的 `ResponseHandler` 来获取到原始响应。
 
 ```php
 <?php
