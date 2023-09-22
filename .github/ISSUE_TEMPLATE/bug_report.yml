@@ -1,0 +1,35 @@
+name: Bug report
+description: Create a bug report
+labels: ["Bug"]
+assignees:
+  - sy-records
+body:
+  - type: textarea
+    attributes:
+      label: Description
+      description: "Please provide a minimal way to reproduce the problem and describe what the expected vs actual behavior is."
+      value: |
+        The following code:
+
+        ```php
+        <?php
+        ```
+
+        Resulted in this output:
+        ```
+        ```
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Api
+      description: "Which API Endpoint are you calling? see [API Endpoints](https://github.com/gitee-php/gitee-enterprise-sdk?tab=readme-ov-file#documentation-for-api-endpoints)."
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: PHP Version
+      description: "The used PHP version."
+      placeholder: "PHP 8.0.12"
+    validations:
+      required: false

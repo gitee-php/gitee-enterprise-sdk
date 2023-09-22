@@ -62,6 +62,32 @@ try {
 ?>
 ```
 
+> [!WARNING]  
+> 由于 Gitee 官方提供的 `swagger.json` 存在错误，所以本 `SDK` 中存在部分 `API` 的返回值 `Model` 未能正确返回内容，如果发现可以提交 [Issue](https://github.com/gitee-php/gitee-enterprise-sdk/issues/new/choose) 或提交 `Pull Request`。
+> 同时为了减少影响，也可以使用 `SDK` 提供的 `ResponseHandler` 来获取到原始响应。
+
+```php
+<?php
+require_once __DIR__ . '/vendor/autoload.php';
+
+$response = new GiteeEnterprise\ResponseHandler();
+$client = $response->createClientWithMiddleware();
+
+$apiInstance = new GiteeEnterprise\Api\MembersApi($client);
+$enterpriseId = 56; // int | 企业id (https://gitee.com/api/v8/swagger#/getList 的返回值的 id)
+$accessToken = "accessToken_example"; // string | 用户授权码
+
+try {
+    $result = $apiInstance->getEnterpriseIdMembers($enterpriseId, $accessToken);
+    print_r($result);
+    print_r($response->toArray());
+} catch (Exception $e) {
+    echo 'Exception when calling MembersApi->getEnterpriseIdMembers: ', $e->getMessage(), PHP_EOL;
+}
+
+?>
+```
+
 ## Documentation for API Endpoints
 
 All URIs are relative to *https://api.gitee.com/enterprises*
