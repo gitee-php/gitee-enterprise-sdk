@@ -16,7 +16,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 ```
 {
   "require": {
-    "gitee-php/gitee-enterprise-sdk": "^0.1"
+    "gitee-php/gitee-enterprise-sdk": "^1.0"
   }
 }
 ```
