@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **int** | ID | [optional] 
 **user** | [**\GiteeEnterprise\Model\UserWithRemark**](UserWithRemark.md) | 用户 | [optional] 
 **issueId** | **int** | 工作项ID | [optional] 
 **issueIdent** | **string** | 工作项ident | [optional] 

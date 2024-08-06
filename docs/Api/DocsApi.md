@@ -125,7 +125,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEnterpriseIdDocsDocIdCommit**
-> getEnterpriseIdDocsDocIdCommit($docId, $commitId, $enterpriseId, $accessToken)
+> \GiteeEnterprise\Model\Commit[] getEnterpriseIdDocsDocIdCommit($docId, $commitId, $enterpriseId, $accessToken)
 
 获取版本历史详情
 
@@ -147,7 +147,8 @@ $enterpriseId = 56; // int |
 $accessToken = "accessToken_example"; // string | 用户授权码
 
 try {
-    $apiInstance->getEnterpriseIdDocsDocIdCommit($docId, $commitId, $enterpriseId, $accessToken);
+    $result = $apiInstance->getEnterpriseIdDocsDocIdCommit($docId, $commitId, $enterpriseId, $accessToken);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocsApi->getEnterpriseIdDocsDocIdCommit: ', $e->getMessage(), PHP_EOL;
 }
@@ -165,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\GiteeEnterprise\Model\Commit[]**](../Model/Commit.md)
 
 ### Authorization
 

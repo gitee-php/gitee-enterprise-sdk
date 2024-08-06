@@ -9,7 +9,9 @@ Method | HTTP request | Description
 [**getEnterpriseIdProjectsProjectIdCommitCommitIdDiffForPath**](ProjectCommitsApi.md#getEnterpriseIdProjectsProjectIdCommitCommitIdDiffForPath) | **GET** /{enterprise_id}/projects/{project_id}/commit/{commit_id}/diff_for_path | 获取 commit 详情中差异较大的文件内容
 [**getEnterpriseIdProjectsProjectIdCommitCommitIdNotes**](ProjectCommitsApi.md#getEnterpriseIdProjectsProjectIdCommitCommitIdNotes) | **GET** /{enterprise_id}/projects/{project_id}/commit/{commit_id}/notes | Commit 评论列表
 [**getEnterpriseIdProjectsProjectIdCommitCommitIdNotesTrees**](ProjectCommitsApi.md#getEnterpriseIdProjectsProjectIdCommitCommitIdNotesTrees) | **GET** /{enterprise_id}/projects/{project_id}/commit/{commit_id}/notes/trees | Commit 评论列表树
+[**getEnterpriseIdProjectsProjectIdCommitCommitIdPullRequests**](ProjectCommitsApi.md#getEnterpriseIdProjectsProjectIdCommitCommitIdPullRequests) | **GET** /{enterprise_id}/projects/{project_id}/commit/{commit_id}/pull_requests | commit的相关的pull request列表
 [**getEnterpriseIdProjectsProjectIdCommitsRef**](ProjectCommitsApi.md#getEnterpriseIdProjectsProjectIdCommitsRef) | **GET** /{enterprise_id}/projects/{project_id}/commits/{ref} | commits列表
+[**getEnterpriseIdProjectsProjectIdCompareDiffForPath**](ProjectCommitsApi.md#getEnterpriseIdProjectsProjectIdCompareDiffForPath) | **GET** /{enterprise_id}/projects/{project_id}/compare/diff_for_path | 获取 commit 对比中差异较大的文件内容
 [**getEnterpriseIdProjectsProjectIdCompareFromTo**](ProjectCommitsApi.md#getEnterpriseIdProjectsProjectIdCompareFromTo) | **GET** /{enterprise_id}/projects/{project_id}/compare/{from}...{to} | 对比commit
 [**postEnterpriseIdProjectsProjectIdCommitCommitIdNotes**](ProjectCommitsApi.md#postEnterpriseIdProjectsProjectIdCommitCommitIdNotes) | **POST** /{enterprise_id}/projects/{project_id}/commit/{commit_id}/notes | 评论 Commit
 [**postEnterpriseIdProjectsProjectIdCommitCommitIdNotesTrees**](ProjectCommitsApi.md#postEnterpriseIdProjectsProjectIdCommitCommitIdNotesTrees) | **POST** /{enterprise_id}/projects/{project_id}/commit/{commit_id}/notes/trees | 评论、回复 Commit
@@ -305,6 +307,67 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **getEnterpriseIdProjectsProjectIdCommitCommitIdPullRequests**
+> \GiteeEnterprise\Model\PullRequest[] getEnterpriseIdProjectsProjectIdCommitCommitIdPullRequests($enterpriseId, $projectId, $commitId, $accessToken, $qt, $page, $perPage)
+
+commit的相关的pull request列表
+
+commit的相关的pull request列表
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new GiteeEnterprise\Api\ProjectCommitsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$enterpriseId = 56; // int | 企业id
+$projectId = "projectId_example"; // string | 仓库 id 或 path
+$commitId = "commitId_example"; // string | commit sha
+$accessToken = "accessToken_example"; // string | 用户授权码
+$qt = "qt_example"; // string | path类型（查询参数为path）, 空则表示查询参数为id
+$page = 1; // int | 当前的页码
+$perPage = 56; // int | 每页的数量，最大为 100
+
+try {
+    $result = $apiInstance->getEnterpriseIdProjectsProjectIdCommitCommitIdPullRequests($enterpriseId, $projectId, $commitId, $accessToken, $qt, $page, $perPage);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProjectCommitsApi->getEnterpriseIdProjectsProjectIdCommitCommitIdPullRequests: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **enterpriseId** | **int**| 企业id |
+ **projectId** | **string**| 仓库 id 或 path |
+ **commitId** | **string**| commit sha |
+ **accessToken** | **string**| 用户授权码 | [optional]
+ **qt** | **string**| path类型（查询参数为path）, 空则表示查询参数为id | [optional]
+ **page** | **int**| 当前的页码 | [optional] [default to 1]
+ **perPage** | **int**| 每页的数量，最大为 100 | [optional]
+
+### Return type
+
+[**\GiteeEnterprise\Model\PullRequest[]**](../Model/PullRequest.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **getEnterpriseIdProjectsProjectIdCommitsRef**
 > \GiteeEnterprise\Model\CommitList[] getEnterpriseIdProjectsProjectIdCommitsRef($enterpriseId, $projectId, $ref, $accessToken, $qt, $author, $startDate, $endDate, $search, $page, $perPage)
 
@@ -362,6 +425,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\GiteeEnterprise\Model\CommitList[]**](../Model/CommitList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getEnterpriseIdProjectsProjectIdCompareDiffForPath**
+> getEnterpriseIdProjectsProjectIdCompareDiffForPath($enterpriseId, $projectId, $from, $to, $fileIdentifier, $newPath, $oldPath, $accessToken, $qt)
+
+获取 commit 对比中差异较大的文件内容
+
+获取 commit 对比中差异较大的文件内容
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new GiteeEnterprise\Api\ProjectCommitsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$enterpriseId = 56; // int | 企业id
+$projectId = "projectId_example"; // string | 仓库 id 或 path
+$from = "from_example"; // string | 起始 commit
+$to = "to_example"; // string | 结束 commit
+$fileIdentifier = "fileIdentifier_example"; // string | git 文件标识符
+$newPath = "newPath_example"; // string | 旧路径
+$oldPath = "oldPath_example"; // string | 新路径
+$accessToken = "accessToken_example"; // string | 用户授权码
+$qt = "qt_example"; // string | path类型（查询参数为path）, 空则表示查询参数为id
+
+try {
+    $apiInstance->getEnterpriseIdProjectsProjectIdCompareDiffForPath($enterpriseId, $projectId, $from, $to, $fileIdentifier, $newPath, $oldPath, $accessToken, $qt);
+} catch (Exception $e) {
+    echo 'Exception when calling ProjectCommitsApi->getEnterpriseIdProjectsProjectIdCompareDiffForPath: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **enterpriseId** | **int**| 企业id |
+ **projectId** | **string**| 仓库 id 或 path |
+ **from** | **string**| 起始 commit |
+ **to** | **string**| 结束 commit |
+ **fileIdentifier** | **string**| git 文件标识符 |
+ **newPath** | **string**| 旧路径 |
+ **oldPath** | **string**| 新路径 |
+ **accessToken** | **string**| 用户授权码 | [optional]
+ **qt** | **string**| path类型（查询参数为path）, 空则表示查询参数为id | [optional]
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 

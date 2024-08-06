@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **createdAt** | **string** | 附件的创建时间 | [optional] 
 **updatedAt** | **string** | 附件的更新时间 | [optional] 
 **canDelete** | **bool** | 能否删除附件 | [optional] 
+**cliDownloadUrl** | **string** | 附件cli下载链接 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

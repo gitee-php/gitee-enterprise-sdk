@@ -857,7 +857,7 @@ $type = "type_example"; // string | 与我相关，created：我创建的，join
 $status = 56; // int | 状态: 0: 开始，1: 暂停，2: 关闭
 $creatorId = 56; // int | 负责人
 $parentId = 56; // int | form_from仓库id
-$forkFilter = "forkFilter_example"; // string | 非fork的(not_fork), 只看fork的(only_fork)
+$forkFilter = "forkFilter_example"; // string | 全部(all), 非fork的(not_fork), 只看fork的(only_fork), 我fork的(my_fork)
 $outsourced = 56; // int | 是否外包：0：内部，1：外包
 $groupId = 56; // int | 团队id
 $sort = "sort_example"; // string | 排序字段(created_at、last_push_at)
@@ -888,7 +888,7 @@ Name | Type | Description  | Notes
  **status** | **int**| 状态: 0: 开始，1: 暂停，2: 关闭 | [optional]
  **creatorId** | **int**| 负责人 | [optional]
  **parentId** | **int**| form_from仓库id | [optional]
- **forkFilter** | **string**| 非fork的(not_fork), 只看fork的(only_fork) | [optional]
+ **forkFilter** | **string**| 全部(all), 非fork的(not_fork), 只看fork的(only_fork), 我fork的(my_fork) | [optional]
  **outsourced** | **int**| 是否外包：0：内部，1：外包 | [optional]
  **groupId** | **int**| 团队id | [optional]
  **sort** | **string**| 排序字段(created_at、last_push_at) | [optional]
@@ -913,7 +913,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEnterpriseIdProgramsProgramIdPullRequests**
-> \GiteeEnterprise\Model\Issue[] getEnterpriseIdProgramsProgramIdPullRequests($programId, $enterpriseId, $accessToken, $state, $scope, $authorId, $assigneeId, $testerId, $search, $sort, $direction, $groupId, $milestoneId, $labels, $labelIds, $canBeMerged, $projectId, $needStateCount, $page, $perPage)
+> \GiteeEnterprise\Model\Issue[] getEnterpriseIdProgramsProgramIdPullRequests($programId, $enterpriseId, $accessToken, $state, $scope, $authorId, $assigneeId, $testerId, $search, $sort, $direction, $groupId, $milestoneId, $labels, $labelIds, $canBeMerged, $category, $createdAt, $updatedAt, $mergedAt, $targetBranch, $sourceBranch, $projectId, $needStateCount, $page, $perPage)
 
 获取项目下的 Pull Request
 
@@ -933,25 +933,31 @@ $programId = 56; // int | 项目 id
 $enterpriseId = 56; // int | 企业 id
 $accessToken = "accessToken_example"; // string | 用户授权码
 $state = "state_example"; // string | PR 状态
-$scope = "scope_example"; // string | 范围筛选。指派我的: assigned_or_test，我创建或指派给我的: related_to_me，我参与仓库的PR: participate_in，草稿PR: draft
+$scope = "scope_example"; // string | 范围筛选。指派我的: assigned_or_test，我创建或指派给我的: related_to_me，                             我参与仓库的PR: participate_in，草稿PR: draft， create：我发起的，assign：我评审的，test：我测试的
 $authorId = "authorId_example"; // string | 筛选 PR 创建者
 $assigneeId = "assigneeId_example"; // string | 筛选 PR 审查者
 $testerId = "testerId_example"; // string | 筛选 PR 测试人员
 $search = "search_example"; // string | 搜索参数
-$sort = "sort_example"; // string | 排序字段(created_at、closed_at、priority)
+$sort = "sort_example"; // string | 排序字段(created_at、closed_at、priority、updated_at)
 $direction = "direction_example"; // string | 排序方向(asc: 升序 desc: 倒序)
 $groupId = 56; // int | 团队 id
 $milestoneId = 56; // int | 里程碑 id
 $labels = "labels_example"; // string | 标签名称。多个标签逗号(,)隔开
 $labelIds = "labelIds_example"; // string | 标签ID,多个标签逗号(,)隔开
 $canBeMerged = 56; // int | 是否可合并
+$category = "category_example"; // string | pr类型
+$createdAt = "createdAt_example"; // string | 创建时间，如：\"2023.12.18-2023.12.31\"
+$updatedAt = "updatedAt_example"; // string | 更新时间，如：\"2023.12.18-2023.12.31\"
+$mergedAt = "mergedAt_example"; // string | 合并时间， 如：\"2023.12.18-2023.12.31\"
+$targetBranch = "targetBranch_example"; // string | 目标分支名
+$sourceBranch = "sourceBranch_example"; // string | 源分支名
 $projectId = 56; // int | 仓库 id
 $needStateCount = 56; // int | 是否需要状态统计数
 $page = 1; // int | 当前的页码
 $perPage = 56; // int | 每页的数量，最大为 100
 
 try {
-    $result = $apiInstance->getEnterpriseIdProgramsProgramIdPullRequests($programId, $enterpriseId, $accessToken, $state, $scope, $authorId, $assigneeId, $testerId, $search, $sort, $direction, $groupId, $milestoneId, $labels, $labelIds, $canBeMerged, $projectId, $needStateCount, $page, $perPage);
+    $result = $apiInstance->getEnterpriseIdProgramsProgramIdPullRequests($programId, $enterpriseId, $accessToken, $state, $scope, $authorId, $assigneeId, $testerId, $search, $sort, $direction, $groupId, $milestoneId, $labels, $labelIds, $canBeMerged, $category, $createdAt, $updatedAt, $mergedAt, $targetBranch, $sourceBranch, $projectId, $needStateCount, $page, $perPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProgramsApi->getEnterpriseIdProgramsProgramIdPullRequests: ', $e->getMessage(), PHP_EOL;
@@ -967,18 +973,24 @@ Name | Type | Description  | Notes
  **enterpriseId** | **int**| 企业 id |
  **accessToken** | **string**| 用户授权码 | [optional]
  **state** | **string**| PR 状态 | [optional]
- **scope** | **string**| 范围筛选。指派我的: assigned_or_test，我创建或指派给我的: related_to_me，我参与仓库的PR: participate_in，草稿PR: draft | [optional]
+ **scope** | **string**| 范围筛选。指派我的: assigned_or_test，我创建或指派给我的: related_to_me，                             我参与仓库的PR: participate_in，草稿PR: draft， create：我发起的，assign：我评审的，test：我测试的 | [optional]
  **authorId** | **string**| 筛选 PR 创建者 | [optional]
  **assigneeId** | **string**| 筛选 PR 审查者 | [optional]
  **testerId** | **string**| 筛选 PR 测试人员 | [optional]
  **search** | **string**| 搜索参数 | [optional]
- **sort** | **string**| 排序字段(created_at、closed_at、priority) | [optional]
+ **sort** | **string**| 排序字段(created_at、closed_at、priority、updated_at) | [optional]
  **direction** | **string**| 排序方向(asc: 升序 desc: 倒序) | [optional]
  **groupId** | **int**| 团队 id | [optional]
  **milestoneId** | **int**| 里程碑 id | [optional]
  **labels** | **string**| 标签名称。多个标签逗号(,)隔开 | [optional]
  **labelIds** | **string**| 标签ID,多个标签逗号(,)隔开 | [optional]
  **canBeMerged** | **int**| 是否可合并 | [optional]
+ **category** | **string**| pr类型 | [optional]
+ **createdAt** | **string**| 创建时间，如：\&quot;2023.12.18-2023.12.31\&quot; | [optional]
+ **updatedAt** | **string**| 更新时间，如：\&quot;2023.12.18-2023.12.31\&quot; | [optional]
+ **mergedAt** | **string**| 合并时间， 如：\&quot;2023.12.18-2023.12.31\&quot; | [optional]
+ **targetBranch** | **string**| 目标分支名 | [optional]
+ **sourceBranch** | **string**| 源分支名 | [optional]
  **projectId** | **int**| 仓库 id | [optional]
  **needStateCount** | **int**| 是否需要状态统计数 | [optional]
  **page** | **int**| 当前的页码 | [optional] [default to 1]
@@ -1453,7 +1465,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putEnterpriseIdProgramsProgramIdUpdateComponents**
-> \GiteeEnterprise\Model\ProgramComponent[] putEnterpriseIdProgramsProgramIdUpdateComponents($programId, $componentsIdent, $componentsEnabled, $enterpriseId, $accessToken, $componentsCondition, $componentsRoleIdsRoleId)
+> \GiteeEnterprise\Model\ProgramComponent[] putEnterpriseIdProgramsProgramIdUpdateComponents($programId, $componentsIdent, $componentsEnabled, $enterpriseId, $accessToken, $componentsCondition, $componentsRoleIdsRoleId, $componentsUserIds)
 
 修改项目组件
 
@@ -1476,9 +1488,10 @@ $enterpriseId = 56; // int |
 $accessToken = "accessToken_example"; // string | 用户授权码
 $componentsCondition = array(56); // int[] | 0为属于， 1为不属于
 $componentsRoleIdsRoleId = array(56); // int[] | 角色id
+$componentsUserIds = array(56); // int[] | 多选用户ID
 
 try {
-    $result = $apiInstance->putEnterpriseIdProgramsProgramIdUpdateComponents($programId, $componentsIdent, $componentsEnabled, $enterpriseId, $accessToken, $componentsCondition, $componentsRoleIdsRoleId);
+    $result = $apiInstance->putEnterpriseIdProgramsProgramIdUpdateComponents($programId, $componentsIdent, $componentsEnabled, $enterpriseId, $accessToken, $componentsCondition, $componentsRoleIdsRoleId, $componentsUserIds);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProgramsApi->putEnterpriseIdProgramsProgramIdUpdateComponents: ', $e->getMessage(), PHP_EOL;
@@ -1497,6 +1510,7 @@ Name | Type | Description  | Notes
  **accessToken** | **string**| 用户授权码 | [optional]
  **componentsCondition** | [**int[]**](../Model/int.md)| 0为属于， 1为不属于 | [optional]
  **componentsRoleIdsRoleId** | [**int[]**](../Model/int.md)| 角色id | [optional]
+ **componentsUserIds** | [**int[]**](../Model/int.md)| 多选用户ID | [optional]
 
 ### Return type
 

@@ -9,7 +9,8 @@ Name | Type | Description | Notes
 **position** | **int** | 位置值 | [optional] 
 **visible** | **bool** | 是否允许显示(角色控制) | [optional] 
 **condition** | **int** | 权限控制条件，0为属于，1为不属于(未设置时为0，roles为nil) | [optional] 
-**roles** | **null[]** | 角色列表 | [optional] 
+**roles** | **null[]** | 授权角色列表 | [optional] 
+**users** | **null[]** | 授权成员列表 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

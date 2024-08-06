@@ -36,6 +36,12 @@ Name | Type | Description | Notes
 **scanStatus** | **int** | scan任务状态：0 等待中、1 执行中、2 已取消、3 成功、4 失败、5 构建中、6 超时 | [optional] 
 **scanStatusDesc** | **int** | scan返回门禁相关的描述 | [optional] 
 **scanFlag** | **int** | 质量门禁标志：1 通过 2 不通过 | [optional] 
+**reviewStrategy** | **string** | 评审策略 | [optional] 
+**reviewScore** | **int** | pr可以合入的最少审查得分 | [optional] 
+**currentReviewScore** | **int** | pr当前审查得分 | [optional] 
+**revertedPr** | [**\GiteeEnterprise\Model\RevertedPullRequest**](RevertedPullRequest.md) | 被回退的pr | [optional] 
+**commitReviewPass** | **bool** | pr是否通过commit review | [optional] 
+**commitReviewDetail** | **object** | pr的commit review详情 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

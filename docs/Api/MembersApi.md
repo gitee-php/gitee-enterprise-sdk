@@ -329,7 +329,7 @@ $isBlock = 0; // int | 1: 筛选已锁定的用户。
 $groupId = 56; // int | 筛选团队的成员列表
 $roleId = 56; // int | 筛选指定角色的成员列表
 $search = "search_example"; // string | 搜索关键字
-$sort = "sort_example"; // string | 排序字段(created_at: 创建时间 remark: 在企业的备注)
+$sort = "sort_example"; // string | 排序字段(created_at: 创建时间;remark: 在企业的备注;role: 角色; occupation: 职位; block_status: 锁定情况 )
 $direction = "direction_example"; // string | 排序方向(asc: 升序 desc: 倒序)
 $includeMemberHistories = true; // bool | 是否包含离职成员历史（true/false）
 $page = 1; // int | 当前的页码
@@ -355,7 +355,7 @@ Name | Type | Description  | Notes
  **groupId** | **int**| 筛选团队的成员列表 | [optional]
  **roleId** | **int**| 筛选指定角色的成员列表 | [optional]
  **search** | **string**| 搜索关键字 | [optional]
- **sort** | **string**| 排序字段(created_at: 创建时间 remark: 在企业的备注) | [optional]
+ **sort** | **string**| 排序字段(created_at: 创建时间;remark: 在企业的备注;role: 角色; occupation: 职位; block_status: 锁定情况 ) | [optional]
  **direction** | **string**| 排序方向(asc: 升序 desc: 倒序) | [optional]
  **includeMemberHistories** | **bool**| 是否包含离职成员历史（true/false） | [optional]
  **page** | **int**| 当前的页码 | [optional] [default to 1]

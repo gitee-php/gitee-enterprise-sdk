@@ -31,7 +31,7 @@ Method | HTTP request | Description
 [**postEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdNotes**](PullRequestsApi.md#postEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdNotes) | **POST** /{enterprise_id}/projects/{project_id}/pull_requests/{pull_request_id}/notes | 评论 Pull Request
 [**postEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdReactions**](PullRequestsApi.md#postEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdReactions) | **POST** /{enterprise_id}/projects/{project_id}/pull_requests/{pull_request_id}/reactions | 新增PR表态
 [**putEnterpriseIdProjectsProjectIdPullRequestsPullRequestId**](PullRequestsApi.md#putEnterpriseIdProjectsProjectIdPullRequestsPullRequestId) | **PUT** /{enterprise_id}/projects/{project_id}/pull_requests/{pull_request_id} | 更新 Pull Request
-[**putEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdAssign**](PullRequestsApi.md#putEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdAssign) | **PUT** /{enterprise_id}/projects/{project_id}/pull_requests/{pull_request_id}/assign | PR 审查通过
+[**putEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdAssign**](PullRequestsApi.md#putEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdAssign) | **PUT** /{enterprise_id}/projects/{project_id}/pull_requests/{pull_request_id}/assign | 审查 PR
 [**putEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdDraft**](PullRequestsApi.md#putEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdDraft) | **PUT** /{enterprise_id}/projects/{project_id}/pull_requests/{pull_request_id}/draft | PR 标记与取消草稿
 [**putEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdTest**](PullRequestsApi.md#putEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdTest) | **PUT** /{enterprise_id}/projects/{project_id}/pull_requests/{pull_request_id}/test | PR 测试通过
 
@@ -1103,7 +1103,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEnterpriseIdPullRequests**
-> \GiteeEnterprise\Model\PullRequest[] getEnterpriseIdPullRequests($enterpriseId, $accessToken, $state, $scope, $authorId, $assigneeId, $testerId, $search, $sort, $direction, $groupId, $milestoneId, $labels, $labelIds, $canBeMerged, $projectId, $needStateCount, $publicOrInternalOpenOnly, $targetBranch, $sourceBranch, $page, $perPage)
+> \GiteeEnterprise\Model\PullRequest[] getEnterpriseIdPullRequests($enterpriseId, $accessToken, $state, $scope, $authorId, $assigneeId, $testerId, $search, $sort, $direction, $groupId, $milestoneId, $labels, $labelIds, $canBeMerged, $category, $createdAt, $updatedAt, $mergedAt, $targetBranch, $sourceBranch, $projectId, $needStateCount, $publicOrInternalOpenOnly, $page, $perPage)
 
 获取企业下的 Pull Request 列表
 
@@ -1122,28 +1122,32 @@ $apiInstance = new GiteeEnterprise\Api\PullRequestsApi(
 $enterpriseId = 56; // int | 企业 id
 $accessToken = "accessToken_example"; // string | 用户授权码
 $state = "state_example"; // string | PR 状态
-$scope = "scope_example"; // string | 范围筛选。指派我的: assigned_or_test，我创建或指派给我的: related_to_me，我参与仓库的PR: participate_in，草稿PR: draft
+$scope = "scope_example"; // string | 范围筛选。指派我的: assigned_or_test，我创建或指派给我的: related_to_me，                             我参与仓库的PR: participate_in，草稿PR: draft， create：我发起的，assign：我评审的，test：我测试的
 $authorId = "authorId_example"; // string | 筛选 PR 创建者
 $assigneeId = "assigneeId_example"; // string | 筛选 PR 审查者
 $testerId = "testerId_example"; // string | 筛选 PR 测试人员
 $search = "search_example"; // string | 搜索参数
-$sort = "sort_example"; // string | 排序字段(created_at、closed_at、priority)
+$sort = "sort_example"; // string | 排序字段(created_at、closed_at、priority、updated_at)
 $direction = "direction_example"; // string | 排序方向(asc: 升序 desc: 倒序)
 $groupId = 56; // int | 团队 id
 $milestoneId = 56; // int | 里程碑 id
 $labels = "labels_example"; // string | 标签名称。多个标签逗号(,)隔开
 $labelIds = "labelIds_example"; // string | 标签ID,多个标签逗号(,)隔开
 $canBeMerged = 56; // int | 是否可合并
+$category = "category_example"; // string | pr类型
+$createdAt = "createdAt_example"; // string | 创建时间，如：\"2023.12.18-2023.12.31\"
+$updatedAt = "updatedAt_example"; // string | 更新时间，如：\"2023.12.18-2023.12.31\"
+$mergedAt = "mergedAt_example"; // string | 合并时间， 如：\"2023.12.18-2023.12.31\"
+$targetBranch = "targetBranch_example"; // string | 目标分支名
+$sourceBranch = "sourceBranch_example"; // string | 源分支名
 $projectId = 56; // int | 仓库 id
 $needStateCount = 56; // int | 是否需要状态统计数
 $publicOrInternalOpenOnly = 56; // int | 仅列出内部公开和外部公开的 PR
-$targetBranch = "targetBranch_example"; // string | 目标分支名
-$sourceBranch = "sourceBranch_example"; // string | 源分支名
 $page = 1; // int | 当前的页码
 $perPage = 56; // int | 每页的数量，最大为 100
 
 try {
-    $result = $apiInstance->getEnterpriseIdPullRequests($enterpriseId, $accessToken, $state, $scope, $authorId, $assigneeId, $testerId, $search, $sort, $direction, $groupId, $milestoneId, $labels, $labelIds, $canBeMerged, $projectId, $needStateCount, $publicOrInternalOpenOnly, $targetBranch, $sourceBranch, $page, $perPage);
+    $result = $apiInstance->getEnterpriseIdPullRequests($enterpriseId, $accessToken, $state, $scope, $authorId, $assigneeId, $testerId, $search, $sort, $direction, $groupId, $milestoneId, $labels, $labelIds, $canBeMerged, $category, $createdAt, $updatedAt, $mergedAt, $targetBranch, $sourceBranch, $projectId, $needStateCount, $publicOrInternalOpenOnly, $page, $perPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PullRequestsApi->getEnterpriseIdPullRequests: ', $e->getMessage(), PHP_EOL;
@@ -1158,23 +1162,27 @@ Name | Type | Description  | Notes
  **enterpriseId** | **int**| 企业 id |
  **accessToken** | **string**| 用户授权码 | [optional]
  **state** | **string**| PR 状态 | [optional]
- **scope** | **string**| 范围筛选。指派我的: assigned_or_test，我创建或指派给我的: related_to_me，我参与仓库的PR: participate_in，草稿PR: draft | [optional]
+ **scope** | **string**| 范围筛选。指派我的: assigned_or_test，我创建或指派给我的: related_to_me，                             我参与仓库的PR: participate_in，草稿PR: draft， create：我发起的，assign：我评审的，test：我测试的 | [optional]
  **authorId** | **string**| 筛选 PR 创建者 | [optional]
  **assigneeId** | **string**| 筛选 PR 审查者 | [optional]
  **testerId** | **string**| 筛选 PR 测试人员 | [optional]
  **search** | **string**| 搜索参数 | [optional]
- **sort** | **string**| 排序字段(created_at、closed_at、priority) | [optional]
+ **sort** | **string**| 排序字段(created_at、closed_at、priority、updated_at) | [optional]
  **direction** | **string**| 排序方向(asc: 升序 desc: 倒序) | [optional]
  **groupId** | **int**| 团队 id | [optional]
  **milestoneId** | **int**| 里程碑 id | [optional]
  **labels** | **string**| 标签名称。多个标签逗号(,)隔开 | [optional]
  **labelIds** | **string**| 标签ID,多个标签逗号(,)隔开 | [optional]
  **canBeMerged** | **int**| 是否可合并 | [optional]
+ **category** | **string**| pr类型 | [optional]
+ **createdAt** | **string**| 创建时间，如：\&quot;2023.12.18-2023.12.31\&quot; | [optional]
+ **updatedAt** | **string**| 更新时间，如：\&quot;2023.12.18-2023.12.31\&quot; | [optional]
+ **mergedAt** | **string**| 合并时间， 如：\&quot;2023.12.18-2023.12.31\&quot; | [optional]
+ **targetBranch** | **string**| 目标分支名 | [optional]
+ **sourceBranch** | **string**| 源分支名 | [optional]
  **projectId** | **int**| 仓库 id | [optional]
  **needStateCount** | **int**| 是否需要状态统计数 | [optional]
  **publicOrInternalOpenOnly** | **int**| 仅列出内部公开和外部公开的 PR | [optional]
- **targetBranch** | **string**| 目标分支名 | [optional]
- **sourceBranch** | **string**| 源分支名 | [optional]
  **page** | **int**| 当前的页码 | [optional] [default to 1]
  **perPage** | **int**| 每页的数量，最大为 100 | [optional]
 
@@ -1244,7 +1252,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postEnterpriseIdProjectsProjectIdPullRequests**
-> \GiteeEnterprise\Model\PullRequestDetail[] postEnterpriseIdProjectsProjectIdPullRequests($enterpriseId, $projectId, $sourceRepo, $sourceBranch, $targetBranch, $title, $body, $assigneeId, $prAssignNum, $testerId, $prTestNum, $milestoneId, $priority, $pruneBranch, $closeRelatedIssue, $accessToken, $qt, $draft, $squash)
+> \GiteeEnterprise\Model\PullRequestDetail[] postEnterpriseIdProjectsProjectIdPullRequests($enterpriseId, $projectId, $sourceRepo, $sourceBranch, $targetBranch, $title, $body, $assigneeId, $prAssignNum, $testerId, $prTestNum, $milestoneId, $priority, $pruneBranch, $closeRelatedIssue, $accessToken, $qt, $draft, $squash, $category, $revertId)
 
 创建 PR
 
@@ -1279,9 +1287,11 @@ $accessToken = "accessToken_example"; // string | 用户授权码
 $qt = "qt_example"; // string | path类型（查询参数为path）, 空则表示查询参数为id
 $draft = true; // bool | 是否指定为草稿： 草稿 - true, 非草稿 - false，缺省时为非草稿
 $squash = true; // bool | 接受 Pull Request 时使用扁平化（squash）合并
+$category = "category_example"; // string | 动作，用来标识pr是普通(normal)pr还是回退(revert)pr
+$revertId = 56; // int | 回退pr的源pr ID
 
 try {
-    $result = $apiInstance->postEnterpriseIdProjectsProjectIdPullRequests($enterpriseId, $projectId, $sourceRepo, $sourceBranch, $targetBranch, $title, $body, $assigneeId, $prAssignNum, $testerId, $prTestNum, $milestoneId, $priority, $pruneBranch, $closeRelatedIssue, $accessToken, $qt, $draft, $squash);
+    $result = $apiInstance->postEnterpriseIdProjectsProjectIdPullRequests($enterpriseId, $projectId, $sourceRepo, $sourceBranch, $targetBranch, $title, $body, $assigneeId, $prAssignNum, $testerId, $prTestNum, $milestoneId, $priority, $pruneBranch, $closeRelatedIssue, $accessToken, $qt, $draft, $squash, $category, $revertId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PullRequestsApi->postEnterpriseIdProjectsProjectIdPullRequests: ', $e->getMessage(), PHP_EOL;
@@ -1312,6 +1322,8 @@ Name | Type | Description  | Notes
  **qt** | **string**| path类型（查询参数为path）, 空则表示查询参数为id | [optional]
  **draft** | **bool**| 是否指定为草稿： 草稿 - true, 非草稿 - false，缺省时为非草稿 | [optional]
  **squash** | **bool**| 接受 Pull Request 时使用扁平化（squash）合并 | [optional]
+ **category** | **string**| 动作，用来标识pr是普通(normal)pr还是回退(revert)pr | [optional]
+ **revertId** | **int**| 回退pr的源pr ID | [optional]
 
 ### Return type
 
@@ -1395,7 +1407,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdCherryPick**
-> \GiteeEnterprise\Model\CherryPick postEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdCherryPick($enterpriseId, $projectId, $targetBranchName, $targetProjectId, $pullRequestId, $accessToken, $qt)
+> \GiteeEnterprise\Model\CherryPick postEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdCherryPick($enterpriseId, $projectId, $targetBranchName, $targetProjectId, $pullRequestId, $accessToken, $qt, $ffMode)
 
 创建 Cherry Pick
 
@@ -1418,9 +1430,10 @@ $targetProjectId = 56; // int | 目标仓库id
 $pullRequestId = 56; // int | 
 $accessToken = "accessToken_example"; // string | 用户授权码
 $qt = "qt_example"; // string | path类型（查询参数为path）, 空则表示查询参数为id
+$ffMode = true; // bool | 是否为fast forward模式
 
 try {
-    $result = $apiInstance->postEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdCherryPick($enterpriseId, $projectId, $targetBranchName, $targetProjectId, $pullRequestId, $accessToken, $qt);
+    $result = $apiInstance->postEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdCherryPick($enterpriseId, $projectId, $targetBranchName, $targetProjectId, $pullRequestId, $accessToken, $qt, $ffMode);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PullRequestsApi->postEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdCherryPick: ', $e->getMessage(), PHP_EOL;
@@ -1439,6 +1452,7 @@ Name | Type | Description  | Notes
  **pullRequestId** | **int**|  |
  **accessToken** | **string**| 用户授权码 | [optional]
  **qt** | **string**| path类型（查询参数为path）, 空则表示查询参数为id | [optional]
+ **ffMode** | **bool**| 是否为fast forward模式 | [optional]
 
 ### Return type
 
@@ -1701,7 +1715,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putEnterpriseIdProjectsProjectIdPullRequestsPullRequestId**
-> \GiteeEnterprise\Model\PullRequestDetail putEnterpriseIdProjectsProjectIdPullRequestsPullRequestId($enterpriseId, $projectId, $pullRequestId, $accessToken, $qt, $prQt, $milestoneId, $relatedIssueId, $title, $body, $targetBranch, $priority, $stateEvent, $labelIds, $closeRelatedIssue, $pruneBranch, $assigneeId, $prAssignNum, $testerId, $prTestNum, $checkState, $testState, $draft, $squash)
+> \GiteeEnterprise\Model\PullRequestDetail putEnterpriseIdProjectsProjectIdPullRequestsPullRequestId($enterpriseId, $projectId, $pullRequestId, $reviewersUserId, $reviewersScore, $accessToken, $qt, $prQt, $milestoneId, $relatedIssueId, $title, $body, $targetBranch, $priority, $deleteSource, $stateEvent, $labelIds, $closeRelatedIssue, $pruneBranch, $assigneeId, $prAssignNum, $testerId, $prTestNum, $checkState, $testState, $draft, $squash, $reviewScore)
 
 更新 Pull Request
 
@@ -1720,6 +1734,8 @@ $apiInstance = new GiteeEnterprise\Api\PullRequestsApi(
 $enterpriseId = 56; // int | 企业id
 $projectId = "projectId_example"; // string | 仓库 id 或 path
 $pullRequestId = 56; // int | PR id
+$reviewersUserId = array(56); // int[] | 用户ID
+$reviewersScore = array(56); // int[] | 审查者代表的的分数reviewer: 1, maintainer: 2
 $accessToken = "accessToken_example"; // string | 用户授权码
 $qt = "qt_example"; // string | path类型（查询参数为path）, 空则表示查询参数为id
 $prQt = "prQt_example"; // string | PR id 类型
@@ -1729,7 +1745,8 @@ $title = "title_example"; // string | PR 标题
 $body = "body_example"; // string | PR 正文内容
 $targetBranch = "targetBranch_example"; // string | 目标仓库的分支名称
 $priority = 56; // int | 优先级(0: 不指定 1: 不重要 2: 次要 3: 主要 4: 严重)
-$stateEvent = "stateEvent_example"; // string | 关闭 PR
+$deleteSource = true; // bool | true: 删除源分支 false: 不删除源分支
+$stateEvent = "stateEvent_example"; // string | close: 关闭PR, reopen: 重新开启 PR
 $labelIds = "labelIds_example"; // string | 关联的标签 id。如有多个，用英文逗号分隔。eg: 1,2,3
 $closeRelatedIssue = 56; // int | 是否需要在合并 PR 后关闭关联的任务. 0: 否 1: 是
 $pruneBranch = 56; // int | 是否需要在合并 PR 后删除提交分支. 0: 否 1: 是
@@ -1741,9 +1758,10 @@ $checkState = 56; // int | 审查状态. 0: 非必须审查 1: 必须审查
 $testState = 56; // int | 测试状态. 0: 非必须测试 1: 必须测试
 $draft = true; // bool | 是否指定为草稿： 草稿 - true, 非草稿 - false，缺省时为非草稿
 $squash = true; // bool | 接受 Pull Request 时使用扁平化（squash）合并
+$reviewScore = 56; // int | 分数模式下最少通过分数
 
 try {
-    $result = $apiInstance->putEnterpriseIdProjectsProjectIdPullRequestsPullRequestId($enterpriseId, $projectId, $pullRequestId, $accessToken, $qt, $prQt, $milestoneId, $relatedIssueId, $title, $body, $targetBranch, $priority, $stateEvent, $labelIds, $closeRelatedIssue, $pruneBranch, $assigneeId, $prAssignNum, $testerId, $prTestNum, $checkState, $testState, $draft, $squash);
+    $result = $apiInstance->putEnterpriseIdProjectsProjectIdPullRequestsPullRequestId($enterpriseId, $projectId, $pullRequestId, $reviewersUserId, $reviewersScore, $accessToken, $qt, $prQt, $milestoneId, $relatedIssueId, $title, $body, $targetBranch, $priority, $deleteSource, $stateEvent, $labelIds, $closeRelatedIssue, $pruneBranch, $assigneeId, $prAssignNum, $testerId, $prTestNum, $checkState, $testState, $draft, $squash, $reviewScore);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PullRequestsApi->putEnterpriseIdProjectsProjectIdPullRequestsPullRequestId: ', $e->getMessage(), PHP_EOL;
@@ -1758,6 +1776,8 @@ Name | Type | Description  | Notes
  **enterpriseId** | **int**| 企业id |
  **projectId** | **string**| 仓库 id 或 path |
  **pullRequestId** | **int**| PR id |
+ **reviewersUserId** | [**int[]**](../Model/int.md)| 用户ID |
+ **reviewersScore** | [**int[]**](../Model/int.md)| 审查者代表的的分数reviewer: 1, maintainer: 2 |
  **accessToken** | **string**| 用户授权码 | [optional]
  **qt** | **string**| path类型（查询参数为path）, 空则表示查询参数为id | [optional]
  **prQt** | **string**| PR id 类型 | [optional]
@@ -1767,7 +1787,8 @@ Name | Type | Description  | Notes
  **body** | **string**| PR 正文内容 | [optional]
  **targetBranch** | **string**| 目标仓库的分支名称 | [optional]
  **priority** | **int**| 优先级(0: 不指定 1: 不重要 2: 次要 3: 主要 4: 严重) | [optional]
- **stateEvent** | **string**| 关闭 PR | [optional]
+ **deleteSource** | **bool**| true: 删除源分支 false: 不删除源分支 | [optional]
+ **stateEvent** | **string**| close: 关闭PR, reopen: 重新开启 PR | [optional]
  **labelIds** | **string**| 关联的标签 id。如有多个，用英文逗号分隔。eg: 1,2,3 | [optional]
  **closeRelatedIssue** | **int**| 是否需要在合并 PR 后关闭关联的任务. 0: 否 1: 是 | [optional]
  **pruneBranch** | **int**| 是否需要在合并 PR 后删除提交分支. 0: 否 1: 是 | [optional]
@@ -1779,6 +1800,7 @@ Name | Type | Description  | Notes
  **testState** | **int**| 测试状态. 0: 非必须测试 1: 必须测试 | [optional]
  **draft** | **bool**| 是否指定为草稿： 草稿 - true, 非草稿 - false，缺省时为非草稿 | [optional]
  **squash** | **bool**| 接受 Pull Request 时使用扁平化（squash）合并 | [optional]
+ **reviewScore** | **int**| 分数模式下最少通过分数 | [optional]
 
 ### Return type
 
@@ -1796,11 +1818,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdAssign**
-> putEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdAssign($enterpriseId, $projectId, $pullRequestId, $accessToken, $qt, $forceAccept)
+> putEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdAssign($enterpriseId, $projectId, $pullRequestId, $accessToken, $qt, $forceAccept, $action)
 
-PR 审查通过
+审查 PR
 
-PR 审查通过
+审查 PR
 
 ### Example
 ```php
@@ -1818,9 +1840,10 @@ $pullRequestId = 56; // int | PR id
 $accessToken = "accessToken_example"; // string | 用户授权码
 $qt = "qt_example"; // string | path类型（查询参数为path）, 空则表示查询参数为id
 $forceAccept = 0; // int | 是否强制审核通过(默认否)
+$action = "accept"; // string | 操作类型(默认通过)
 
 try {
-    $apiInstance->putEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdAssign($enterpriseId, $projectId, $pullRequestId, $accessToken, $qt, $forceAccept);
+    $apiInstance->putEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdAssign($enterpriseId, $projectId, $pullRequestId, $accessToken, $qt, $forceAccept, $action);
 } catch (Exception $e) {
     echo 'Exception when calling PullRequestsApi->putEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdAssign: ', $e->getMessage(), PHP_EOL;
 }
@@ -1837,6 +1860,7 @@ Name | Type | Description  | Notes
  **accessToken** | **string**| 用户授权码 | [optional]
  **qt** | **string**| path类型（查询参数为path）, 空则表示查询参数为id | [optional]
  **forceAccept** | **int**| 是否强制审核通过(默认否) | [optional] [default to 0]
+ **action** | **string**| 操作类型(默认通过) | [optional] [default to accept]
 
 ### Return type
 

@@ -8,10 +8,14 @@ Method | HTTP request | Description
 [**deleteEnterpriseIdGroupsGroupIdMembers**](GroupsApi.md#deleteEnterpriseIdGroupsGroupIdMembers) | **DELETE** /{enterprise_id}/groups/{group_id}/members | 移除团队成员
 [**getEnterpriseIdGroups**](GroupsApi.md#getEnterpriseIdGroups) | **GET** /{enterprise_id}/groups | 获取企业团队列表
 [**getEnterpriseIdGroupsGroupId**](GroupsApi.md#getEnterpriseIdGroupsGroupId) | **GET** /{enterprise_id}/groups/{group_id} | 获取团队详情
+[**getEnterpriseIdGroupsGroupIdComplement**](GroupsApi.md#getEnterpriseIdGroupsGroupIdComplement) | **GET** /{enterprise_id}/groups/{group_id}/complement | 获取某一仓库不在本组织的仓库成员列表
+[**getEnterpriseIdGroupsGroupIdGroupMembers**](GroupsApi.md#getEnterpriseIdGroupsGroupIdGroupMembers) | **GET** /{enterprise_id}/groups/{group_id}/group_members | 获取团队成员列表（根组形式）
 [**getEnterpriseIdGroupsGroupIdMembers**](GroupsApi.md#getEnterpriseIdGroupsGroupIdMembers) | **GET** /{enterprise_id}/groups/{group_id}/members | 获取企业团队下的成员列表
 [**getEnterpriseIdGroupsGroupIdProjects**](GroupsApi.md#getEnterpriseIdGroupsGroupIdProjects) | **GET** /{enterprise_id}/groups/{group_id}/projects | 企业团队下仓库列表
 [**postEnterpriseIdGroups**](GroupsApi.md#postEnterpriseIdGroups) | **POST** /{enterprise_id}/groups | 新建企业团队
+[**postEnterpriseIdGroupsGroupIdMembers**](GroupsApi.md#postEnterpriseIdGroupsGroupIdMembers) | **POST** /{enterprise_id}/groups/{group_id}/members | 添加团队成员
 [**putEnterpriseIdGroupsGroupId**](GroupsApi.md#putEnterpriseIdGroupsGroupId) | **PUT** /{enterprise_id}/groups/{group_id} | 更新企业团队
+[**putEnterpriseIdGroupsGroupIdMembersAccessLevel**](GroupsApi.md#putEnterpriseIdGroupsGroupIdMembersAccessLevel) | **PUT** /{enterprise_id}/groups/{group_id}/members/access_level | 变更团队成员角色
 
 
 # **deleteEnterpriseIdGroupsGroupId**
@@ -194,7 +198,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEnterpriseIdGroupsGroupId**
-> \GiteeEnterprise\Model\Group getEnterpriseIdGroupsGroupId($enterpriseId, $groupId, $accessToken, $qt)
+> \GiteeEnterprise\Model\GroupDetail getEnterpriseIdGroupsGroupId($enterpriseId, $groupId, $accessToken, $qt)
 
 获取团队详情
 
@@ -235,7 +239,139 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\GiteeEnterprise\Model\Group**](../Model/Group.md)
+[**\GiteeEnterprise\Model\GroupDetail**](../Model/GroupDetail.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getEnterpriseIdGroupsGroupIdComplement**
+> \GiteeEnterprise\Model\ProjectMemberList[] getEnterpriseIdGroupsGroupIdComplement($projectId, $enterpriseId, $groupId, $accessToken, $search, $countWithoutSearch, $multiSearch, $page, $perPage)
+
+获取某一仓库不在本组织的仓库成员列表
+
+获取某一仓库不在本组织的仓库成员列表
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new GiteeEnterprise\Api\GroupsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$projectId = 56; // int | 仓库 ID
+$enterpriseId = 56; // int | 
+$groupId = 56; // int | 
+$accessToken = "accessToken_example"; // string | 用户授权码
+$search = "search_example"; // string | 搜索关键字
+$countWithoutSearch = true; // bool | 是否返回不带搜索条件的数量
+$multiSearch = true; // bool | 是否开启多关键字筛选
+$page = 1; // int | 当前的页码
+$perPage = 56; // int | 每页的数量，最大为 100
+
+try {
+    $result = $apiInstance->getEnterpriseIdGroupsGroupIdComplement($projectId, $enterpriseId, $groupId, $accessToken, $search, $countWithoutSearch, $multiSearch, $page, $perPage);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupsApi->getEnterpriseIdGroupsGroupIdComplement: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectId** | **int**| 仓库 ID |
+ **enterpriseId** | **int**|  |
+ **groupId** | **int**|  |
+ **accessToken** | **string**| 用户授权码 | [optional]
+ **search** | **string**| 搜索关键字 | [optional]
+ **countWithoutSearch** | **bool**| 是否返回不带搜索条件的数量 | [optional]
+ **multiSearch** | **bool**| 是否开启多关键字筛选 | [optional]
+ **page** | **int**| 当前的页码 | [optional] [default to 1]
+ **perPage** | **int**| 每页的数量，最大为 100 | [optional]
+
+### Return type
+
+[**\GiteeEnterprise\Model\ProjectMemberList[]**](../Model/ProjectMemberList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getEnterpriseIdGroupsGroupIdGroupMembers**
+> \GiteeEnterprise\Model\RootGroupMember[] getEnterpriseIdGroupsGroupIdGroupMembers($enterpriseId, $groupId, $accessToken, $qt, $accessLevel, $search, $sort, $direction, $page, $perPage)
+
+获取团队成员列表（根组形式）
+
+获取团队成员列表（根组形式）
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new GiteeEnterprise\Api\GroupsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$enterpriseId = 56; // int | 企业id
+$groupId = "groupId_example"; // string | 团队id/path
+$accessToken = "accessToken_example"; // string | 用户授权码
+$qt = "qt_example"; // string | path类型（查询参数为path）, 空则表示查询参数为id
+$accessLevel = 56; // int | 报告者:15,观察者:25,开发者:30,管理员:40
+$search = "search_example"; // string | 搜索关键字
+$sort = "sort_example"; // string | 排序字段(created_at: 创建时间 remark: 在企业的备注)
+$direction = "direction_example"; // string | 排序方向(asc: 升序 desc: 倒序)
+$page = 1; // int | 当前的页码
+$perPage = 56; // int | 每页的数量，最大为 100
+
+try {
+    $result = $apiInstance->getEnterpriseIdGroupsGroupIdGroupMembers($enterpriseId, $groupId, $accessToken, $qt, $accessLevel, $search, $sort, $direction, $page, $perPage);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupsApi->getEnterpriseIdGroupsGroupIdGroupMembers: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **enterpriseId** | **int**| 企业id |
+ **groupId** | **string**| 团队id/path |
+ **accessToken** | **string**| 用户授权码 | [optional]
+ **qt** | **string**| path类型（查询参数为path）, 空则表示查询参数为id | [optional]
+ **accessLevel** | **int**| 报告者:15,观察者:25,开发者:30,管理员:40 | [optional]
+ **search** | **string**| 搜索关键字 | [optional]
+ **sort** | **string**| 排序字段(created_at: 创建时间 remark: 在企业的备注) | [optional]
+ **direction** | **string**| 排序方向(asc: 升序 desc: 倒序) | [optional]
+ **page** | **int**| 当前的页码 | [optional] [default to 1]
+ **perPage** | **int**| 每页的数量，最大为 100 | [optional]
+
+### Return type
+
+[**\GiteeEnterprise\Model\RootGroupMember[]**](../Model/RootGroupMember.md)
 
 ### Authorization
 
@@ -249,7 +385,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEnterpriseIdGroupsGroupIdMembers**
-> \GiteeEnterprise\Model\Member[] getEnterpriseIdGroupsGroupIdMembers($enterpriseId, $groupId, $accessToken, $qt, $search, $sort, $direction, $page, $perPage)
+> \GiteeEnterprise\Model\Member[] getEnterpriseIdGroupsGroupIdMembers($enterpriseId, $groupId, $accessToken, $qt, $search, $sort, $direction, $scope, $countWithoutSearch, $multiSearch, $page, $perPage)
 
 获取企业团队下的成员列表
 
@@ -272,11 +408,14 @@ $qt = "qt_example"; // string | path类型（查询参数为path）, 空则表�
 $search = "search_example"; // string | 搜索关键字
 $sort = "sort_example"; // string | 排序字段(created_at: 创建时间 remark: 在企业的备注)
 $direction = "direction_example"; // string | 排序方向(asc: 升序 desc: 倒序)
+$scope = "scope_example"; // string | not_in: 获取不在本组织的企业成员
+$countWithoutSearch = true; // bool | 是否返回不带搜索条件的数量
+$multiSearch = true; // bool | 是否开启多关键字筛选
 $page = 1; // int | 当前的页码
 $perPage = 56; // int | 每页的数量，最大为 100
 
 try {
-    $result = $apiInstance->getEnterpriseIdGroupsGroupIdMembers($enterpriseId, $groupId, $accessToken, $qt, $search, $sort, $direction, $page, $perPage);
+    $result = $apiInstance->getEnterpriseIdGroupsGroupIdMembers($enterpriseId, $groupId, $accessToken, $qt, $search, $sort, $direction, $scope, $countWithoutSearch, $multiSearch, $page, $perPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GroupsApi->getEnterpriseIdGroupsGroupIdMembers: ', $e->getMessage(), PHP_EOL;
@@ -295,6 +434,9 @@ Name | Type | Description  | Notes
  **search** | **string**| 搜索关键字 | [optional]
  **sort** | **string**| 排序字段(created_at: 创建时间 remark: 在企业的备注) | [optional]
  **direction** | **string**| 排序方向(asc: 升序 desc: 倒序) | [optional]
+ **scope** | **string**| not_in: 获取不在本组织的企业成员 | [optional]
+ **countWithoutSearch** | **bool**| 是否返回不带搜索条件的数量 | [optional]
+ **multiSearch** | **bool**| 是否开启多关键字筛选 | [optional]
  **page** | **int**| 当前的页码 | [optional] [default to 1]
  **perPage** | **int**| 每页的数量，最大为 100 | [optional]
 
@@ -340,7 +482,7 @@ $type = "type_example"; // string | 与我相关，created：我创建的，join
 $status = 56; // int | 状态: 0: 开始，1: 暂停，2: 关闭
 $creatorId = 56; // int | 负责人
 $parentId = 56; // int | form_from仓库id
-$forkFilter = "forkFilter_example"; // string | 非fork的(not_fork), 只看fork的(only_fork)
+$forkFilter = "forkFilter_example"; // string | 全部(all), 非fork的(not_fork), 只看fork的(only_fork), 我fork的(my_fork)
 $outsourced = 56; // int | 是否外包：0：内部，1：外包
 $sort = "sort_example"; // string | 排序字段(created_at: 创建时间 last_push_at: 最近push时间)
 $direction = "direction_example"; // string | 排序方向(asc: 升序 desc: 倒序)
@@ -370,7 +512,7 @@ Name | Type | Description  | Notes
  **status** | **int**| 状态: 0: 开始，1: 暂停，2: 关闭 | [optional]
  **creatorId** | **int**| 负责人 | [optional]
  **parentId** | **int**| form_from仓库id | [optional]
- **forkFilter** | **string**| 非fork的(not_fork), 只看fork的(only_fork) | [optional]
+ **forkFilter** | **string**| 全部(all), 非fork的(not_fork), 只看fork的(only_fork), 我fork的(my_fork) | [optional]
  **outsourced** | **int**| 是否外包：0：内部，1：外包 | [optional]
  **sort** | **string**| 排序字段(created_at: 创建时间 last_push_at: 最近push时间) | [optional]
  **direction** | **string**| 排序方向(asc: 升序 desc: 倒序) | [optional]
@@ -455,6 +597,69 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **postEnterpriseIdGroupsGroupIdMembers**
+> \GiteeEnterprise\Model\InviteGroupMember[] postEnterpriseIdGroupsGroupIdMembers($enterpriseId, $groupId, $accessToken, $qt, $masterIds, $developerIds, $viewerIds, $reporterIds)
+
+添加团队成员
+
+添加团队成员
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new GiteeEnterprise\Api\GroupsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$enterpriseId = 56; // int | 企业id
+$groupId = "groupId_example"; // string | 团队id/path
+$accessToken = "accessToken_example"; // string | 用户授权码
+$qt = "qt_example"; // string | path类型（查询参数为path）, 空则表示查询参数为id
+$masterIds = "masterIds_example"; // string | 管理员 ID 列表, 多个使用英文 , 隔开
+$developerIds = "developerIds_example"; // string | 开发者 ID 列表, 多个使用英文 , 隔开
+$viewerIds = "viewerIds_example"; // string | 观察者 ID 列表, 多个使用英文 , 隔开
+$reporterIds = "reporterIds_example"; // string | 报告者 ID 列表, 多个使用英文 , 隔开
+
+try {
+    $result = $apiInstance->postEnterpriseIdGroupsGroupIdMembers($enterpriseId, $groupId, $accessToken, $qt, $masterIds, $developerIds, $viewerIds, $reporterIds);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupsApi->postEnterpriseIdGroupsGroupIdMembers: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **enterpriseId** | **int**| 企业id |
+ **groupId** | **string**| 团队id/path |
+ **accessToken** | **string**| 用户授权码 | [optional]
+ **qt** | **string**| path类型（查询参数为path）, 空则表示查询参数为id | [optional]
+ **masterIds** | **string**| 管理员 ID 列表, 多个使用英文 , 隔开 | [optional]
+ **developerIds** | **string**| 开发者 ID 列表, 多个使用英文 , 隔开 | [optional]
+ **viewerIds** | **string**| 观察者 ID 列表, 多个使用英文 , 隔开 | [optional]
+ **reporterIds** | **string**| 报告者 ID 列表, 多个使用英文 , 隔开 | [optional]
+
+### Return type
+
+[**\GiteeEnterprise\Model\InviteGroupMember[]**](../Model/InviteGroupMember.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **putEnterpriseIdGroupsGroupId**
 > \GiteeEnterprise\Model\Group putEnterpriseIdGroupsGroupId($enterpriseId, $groupId, $accessToken, $userIds, $name, $description, $public, $ownerId)
 
@@ -506,6 +711,63 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\GiteeEnterprise\Model\Group**](../Model/Group.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **putEnterpriseIdGroupsGroupIdMembersAccessLevel**
+> \GiteeEnterprise\Model\GroupMember[] putEnterpriseIdGroupsGroupIdMembersAccessLevel($userIds, $accessLevel, $enterpriseId, $groupId, $accessToken)
+
+变更团队成员角色
+
+变更团队成员角色
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new GiteeEnterprise\Api\GroupsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$userIds = "userIds_example"; // string | 用户 ID
+$accessLevel = 56; // int | 团队成员角色
+$enterpriseId = 56; // int | 
+$groupId = 56; // int | 
+$accessToken = "accessToken_example"; // string | 用户授权码
+
+try {
+    $result = $apiInstance->putEnterpriseIdGroupsGroupIdMembersAccessLevel($userIds, $accessLevel, $enterpriseId, $groupId, $accessToken);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GroupsApi->putEnterpriseIdGroupsGroupIdMembersAccessLevel: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userIds** | **string**| 用户 ID |
+ **accessLevel** | **int**| 团队成员角色 |
+ **enterpriseId** | **int**|  |
+ **groupId** | **int**|  |
+ **accessToken** | **string**| 用户授权码 | [optional]
+
+### Return type
+
+[**\GiteeEnterprise\Model\GroupMember[]**](../Model/GroupMember.md)
 
 ### Authorization
 

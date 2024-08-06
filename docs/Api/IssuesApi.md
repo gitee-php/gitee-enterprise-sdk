@@ -11,21 +11,25 @@ Method | HTTP request | Description
 [**deleteEnterpriseIdIssuesIssueIdRelatedIssueLinkIssueId**](IssuesApi.md#deleteEnterpriseIdIssuesIssueIdRelatedIssueLinkIssueId) | **DELETE** /{enterprise_id}/issues/{issue_id}/related_issue/{link_issue_id} | 移除任务的关联关系
 [**deleteEnterpriseIdIssuesIssueIdStar**](IssuesApi.md#deleteEnterpriseIdIssuesIssueIdStar) | **DELETE** /{enterprise_id}/issues/{issue_id}/star | 取消星标任务
 [**getEnterpriseIdIssues**](IssuesApi.md#getEnterpriseIdIssues) | **GET** /{enterprise_id}/issues | 获取任务列表
+[**getEnterpriseIdIssuesAttachFileIssues**](IssuesApi.md#getEnterpriseIdIssuesAttachFileIssues) | **GET** /{enterprise_id}/issues/attach_file_issues | 显示全部有附件的issue
 [**getEnterpriseIdIssuesBoardMembers**](IssuesApi.md#getEnterpriseIdIssuesBoardMembers) | **GET** /{enterprise_id}/issues/board_members | 获取成员看板的成员列表
 [**getEnterpriseIdIssuesIssueId**](IssuesApi.md#getEnterpriseIdIssuesIssueId) | **GET** /{enterprise_id}/issues/{issue_id} | 获取任务详情
 [**getEnterpriseIdIssuesIssueIdAttachFiles**](IssuesApi.md#getEnterpriseIdIssuesIssueIdAttachFiles) | **GET** /{enterprise_id}/issues/{issue_id}/attach_files | 获取任务附件
 [**getEnterpriseIdIssuesIssueIdAuths**](IssuesApi.md#getEnterpriseIdIssuesIssueIdAuths) | **GET** /{enterprise_id}/issues/{issue_id}/auths | 获取授权用户对任务的权限
+[**getEnterpriseIdIssuesIssueIdIssueScheduleUpdateCheck**](IssuesApi.md#getEnterpriseIdIssuesIssueIdIssueScheduleUpdateCheck) | **GET** /{enterprise_id}/issues/{issue_id}/issue_schedule_update_check | 查询当前工作项的排期是否可以更新
 [**getEnterpriseIdIssuesIssueIdIssueStates**](IssuesApi.md#getEnterpriseIdIssuesIssueIdIssueStates) | **GET** /{enterprise_id}/issues/{issue_id}/issue_states | 获取当前任务可流转的下一状态
 [**getEnterpriseIdIssuesIssueIdLinkIssues**](IssuesApi.md#getEnterpriseIdIssuesIssueIdLinkIssues) | **GET** /{enterprise_id}/issues/{issue_id}/link_issues | 获取任务的关联任务
 [**getEnterpriseIdIssuesIssueIdLinkPullRequest**](IssuesApi.md#getEnterpriseIdIssuesIssueIdLinkPullRequest) | **GET** /{enterprise_id}/issues/{issue_id}/link_pull_request | 获取任务关联的 Pull Request
 [**getEnterpriseIdIssuesIssueIdNotes**](IssuesApi.md#getEnterpriseIdIssuesIssueIdNotes) | **GET** /{enterprise_id}/issues/{issue_id}/notes | 获取任务下的评论列表
 [**getEnterpriseIdIssuesIssueIdOperateLogs**](IssuesApi.md#getEnterpriseIdIssuesIssueIdOperateLogs) | **GET** /{enterprise_id}/issues/{issue_id}/operate_logs | 获取任务的操作日志列表
+[**getEnterpriseIdIssuesIssueIdProgramGanttIssues**](IssuesApi.md#getEnterpriseIdIssuesIssueIdProgramGanttIssues) | **GET** /{enterprise_id}/issues/{issue_id}/program_gantt_issues | 查询指定工作项所在项目的工作项列表
 [**getEnterpriseIdIssuesIssueStats**](IssuesApi.md#getEnterpriseIdIssuesIssueStats) | **GET** /{enterprise_id}/issues/issue_stats | 获取企业下用户任务相关数量数据
 [**getEnterpriseIdIssuesLinkIssues**](IssuesApi.md#getEnterpriseIdIssuesLinkIssues) | **GET** /{enterprise_id}/issues/link_issues | 可选的关联任务集
 [**getEnterpriseIdIssuesMemberSelect**](IssuesApi.md#getEnterpriseIdIssuesMemberSelect) | **GET** /{enterprise_id}/issues/member_select | 获取任务指派的成员列表
 [**postEnterpriseIdIssues**](IssuesApi.md#postEnterpriseIdIssues) | **POST** /{enterprise_id}/issues | 新建任务
 [**postEnterpriseIdIssuesFilter**](IssuesApi.md#postEnterpriseIdIssuesFilter) | **POST** /{enterprise_id}/issues/filter | 获取任务列表-筛选器查询
 [**postEnterpriseIdIssuesIssueIdLinkPullRequestPullRequestId**](IssuesApi.md#postEnterpriseIdIssuesIssueIdLinkPullRequestPullRequestId) | **POST** /{enterprise_id}/issues/{issue_id}/link_pull_request/{pull_request_id} | 任务关联 Pull Request
+[**postEnterpriseIdIssuesIssueIdMultiLinkIssues**](IssuesApi.md#postEnterpriseIdIssuesIssueIdMultiLinkIssues) | **POST** /{enterprise_id}/issues/{issue_id}/multi_link_issues | 给指定工作项批量更新关联工作项
 [**postEnterpriseIdIssuesIssueIdNotes**](IssuesApi.md#postEnterpriseIdIssuesIssueIdNotes) | **POST** /{enterprise_id}/issues/{issue_id}/notes | 评论任务
 [**postEnterpriseIdIssuesIssueIdReaction**](IssuesApi.md#postEnterpriseIdIssuesIssueIdReaction) | **POST** /{enterprise_id}/issues/{issue_id}/reaction | 新增任务表态
 [**postEnterpriseIdIssuesIssueIdRelatedIssue**](IssuesApi.md#postEnterpriseIdIssuesIssueIdRelatedIssue) | **POST** /{enterprise_id}/issues/{issue_id}/related_issue | 为指定任务添加关联任务
@@ -458,6 +462,65 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **getEnterpriseIdIssuesAttachFileIssues**
+> \GiteeEnterprise\Model\WithAttachFiles[] getEnterpriseIdIssuesAttachFileIssues($enterpriseId, $accessToken, $page, $perPage, $programId, $search)
+
+显示全部有附件的issue
+
+显示全部有附件的issue
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new GiteeEnterprise\Api\IssuesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$enterpriseId = 56; // int | 
+$accessToken = "accessToken_example"; // string | 用户授权码
+$page = 1; // int | 当前的页码
+$perPage = 56; // int | 每页的数量，最大为 100
+$programId = 56; // int | 所在项目
+$search = "search_example"; // string | #号开头搜索ident,否则搜索title
+
+try {
+    $result = $apiInstance->getEnterpriseIdIssuesAttachFileIssues($enterpriseId, $accessToken, $page, $perPage, $programId, $search);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling IssuesApi->getEnterpriseIdIssuesAttachFileIssues: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **enterpriseId** | **int**|  |
+ **accessToken** | **string**| 用户授权码 | [optional]
+ **page** | **int**| 当前的页码 | [optional] [default to 1]
+ **perPage** | **int**| 每页的数量，最大为 100 | [optional]
+ **programId** | **int**| 所在项目 | [optional]
+ **search** | **string**| #号开头搜索ident,否则搜索title | [optional]
+
+### Return type
+
+[**\GiteeEnterprise\Model\WithAttachFiles[]**](../Model/WithAttachFiles.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **getEnterpriseIdIssuesBoardMembers**
 > \GiteeEnterprise\Model\UserWithRemark[] getEnterpriseIdIssuesBoardMembers($enterpriseId, $accessToken, $assigneeIds, $projectId, $groupIds, $programId, $milestoneId, $issueTypeId, $page, $perPage)
 
@@ -581,7 +644,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEnterpriseIdIssuesIssueIdAttachFiles**
-> \GiteeEnterprise\Model\AttachFile[] getEnterpriseIdIssuesIssueIdAttachFiles($enterpriseId, $issueId, $accessToken)
+> \GiteeEnterprise\Model\AttachFile getEnterpriseIdIssuesIssueIdAttachFiles($enterpriseId, $issueId, $accessToken)
 
 获取任务附件
 
@@ -620,7 +683,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\GiteeEnterprise\Model\AttachFile[]**](../Model/AttachFile.md)
+[**\GiteeEnterprise\Model\AttachFile**](../Model/AttachFile.md)
 
 ### Authorization
 
@@ -674,6 +737,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\GiteeEnterprise\Model\IssueAuth**](../Model/IssueAuth.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getEnterpriseIdIssuesIssueIdIssueScheduleUpdateCheck**
+> getEnterpriseIdIssuesIssueIdIssueScheduleUpdateCheck($enterpriseId, $issueId, $planStartedAt, $deadline, $accessToken)
+
+查询当前工作项的排期是否可以更新
+
+查询当前工作项的排期是否可以更新
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new GiteeEnterprise\Api\IssuesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$enterpriseId = 56; // int | 企业id (https://gitee.com/api/v8/swagger#/getList 的返回值的 id)
+$issueId = 56; // int | 工作项 id
+$planStartedAt = "planStartedAt_example"; // string | 计划开始日期。格式：yyyy-mm-ddTHH:MM:SS
+$deadline = "deadline_example"; // string | 计划完成日期。格式：yyyy-mm-ddTHH:MM:SS
+$accessToken = "accessToken_example"; // string | 用户授权码
+
+try {
+    $apiInstance->getEnterpriseIdIssuesIssueIdIssueScheduleUpdateCheck($enterpriseId, $issueId, $planStartedAt, $deadline, $accessToken);
+} catch (Exception $e) {
+    echo 'Exception when calling IssuesApi->getEnterpriseIdIssuesIssueIdIssueScheduleUpdateCheck: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **enterpriseId** | **int**| 企业id (https://gitee.com/api/v8/swagger#/getList 的返回值的 id) |
+ **issueId** | **int**| 工作项 id |
+ **planStartedAt** | **string**| 计划开始日期。格式：yyyy-mm-ddTHH:MM:SS |
+ **deadline** | **string**| 计划完成日期。格式：yyyy-mm-ddTHH:MM:SS |
+ **accessToken** | **string**| 用户授权码 | [optional]
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
@@ -855,7 +974,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEnterpriseIdIssuesIssueIdNotes**
-> \GiteeEnterprise\Model\IssueNote[] getEnterpriseIdIssuesIssueIdNotes($enterpriseId, $issueId, $accessToken, $sort, $direction, $page, $perPage)
+> \GiteeEnterprise\Model\IssueNote getEnterpriseIdIssuesIssueIdNotes($enterpriseId, $issueId, $accessToken, $sort, $direction, $page, $perPage)
 
 获取任务下的评论列表
 
@@ -902,7 +1021,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\GiteeEnterprise\Model\IssueNote[]**](../Model/IssueNote.md)
+[**\GiteeEnterprise\Model\IssueNote**](../Model/IssueNote.md)
 
 ### Authorization
 
@@ -962,6 +1081,109 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\GiteeEnterprise\Model\IssueOperateLog**](../Model/IssueOperateLog.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getEnterpriseIdIssuesIssueIdProgramGanttIssues**
+> \GiteeEnterprise\Model\IssueGantt[] getEnterpriseIdIssuesIssueIdProgramGanttIssues($enterpriseId, $issueId, $programId, $accessToken, $milestoneId, $state, $onlyRelatedMe, $assigneeId, $authorId, $collaboratorIds, $createdAt, $finishedAt, $planStartedAt, $deadline, $search, $filterChild, $issueStateIds, $issueTypeId, $labelIds, $priority, $scrumSprintIds, $scrumVersionIds, $kanbanIds, $kanbanColumnIds, $rootId, $parentId, $page, $perPage)
+
+查询指定工作项所在项目的工作项列表
+
+查询指定工作项所在项目的工作项列表
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new GiteeEnterprise\Api\IssuesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$enterpriseId = 56; // int | 企业 id
+$issueId = 56; // int | 工作项 id
+$programId = "programId_example"; // string | 项目ID
+$accessToken = "accessToken_example"; // string | 用户授权码
+$milestoneId = "milestoneId_example"; // string | 里程碑 id（可多选，用英文逗号分隔）
+$state = "state_example"; // string | 任务状态属性，可多选，用逗号分隔。（开启：open 关闭：closed 拒绝：rejected 进行中: progressing）
+$onlyRelatedMe = "onlyRelatedMe_example"; // string | 是否仅列出与授权用户相关的任务（0: 否 1: 是）
+$assigneeId = "assigneeId_example"; // string | 负责人 id
+$authorId = "authorId_example"; // string | 创建者 id
+$collaboratorIds = "collaboratorIds_example"; // string | 协作者。(,分隔的id字符串)
+$createdAt = "createdAt_example"; // string | 创建时间，格式：(区间)yyyymmddTHH:MM:SS+08:00-yyyymmddTHH:MM:SS+08:00，（指定某日期）yyyymmddTHH:MM:SS+08:00，（小于指定日期）<yyyymmddTHH:MM:SS+08:00，（大于指定日期）>yyyymmddTHH:MM:SS+08:00
+$finishedAt = "finishedAt_example"; // string | 任务完成日期，格式同上
+$planStartedAt = "planStartedAt_example"; // string | 计划开始时间，(格式：yyyy-mm-dd)
+$deadline = "deadline_example"; // string | 任务截止日期，(格式：yyyy-mm-dd)
+$search = "search_example"; // string | 搜索参数
+$filterChild = "filterChild_example"; // string | 是否过滤子任务(0: 否, 1: 是)
+$issueStateIds = "issueStateIds_example"; // string | 任务状态id，多选，用英文逗号分隔。
+$issueTypeId = "issueTypeId_example"; // string | 任务类型
+$labelIds = "labelIds_example"; // string | 标签 id（可多选，用英文逗号分隔）
+$priority = "priority_example"; // string | 优先级（可多选，用英文逗号分隔）
+$scrumSprintIds = "scrumSprintIds_example"; // string | 迭代id(可多选，用英文逗号分隔)
+$scrumVersionIds = "scrumVersionIds_example"; // string | 版本id(可多选，用英文逗号分隔)
+$kanbanIds = "kanbanIds_example"; // string | 看板id(可多选，用英文逗号分隔)
+$kanbanColumnIds = "kanbanColumnIds_example"; // string | 看板栏id(可多选，用英文逗号分隔)
+$rootId = 56; // int | 根结点ID
+$parentId = 56; // int | 父任务ID
+$page = 1; // int | 当前的页码
+$perPage = 56; // int | 每页的数量，最大为 100
+
+try {
+    $result = $apiInstance->getEnterpriseIdIssuesIssueIdProgramGanttIssues($enterpriseId, $issueId, $programId, $accessToken, $milestoneId, $state, $onlyRelatedMe, $assigneeId, $authorId, $collaboratorIds, $createdAt, $finishedAt, $planStartedAt, $deadline, $search, $filterChild, $issueStateIds, $issueTypeId, $labelIds, $priority, $scrumSprintIds, $scrumVersionIds, $kanbanIds, $kanbanColumnIds, $rootId, $parentId, $page, $perPage);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling IssuesApi->getEnterpriseIdIssuesIssueIdProgramGanttIssues: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **enterpriseId** | **int**| 企业 id |
+ **issueId** | **int**| 工作项 id |
+ **programId** | **string**| 项目ID |
+ **accessToken** | **string**| 用户授权码 | [optional]
+ **milestoneId** | **string**| 里程碑 id（可多选，用英文逗号分隔） | [optional]
+ **state** | **string**| 任务状态属性，可多选，用逗号分隔。（开启：open 关闭：closed 拒绝：rejected 进行中: progressing） | [optional]
+ **onlyRelatedMe** | **string**| 是否仅列出与授权用户相关的任务（0: 否 1: 是） | [optional]
+ **assigneeId** | **string**| 负责人 id | [optional]
+ **authorId** | **string**| 创建者 id | [optional]
+ **collaboratorIds** | **string**| 协作者。(,分隔的id字符串) | [optional]
+ **createdAt** | **string**| 创建时间，格式：(区间)yyyymmddTHH:MM:SS+08:00-yyyymmddTHH:MM:SS+08:00，（指定某日期）yyyymmddTHH:MM:SS+08:00，（小于指定日期）&lt;yyyymmddTHH:MM:SS+08:00，（大于指定日期）&gt;yyyymmddTHH:MM:SS+08:00 | [optional]
+ **finishedAt** | **string**| 任务完成日期，格式同上 | [optional]
+ **planStartedAt** | **string**| 计划开始时间，(格式：yyyy-mm-dd) | [optional]
+ **deadline** | **string**| 任务截止日期，(格式：yyyy-mm-dd) | [optional]
+ **search** | **string**| 搜索参数 | [optional]
+ **filterChild** | **string**| 是否过滤子任务(0: 否, 1: 是) | [optional]
+ **issueStateIds** | **string**| 任务状态id，多选，用英文逗号分隔。 | [optional]
+ **issueTypeId** | **string**| 任务类型 | [optional]
+ **labelIds** | **string**| 标签 id（可多选，用英文逗号分隔） | [optional]
+ **priority** | **string**| 优先级（可多选，用英文逗号分隔） | [optional]
+ **scrumSprintIds** | **string**| 迭代id(可多选，用英文逗号分隔) | [optional]
+ **scrumVersionIds** | **string**| 版本id(可多选，用英文逗号分隔) | [optional]
+ **kanbanIds** | **string**| 看板id(可多选，用英文逗号分隔) | [optional]
+ **kanbanColumnIds** | **string**| 看板栏id(可多选，用英文逗号分隔) | [optional]
+ **rootId** | **int**| 根结点ID | [optional]
+ **parentId** | **int**| 父任务ID | [optional]
+ **page** | **int**| 当前的页码 | [optional] [default to 1]
+ **perPage** | **int**| 每页的数量，最大为 100 | [optional]
+
+### Return type
+
+[**\GiteeEnterprise\Model\IssueGantt[]**](../Model/IssueGantt.md)
 
 ### Authorization
 
@@ -1145,7 +1367,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postEnterpriseIdIssues**
-> \GiteeEnterprise\Model\IssueDetail postEnterpriseIdIssues($enterpriseId, $title, $accessToken, $copiedIssueId, $description, $assigneeId, $collaboratorIds, $issueTypeId, $programId, $projectId, $milestoneId, $labelIds, $priority, $parentId, $branch, $planStartedAt, $deadline, $startedAt, $finishedAt, $attachmentIds, $securityHole, $extraFieldsIssueFieldId, $extraFieldsValue, $kanbanId, $kanbanColumnId, $scrumSprintId, $scrumVersionId, $estimatedDuration, $duration, $testPlanCaseId, $pullRequestId, $category, $linkIssueId, $linkRefType, $linkDirection, $linkResultType)
+> \GiteeEnterprise\Model\IssueDetail postEnterpriseIdIssues($enterpriseId, $title, $accessToken, $copiedIssueId, $description, $assigneeId, $collaboratorIds, $issueTypeId, $programId, $projectId, $milestoneId, $labelIds, $priority, $parentId, $branch, $planStartedAt, $deadline, $startedAt, $finishedAt, $attachmentIds, $securityHole, $extraFieldsIssueFieldId, $extraFieldsValue, $kanbanId, $kanbanColumnId, $scrumSprintId, $scrumVersionId, $estimatedDuration, $duration, $testPlanCaseId, $pullRequestId, $category, $linkIssueId, $linkRefType, $linkDirection, $linkResultType, $linkDocNodeId)
 
 新建任务
 
@@ -1197,9 +1419,10 @@ $linkIssueId = 56; // int | 需要关联的任务 id
 $linkRefType = "linkRefType_example"; // string | 关联关系(normal, finish_to_finish, finish_to_start, start_to_start, start_to_finish)
 $linkDirection = "linkDirection_example"; // string | 关联关系的方向(none, pre, latter)
 $linkResultType = "linkResultType_example"; // string | 返回结果类型：包括issue, dependence
+$linkDocNodeId = 56; // int | 需要关联的文档 id
 
 try {
-    $result = $apiInstance->postEnterpriseIdIssues($enterpriseId, $title, $accessToken, $copiedIssueId, $description, $assigneeId, $collaboratorIds, $issueTypeId, $programId, $projectId, $milestoneId, $labelIds, $priority, $parentId, $branch, $planStartedAt, $deadline, $startedAt, $finishedAt, $attachmentIds, $securityHole, $extraFieldsIssueFieldId, $extraFieldsValue, $kanbanId, $kanbanColumnId, $scrumSprintId, $scrumVersionId, $estimatedDuration, $duration, $testPlanCaseId, $pullRequestId, $category, $linkIssueId, $linkRefType, $linkDirection, $linkResultType);
+    $result = $apiInstance->postEnterpriseIdIssues($enterpriseId, $title, $accessToken, $copiedIssueId, $description, $assigneeId, $collaboratorIds, $issueTypeId, $programId, $projectId, $milestoneId, $labelIds, $priority, $parentId, $branch, $planStartedAt, $deadline, $startedAt, $finishedAt, $attachmentIds, $securityHole, $extraFieldsIssueFieldId, $extraFieldsValue, $kanbanId, $kanbanColumnId, $scrumSprintId, $scrumVersionId, $estimatedDuration, $duration, $testPlanCaseId, $pullRequestId, $category, $linkIssueId, $linkRefType, $linkDirection, $linkResultType, $linkDocNodeId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IssuesApi->postEnterpriseIdIssues: ', $e->getMessage(), PHP_EOL;
@@ -1247,6 +1470,7 @@ Name | Type | Description  | Notes
  **linkRefType** | **string**| 关联关系(normal, finish_to_finish, finish_to_start, start_to_start, start_to_finish) | [optional]
  **linkDirection** | **string**| 关联关系的方向(none, pre, latter) | [optional]
  **linkResultType** | **string**| 返回结果类型：包括issue, dependence | [optional]
+ **linkDocNodeId** | **int**| 需要关联的文档 id | [optional]
 
 ### Return type
 
@@ -1385,6 +1609,64 @@ Name | Type | Description  | Notes
  **enterpriseId** | **int**| 企业id (https://gitee.com/api/v8/swagger#/getList 的返回值的 id) |
  **issueId** | **string**| 任务 id |
  **pullRequestId** | **int**| Pull Request id |
+ **accessToken** | **string**| 用户授权码 | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **postEnterpriseIdIssuesIssueIdMultiLinkIssues**
+> postEnterpriseIdIssuesIssueIdMultiLinkIssues($enterpriseId, $issueId, $linkIssueIds, $refType, $direction, $accessToken)
+
+给指定工作项批量更新关联工作项
+
+给指定工作项批量更新关联工作项
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new GiteeEnterprise\Api\IssuesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$enterpriseId = 56; // int | 企业id (https://gitee.com/api/v8/swagger#/getList 的返回值的 id)
+$issueId = 56; // int | 工作项 id
+$linkIssueIds = array(56); // int[] | 关联工作项的ID列表,例如[1,2,3]
+$refType = "refType_example"; // string | 关联关系(normal, finish_to_finish, finish_to_start, start_to_start, start_to_finish)
+$direction = "direction_example"; // string | 关联关系的方向(none, pre, latter)
+$accessToken = "accessToken_example"; // string | 用户授权码
+
+try {
+    $apiInstance->postEnterpriseIdIssuesIssueIdMultiLinkIssues($enterpriseId, $issueId, $linkIssueIds, $refType, $direction, $accessToken);
+} catch (Exception $e) {
+    echo 'Exception when calling IssuesApi->postEnterpriseIdIssuesIssueIdMultiLinkIssues: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **enterpriseId** | **int**| 企业id (https://gitee.com/api/v8/swagger#/getList 的返回值的 id) |
+ **issueId** | **int**| 工作项 id |
+ **linkIssueIds** | [**int[]**](../Model/int.md)| 关联工作项的ID列表,例如[1,2,3] |
+ **refType** | **string**| 关联关系(normal, finish_to_finish, finish_to_start, start_to_start, start_to_finish) |
+ **direction** | **string**| 关联关系的方向(none, pre, latter) |
  **accessToken** | **string**| 用户授权码 | [optional]
 
 ### Return type
@@ -1626,7 +1908,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putEnterpriseIdIssuesIssueId**
-> \GiteeEnterprise\Model\IssueDetail putEnterpriseIdIssuesIssueId($enterpriseId, $issueId, $accessToken, $title, $description, $assigneeId, $collaboratorIds, $issueTypeId, $issueStateId, $programId, $projectId, $milestoneId, $labelIds, $priority, $parentId, $branch, $planStartedAt, $deadline, $startedAt, $finishedAt, $securityHole, $scrumSprintId, $scrumVersionId, $kanbanId, $kanbanColumnId, $estimatedDuration, $duration, $changeStates, $hierarchyChangeMethod)
+> \GiteeEnterprise\Model\IssueDetail putEnterpriseIdIssuesIssueId($enterpriseId, $issueId, $accessToken, $title, $description, $assigneeId, $collaboratorIds, $issueTypeId, $issueStateId, $programId, $projectId, $milestoneId, $labelIds, $priority, $parentId, $branch, $planStartedAt, $deadline, $dependencyType, $startedAt, $finishedAt, $securityHole, $scrumSprintId, $scrumVersionId, $kanbanId, $kanbanColumnId, $estimatedDuration, $duration, $changeStates, $hierarchyChangeMethod)
 
 更新任务
 
@@ -1660,6 +1942,7 @@ $parentId = 56; // int | 父级任务的 id
 $branch = "branch_example"; // string | 关联分支的名称
 $planStartedAt = "planStartedAt_example"; // string | 计划开始日期。格式：yyyy-mm-ddTHH:MM:SS
 $deadline = "deadline_example"; // string | 计划完成日期。格式：yyyy-mm-ddTHH:MM:SS
+$dependencyType = "dependencyType_example"; // string | 后继任务的时间更新方式，更新所有是all,更新下一个是single
 $startedAt = "startedAt_example"; // string | 实际开始时间。格式：yyyy-mm-ddTHH:MM:SS
 $finishedAt = "finishedAt_example"; // string | 实际完成时间。格式：yyyy-mm-ddTHH:MM:SS
 $securityHole = 56; // int | 是否是私有issue, 0:否，1:是
@@ -1669,11 +1952,11 @@ $kanbanId = 56; // int | 看板ID
 $kanbanColumnId = 56; // int | 看板的栏ID
 $estimatedDuration = 3.4; // float | 预估工时(单位：小时， 支持两位小数)
 $duration = 56; // int | 预估工时。（单位：分钟）
-$changeStates = array('key' => "changeStates_example"); // map[string,string] | 变更的状态 {source_id1: target_id1, source_id2: target_id2}
+$changeStates = array("changeStates_example"); // string[] | 变更的状态 {source_id1: target_id1, source_id2: target_id2}
 $hierarchyChangeMethod = "hierarchyChangeMethod_example"; // string | 选择的层级结构（relevance: 改为关联关系, independence: 取消父子关系）
 
 try {
-    $result = $apiInstance->putEnterpriseIdIssuesIssueId($enterpriseId, $issueId, $accessToken, $title, $description, $assigneeId, $collaboratorIds, $issueTypeId, $issueStateId, $programId, $projectId, $milestoneId, $labelIds, $priority, $parentId, $branch, $planStartedAt, $deadline, $startedAt, $finishedAt, $securityHole, $scrumSprintId, $scrumVersionId, $kanbanId, $kanbanColumnId, $estimatedDuration, $duration, $changeStates, $hierarchyChangeMethod);
+    $result = $apiInstance->putEnterpriseIdIssuesIssueId($enterpriseId, $issueId, $accessToken, $title, $description, $assigneeId, $collaboratorIds, $issueTypeId, $issueStateId, $programId, $projectId, $milestoneId, $labelIds, $priority, $parentId, $branch, $planStartedAt, $deadline, $dependencyType, $startedAt, $finishedAt, $securityHole, $scrumSprintId, $scrumVersionId, $kanbanId, $kanbanColumnId, $estimatedDuration, $duration, $changeStates, $hierarchyChangeMethod);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IssuesApi->putEnterpriseIdIssuesIssueId: ', $e->getMessage(), PHP_EOL;
@@ -1703,6 +1986,7 @@ Name | Type | Description  | Notes
  **branch** | **string**| 关联分支的名称 | [optional]
  **planStartedAt** | **string**| 计划开始日期。格式：yyyy-mm-ddTHH:MM:SS | [optional]
  **deadline** | **string**| 计划完成日期。格式：yyyy-mm-ddTHH:MM:SS | [optional]
+ **dependencyType** | **string**| 后继任务的时间更新方式，更新所有是all,更新下一个是single | [optional]
  **startedAt** | **string**| 实际开始时间。格式：yyyy-mm-ddTHH:MM:SS | [optional]
  **finishedAt** | **string**| 实际完成时间。格式：yyyy-mm-ddTHH:MM:SS | [optional]
  **securityHole** | **int**| 是否是私有issue, 0:否，1:是 | [optional]
@@ -1712,7 +1996,7 @@ Name | Type | Description  | Notes
  **kanbanColumnId** | **int**| 看板的栏ID | [optional]
  **estimatedDuration** | **float**| 预估工时(单位：小时， 支持两位小数) | [optional]
  **duration** | **int**| 预估工时。（单位：分钟） | [optional]
- **changeStates** | [**map[string,string]**](../Model/string.md)| 变更的状态 {source_id1: target_id1, source_id2: target_id2} | [optional]
+ **changeStates** | [**string[]**](../Model/string.md)| 变更的状态 {source_id1: target_id1, source_id2: target_id2} | [optional]
  **hierarchyChangeMethod** | **string**| 选择的层级结构（relevance: 改为关联关系, independence: 取消父子关系） | [optional]
 
 ### Return type
