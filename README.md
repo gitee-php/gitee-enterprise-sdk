@@ -11,17 +11,9 @@ PHP 5.5 and later
 ## Installation & Usage
 ### Composer
 
-To install the bindings via [Composer](http://getcomposer.org/), add the following to `composer.json`:
-
+```bash
+composer require gitee-php/gitee-enterprise-sdk
 ```
-{
-  "require": {
-    "gitee-php/gitee-enterprise-sdk": "^1.0"
-  }
-}
-```
-
-Then run `composer install`
 
 ### Manual Installation
 

@@ -103,14 +103,14 @@ class IssueDetail implements ModelInterface, ArrayAccess
         'attachFileIds' => 'int',
         'securityHoleOperater' => 'bool',
         'scrumVersion' => '\GiteeEnterprise\Model\EnterpriseScrumVersion',
-        'starredUsers' => '\GiteeEnterprise\Model\UserWithRemark',
+        'starredUsers' => '\GiteeEnterprise\Model\UserWithRemark[]',
         'triggerExecuteInfo' => 'bool',
         'estimatedDuration' => 'float',
         'registeredDuration' => 'float',
         'leftDuration' => 'float',
         'isInheritSatisfying' => 'bool',
         'version' => 'null[]',
-        'children' => '\GiteeEnterprise\Model\Issue',
+        'children' => '\GiteeEnterprise\Model\Issue[]',
         'childrenCount' => 'int'
     ];
 
@@ -1606,7 +1606,7 @@ class IssueDetail implements ModelInterface, ArrayAccess
     /**
      * Gets starredUsers
      *
-     * @return \GiteeEnterprise\Model\UserWithRemark
+     * @return \GiteeEnterprise\Model\UserWithRemark[]
      */
     public function getStarredUsers()
     {
@@ -1616,7 +1616,7 @@ class IssueDetail implements ModelInterface, ArrayAccess
     /**
      * Sets starredUsers
      *
-     * @param \GiteeEnterprise\Model\UserWithRemark $starredUsers 收藏了该任务的用户列表
+     * @param \GiteeEnterprise\Model\UserWithRemark[] $starredUsers 收藏了该任务的用户列表
      *
      * @return $this
      */
@@ -1774,7 +1774,7 @@ class IssueDetail implements ModelInterface, ArrayAccess
     /**
      * Gets children
      *
-     * @return \GiteeEnterprise\Model\Issue
+     * @return \GiteeEnterprise\Model\Issue[]
      */
     public function getChildren()
     {
@@ -1784,7 +1784,7 @@ class IssueDetail implements ModelInterface, ArrayAccess
     /**
      * Sets children
      *
-     * @param \GiteeEnterprise\Model\Issue $children 子任务
+     * @param \GiteeEnterprise\Model\Issue[] $children 子任务
      *
      * @return $this
      */

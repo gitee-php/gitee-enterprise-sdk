@@ -49,14 +49,14 @@ Name | Type | Description | Notes
 **attachFileIds** | **int** | issue附件id列表 | [optional] 
 **securityHoleOperater** | **bool** | 私有issue操作者 | [optional] 
 **scrumVersion** | [**\GiteeEnterprise\Model\EnterpriseScrumVersion**](EnterpriseScrumVersion.md) | 关联版本 | [optional] 
-**starredUsers** | [**\GiteeEnterprise\Model\UserWithRemark**](UserWithRemark.md) | 收藏了该任务的用户列表 | [optional] 
+**starredUsers** | [**\GiteeEnterprise\Model\UserWithRemark[]**](UserWithRemark.md) | 收藏了该任务的用户列表 | [optional] 
 **triggerExecuteInfo** | **bool** | 是否有异步执行的触发器 | [optional] 
 **estimatedDuration** | **float** | 预估工时(单位小时) | [optional] 
 **registeredDuration** | **float** | 登记工时(单位小时) | [optional] 
 **leftDuration** | **float** | 剩余工时(单位小时) | [optional] 
 **isInheritSatisfying** | **bool** | 子工作项是否符合层级关系 | [optional] 
 **version** | **null[]** | 版本号集合 | [optional] 
-**children** | [**\GiteeEnterprise\Model\Issue**](Issue.md) | 子任务 | [optional] 
+**children** | [**\GiteeEnterprise\Model\Issue[]**](Issue.md) | 子任务 | [optional] 
 **childrenCount** | **int** | 子任务数量 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

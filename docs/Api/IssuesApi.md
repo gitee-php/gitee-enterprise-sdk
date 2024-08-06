@@ -644,7 +644,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEnterpriseIdIssuesIssueIdAttachFiles**
-> \GiteeEnterprise\Model\AttachFile getEnterpriseIdIssuesIssueIdAttachFiles($enterpriseId, $issueId, $accessToken)
+> \GiteeEnterprise\Model\AttachFile[] getEnterpriseIdIssuesIssueIdAttachFiles($enterpriseId, $issueId, $accessToken)
 
 获取任务附件
 
@@ -683,7 +683,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\GiteeEnterprise\Model\AttachFile**](../Model/AttachFile.md)
+[**\GiteeEnterprise\Model\AttachFile[]**](../Model/AttachFile.md)
 
 ### Authorization
 
@@ -974,7 +974,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEnterpriseIdIssuesIssueIdNotes**
-> \GiteeEnterprise\Model\IssueNote getEnterpriseIdIssuesIssueIdNotes($enterpriseId, $issueId, $accessToken, $sort, $direction, $page, $perPage)
+> \GiteeEnterprise\Model\IssueNote[] getEnterpriseIdIssuesIssueIdNotes($enterpriseId, $issueId, $accessToken, $sort, $direction, $page, $perPage)
 
 获取任务下的评论列表
 
@@ -1021,7 +1021,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\GiteeEnterprise\Model\IssueNote**](../Model/IssueNote.md)
+[**\GiteeEnterprise\Model\IssueNote[]**](../Model/IssueNote.md)
 
 ### Authorization
 

@@ -36,7 +36,7 @@ use \GiteeEnterprise\ObjectSerializer;
  * Project Class Doc Comment
  *
  * @category Class
- * @description 部署公钥添加仓库
+ * @description 仓库信息
  * @package  GiteeEnterprise
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen

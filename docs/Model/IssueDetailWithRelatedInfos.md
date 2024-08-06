@@ -49,7 +49,7 @@ Name | Type | Description | Notes
 **attachFileIds** | **int** | issue附件id列表 | [optional] 
 **securityHoleOperater** | **bool** | 私有issue操作者 | [optional] 
 **scrumVersion** | [**\GiteeEnterprise\Model\EnterpriseScrumVersion**](EnterpriseScrumVersion.md) | 关联版本 | [optional] 
-**starredUsers** | [**\GiteeEnterprise\Model\UserWithRemark**](UserWithRemark.md) | 收藏了该任务的用户列表 | [optional] 
+**starredUsers** | [**\GiteeEnterprise\Model\UserWithRemark[]**](UserWithRemark.md) | 收藏了该任务的用户列表 | [optional] 
 **triggerExecuteInfo** | **bool** | 是否有异步执行的触发器 | [optional] 
 **estimatedDuration** | **float** | 预估工时(单位小时) | [optional] 
 **registeredDuration** | **float** | 登记工时(单位小时) | [optional] 

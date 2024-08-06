@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **color** | **string** | 颜色 | [optional] 
 **category** | **string** | 项目类型 | [optional] 
 **programExtraFields** | [**\GiteeEnterprise\Model\ProgramExtraField**](ProgramExtraField.md) | 项目自定义字段值 | [optional] 
-**components** | [**\GiteeEnterprise\Model\ProgramComponent**](ProgramComponent.md) | 项目组件列表 | [optional] 
+**components** | [**\GiteeEnterprise\Model\ProgramComponent[]**](ProgramComponent.md) | 项目组件列表 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
