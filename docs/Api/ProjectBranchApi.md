@@ -125,7 +125,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEnterpriseIdProjectsProjectIdBranches**
-> \GiteeEnterprise\Model\Branch getEnterpriseIdProjectsProjectIdBranches($enterpriseId, $projectId, $accessToken, $qt, $search, $sort, $mode, $creatorId, $needModeCount, $page, $perPage)
+> \GiteeEnterprise\Model\Branch getEnterpriseIdProjectsProjectIdBranches($enterpriseId, $projectId, $accessToken, $qt, $search, $sort, $mode, $creatorId, $needModeCount, $branchQuality, $page, $perPage)
 
 获取仓库的分支列表
 
@@ -150,11 +150,12 @@ $sort = "updated_desc"; // string | 排序
 $mode = "all"; // string | 类型(all: 全部分支, active: 活跃分支, stale: 非活跃分支, deleted: 已删除分支)
 $creatorId = 56; // int | 分支创建者
 $needModeCount = true; // bool | 是否需要按照类型分组统计数量
+$branchQuality = "branchQuality_example"; // string | 分支属性(0:常规分支 1:保护分支 2:只读分支)
 $page = 1; // int | 当前的页码
 $perPage = 56; // int | 每页的数量，最大为 100
 
 try {
-    $result = $apiInstance->getEnterpriseIdProjectsProjectIdBranches($enterpriseId, $projectId, $accessToken, $qt, $search, $sort, $mode, $creatorId, $needModeCount, $page, $perPage);
+    $result = $apiInstance->getEnterpriseIdProjectsProjectIdBranches($enterpriseId, $projectId, $accessToken, $qt, $search, $sort, $mode, $creatorId, $needModeCount, $branchQuality, $page, $perPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProjectBranchApi->getEnterpriseIdProjectsProjectIdBranches: ', $e->getMessage(), PHP_EOL;
@@ -175,6 +176,7 @@ Name | Type | Description  | Notes
  **mode** | **string**| 类型(all: 全部分支, active: 活跃分支, stale: 非活跃分支, deleted: 已删除分支) | [optional] [default to all]
  **creatorId** | **int**| 分支创建者 | [optional]
  **needModeCount** | **bool**| 是否需要按照类型分组统计数量 | [optional]
+ **branchQuality** | **string**| 分支属性(0:常规分支 1:保护分支 2:只读分支) | [optional]
  **page** | **int**| 当前的页码 | [optional] [default to 1]
  **perPage** | **int**| 每页的数量，最大为 100 | [optional]
 

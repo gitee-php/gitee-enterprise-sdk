@@ -14,12 +14,14 @@ Method | HTTP request | Description
 [**getEnterpriseIdDocNodesDocNodeIdAuth**](DocNodesApi.md#getEnterpriseIdDocNodesDocNodeIdAuth) | **GET** /{enterprise_id}/doc_nodes/{doc_node_id}/auth | 查看文件节点的权限
 [**getEnterpriseIdDocNodesDocNodeIdFileVersions**](DocNodesApi.md#getEnterpriseIdDocNodesDocNodeIdFileVersions) | **GET** /{enterprise_id}/doc_nodes/{doc_node_id}/file_versions | 查看历史版本
 [**getEnterpriseIdDocNodesDocNodeIdOperateAuths**](DocNodesApi.md#getEnterpriseIdDocNodesDocNodeIdOperateAuths) | **GET** /{enterprise_id}/doc_nodes/{doc_node_id}/operate_auths | 获取文件节点的权限
+[**getEnterpriseIdDocNodesFetchBackupFolderProgress**](DocNodesApi.md#getEnterpriseIdDocNodesFetchBackupFolderProgress) | **GET** /{enterprise_id}/doc_nodes/fetch_backup_folder_progress | 获取当前用户文件夹备份进度
 [**getEnterpriseIdDocNodesLevel**](DocNodesApi.md#getEnterpriseIdDocNodesLevel) | **GET** /{enterprise_id}/doc_nodes/level | 获取文件节点列表（层级）
 [**getEnterpriseIdDocNodesPrograms**](DocNodesApi.md#getEnterpriseIdDocNodesPrograms) | **GET** /{enterprise_id}/doc_nodes/programs | 获取与文档有关的项目
 [**getEnterpriseIdDocNodesProgramsDirectories**](DocNodesApi.md#getEnterpriseIdDocNodesProgramsDirectories) | **GET** /{enterprise_id}/doc_nodes/programs_directories | 获取项目类型文件夹
 [**getEnterpriseIdDocNodesRecent**](DocNodesApi.md#getEnterpriseIdDocNodesRecent) | **GET** /{enterprise_id}/doc_nodes/recent | 获取最近编辑的文件
 [**getEnterpriseIdDocNodesRecentDoc**](DocNodesApi.md#getEnterpriseIdDocNodesRecentDoc) | **GET** /{enterprise_id}/doc_nodes/recent_doc | 获取最近编辑的文档
 [**getEnterpriseIdDocNodesRecycle**](DocNodesApi.md#getEnterpriseIdDocNodesRecycle) | **GET** /{enterprise_id}/doc_nodes/recycle | 获取回收站的内容列表
+[**getEnterpriseIdDocNodesShared**](DocNodesApi.md#getEnterpriseIdDocNodesShared) | **GET** /{enterprise_id}/doc_nodes/shared | 获取分享给我的文档
 [**getEnterpriseIdDocNodesTile**](DocNodesApi.md#getEnterpriseIdDocNodesTile) | **GET** /{enterprise_id}/doc_nodes/tile | 获取文件节点列表（平铺）
 [**postEnterpriseIdDocNodesAttachFile**](DocNodesApi.md#postEnterpriseIdDocNodesAttachFile) | **POST** /{enterprise_id}/doc_nodes/attach_file | 上传附件
 [**postEnterpriseIdDocNodesBatchRecycle**](DocNodesApi.md#postEnterpriseIdDocNodesBatchRecycle) | **POST** /{enterprise_id}/doc_nodes/batch_recycle | 批量移除到回收站
@@ -36,7 +38,9 @@ Method | HTTP request | Description
 [**putEnterpriseIdDocNodesDocNodeIdAuth**](DocNodesApi.md#putEnterpriseIdDocNodesDocNodeIdAuth) | **PUT** /{enterprise_id}/doc_nodes/{doc_node_id}/auth | 更新文件节点的权限
 [**putEnterpriseIdDocNodesDocNodeIdCollection**](DocNodesApi.md#putEnterpriseIdDocNodesDocNodeIdCollection) | **PUT** /{enterprise_id}/doc_nodes/{doc_node_id}/collection | 收藏/取消收藏文件节点
 [**putEnterpriseIdDocNodesDocNodeIdIsTop**](DocNodesApi.md#putEnterpriseIdDocNodesDocNodeIdIsTop) | **PUT** /{enterprise_id}/doc_nodes/{doc_node_id}/is_top | 置顶节点
+[**putEnterpriseIdDocNodesDocNodeIdLock**](DocNodesApi.md#putEnterpriseIdDocNodesDocNodeIdLock) | **PUT** /{enterprise_id}/doc_nodes/{doc_node_id}/lock | 锁定附件
 [**putEnterpriseIdDocNodesDocNodeIdMove**](DocNodesApi.md#putEnterpriseIdDocNodesDocNodeIdMove) | **PUT** /{enterprise_id}/doc_nodes/{doc_node_id}/move | 移动文件节点
+[**putEnterpriseIdDocNodesDocNodeIdUnlock**](DocNodesApi.md#putEnterpriseIdDocNodesDocNodeIdUnlock) | **PUT** /{enterprise_id}/doc_nodes/{doc_node_id}/unlock | 解锁附件
 
 
 # **deleteEnterpriseIdDocNodesBatchDelete**
@@ -586,8 +590,60 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **getEnterpriseIdDocNodesFetchBackupFolderProgress**
+> getEnterpriseIdDocNodesFetchBackupFolderProgress($enterpriseId, $accessToken, $docNodeId)
+
+获取当前用户文件夹备份进度
+
+获取当前用户文件夹备份进度
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new GiteeEnterprise\Api\DocNodesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$enterpriseId = 56; // int | 企业id (https://gitee.com/api/v8/swagger#/getList 的返回值的 id)
+$accessToken = "accessToken_example"; // string | 用户授权码
+$docNodeId = 56; // int | 文档节点 id
+
+try {
+    $apiInstance->getEnterpriseIdDocNodesFetchBackupFolderProgress($enterpriseId, $accessToken, $docNodeId);
+} catch (Exception $e) {
+    echo 'Exception when calling DocNodesApi->getEnterpriseIdDocNodesFetchBackupFolderProgress: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **enterpriseId** | **int**| 企业id (https://gitee.com/api/v8/swagger#/getList 的返回值的 id) |
+ **accessToken** | **string**| 用户授权码 | [optional]
+ **docNodeId** | **int**| 文档节点 id | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **getEnterpriseIdDocNodesLevel**
-> \GiteeEnterprise\Model\DocNodeLevel[] getEnterpriseIdDocNodesLevel($enterpriseId, $parentId, $accessToken, $programId, $scope, $fileType)
+> \GiteeEnterprise\Model\DocNodeLevel[] getEnterpriseIdDocNodesLevel($enterpriseId, $parentId, $accessToken, $programId, $scope, $fileType, $search)
 
 获取文件节点列表（层级）
 
@@ -608,10 +664,11 @@ $parentId = 0; // int | 父级 id（默认：0）
 $accessToken = "accessToken_example"; // string | 用户授权码
 $programId = 0; // int | 项目 id
 $scope = "scope_example"; // string | 可筛选类型：directory, recycle
-$fileType = "fileType_example"; // string | 文件类型（WikiInfo,Wiki,DocDirectory,AttachFile），支持多选，用逗号分割
+$fileType = "fileType_example"; // string | 文件类型（WikiInfo,Wiki,DocDirectory,AttachFile,Shortcut），支持多选，用逗号分割
+$search = "search_example"; // string | 搜索关键字
 
 try {
-    $result = $apiInstance->getEnterpriseIdDocNodesLevel($enterpriseId, $parentId, $accessToken, $programId, $scope, $fileType);
+    $result = $apiInstance->getEnterpriseIdDocNodesLevel($enterpriseId, $parentId, $accessToken, $programId, $scope, $fileType, $search);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocNodesApi->getEnterpriseIdDocNodesLevel: ', $e->getMessage(), PHP_EOL;
@@ -628,7 +685,8 @@ Name | Type | Description  | Notes
  **accessToken** | **string**| 用户授权码 | [optional]
  **programId** | **int**| 项目 id | [optional] [default to 0]
  **scope** | **string**| 可筛选类型：directory, recycle | [optional]
- **fileType** | **string**| 文件类型（WikiInfo,Wiki,DocDirectory,AttachFile），支持多选，用逗号分割 | [optional]
+ **fileType** | **string**| 文件类型（WikiInfo,Wiki,DocDirectory,AttachFile,Shortcut），支持多选，用逗号分割 | [optional]
+ **search** | **string**| 搜索关键字 | [optional]
 
 ### Return type
 
@@ -909,6 +967,71 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getEnterpriseIdDocNodesShared**
+> \GiteeEnterprise\Model\DocNode[] getEnterpriseIdDocNodesShared($enterpriseId, $accessToken, $programId, $sort, $fileType, $search, $direction, $page, $perPage)
+
+获取分享给我的文档
+
+获取分享给我的文档
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new GiteeEnterprise\Api\DocNodesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$enterpriseId = 56; // int | 企业id (https://gitee.com/api/v8/swagger#/getList 的返回值的 id)
+$accessToken = "accessToken_example"; // string | 用户授权码
+$programId = 56; // int | 项目 ID
+$sort = "sort_example"; // string | 排序字段(name size updated_at created_at creator_id public)
+$fileType = "fileType_example"; // string | 文件类型(WikiInfo Wiki DocDirectory AttachFile)，支持支持多选，用英文 , 分割
+$search = "search_example"; // string | 搜索关键字
+$direction = "desc"; // string | 排序方向
+$page = 1; // int | 当前的页码
+$perPage = 56; // int | 每页的数量，最大为 100
+
+try {
+    $result = $apiInstance->getEnterpriseIdDocNodesShared($enterpriseId, $accessToken, $programId, $sort, $fileType, $search, $direction, $page, $perPage);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DocNodesApi->getEnterpriseIdDocNodesShared: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **enterpriseId** | **int**| 企业id (https://gitee.com/api/v8/swagger#/getList 的返回值的 id) |
+ **accessToken** | **string**| 用户授权码 | [optional]
+ **programId** | **int**| 项目 ID | [optional]
+ **sort** | **string**| 排序字段(name size updated_at created_at creator_id public) | [optional]
+ **fileType** | **string**| 文件类型(WikiInfo Wiki DocDirectory AttachFile)，支持支持多选，用英文 , 分割 | [optional]
+ **search** | **string**| 搜索关键字 | [optional]
+ **direction** | **string**| 排序方向 | [optional] [default to desc]
+ **page** | **int**| 当前的页码 | [optional] [default to 1]
+ **perPage** | **int**| 每页的数量，最大为 100 | [optional]
+
+### Return type
+
+[**\GiteeEnterprise\Model\DocNode[]**](../Model/DocNode.md)
 
 ### Authorization
 
@@ -1845,6 +1968,58 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **putEnterpriseIdDocNodesDocNodeIdLock**
+> putEnterpriseIdDocNodesDocNodeIdLock($enterpriseId, $docNodeId, $accessToken)
+
+锁定附件
+
+锁定附件
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new GiteeEnterprise\Api\DocNodesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$enterpriseId = 56; // int | 企业id (https://gitee.com/api/v8/swagger#/getList 的返回值的 id)
+$docNodeId = 56; // int | 
+$accessToken = "accessToken_example"; // string | 用户授权码
+
+try {
+    $apiInstance->putEnterpriseIdDocNodesDocNodeIdLock($enterpriseId, $docNodeId, $accessToken);
+} catch (Exception $e) {
+    echo 'Exception when calling DocNodesApi->putEnterpriseIdDocNodesDocNodeIdLock: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **enterpriseId** | **int**| 企业id (https://gitee.com/api/v8/swagger#/getList 的返回值的 id) |
+ **docNodeId** | **int**|  |
+ **accessToken** | **string**| 用户授权码 | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **putEnterpriseIdDocNodesDocNodeIdMove**
 > \GiteeEnterprise\Model\DocNode putEnterpriseIdDocNodesDocNodeIdMove($enterpriseId, $docNodeId, $parentId, $accessToken, $programId)
 
@@ -1890,6 +2065,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\GiteeEnterprise\Model\DocNode**](../Model/DocNode.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **putEnterpriseIdDocNodesDocNodeIdUnlock**
+> putEnterpriseIdDocNodesDocNodeIdUnlock($enterpriseId, $docNodeId, $accessToken)
+
+解锁附件
+
+解锁附件
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new GiteeEnterprise\Api\DocNodesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$enterpriseId = 56; // int | 企业id (https://gitee.com/api/v8/swagger#/getList 的返回值的 id)
+$docNodeId = 56; // int | 
+$accessToken = "accessToken_example"; // string | 用户授权码
+
+try {
+    $apiInstance->putEnterpriseIdDocNodesDocNodeIdUnlock($enterpriseId, $docNodeId, $accessToken);
+} catch (Exception $e) {
+    echo 'Exception when calling DocNodesApi->putEnterpriseIdDocNodesDocNodeIdUnlock: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **enterpriseId** | **int**| 企业id (https://gitee.com/api/v8/swagger#/getList 的返回值的 id) |
+ **docNodeId** | **int**|  |
+ **accessToken** | **string**| 用户授权码 | [optional]
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 

@@ -10,8 +10,6 @@ Name | Type | Description | Notes
 **addGroup** | **bool** | 是否可新增团队 | [optional] 
 **readIssue** | **bool** | 是否可查看授权用户参与的任务列表 | [optional] 
 **createIssue** | **bool** | 是否可创建任务 | [optional] 
-**readCaseConfig** | **bool** | 是否可见用例设置 | [optional] 
-**settingCaseConfig** | **bool** | 是否可配置用例设置 | [optional] 
 **readProgramConfig** | **bool** | 是否可见用例设置 | [optional] 
 **settingProgramConfig** | **bool** | 是否可配置用例设置 | [optional] 
 **readProgram** | **bool** | 是否可查看授权用户参与的项目列表 | [optional] 

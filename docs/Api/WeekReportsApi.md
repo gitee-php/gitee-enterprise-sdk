@@ -149,7 +149,7 @@ $apiInstance = new GiteeEnterprise\Api\WeekReportsApi(
 );
 $enterpriseId = 56; // int | 企业id (https://gitee.com/api/v8/swagger#/getList 的返回值的 id)
 $accessToken = "accessToken_example"; // string | 用户授权码
-$year = 2023; // int | 年份
+$year = 2024; // int | 年份
 $weekIndex = 56; // int | 周报所属周
 $programId = 56; // int | 项目ID
 $groupId = 56; // int | 团队ID
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **enterpriseId** | **int**| 企业id (https://gitee.com/api/v8/swagger#/getList 的返回值的 id) |
  **accessToken** | **string**| 用户授权码 | [optional]
- **year** | **int**| 年份 | [optional] [default to 2023]
+ **year** | **int**| 年份 | [optional] [default to 2024]
  **weekIndex** | **int**| 周报所属周 | [optional]
  **programId** | **int**| 项目ID | [optional]
  **groupId** | **int**| 团队ID | [optional]
@@ -216,7 +216,7 @@ $apiInstance = new GiteeEnterprise\Api\WeekReportsApi(
 );
 $enterpriseId = 56; // int | 企业id (https://gitee.com/api/v8/swagger#/getList 的返回值的 id)
 $accessToken = "accessToken_example"; // string | 用户授权码
-$year = 2023; // int | 年份
+$year = 2024; // int | 年份
 
 try {
     $result = $apiInstance->getEnterpriseIdWeekReportsMyReports($enterpriseId, $accessToken, $year);
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **enterpriseId** | **int**| 企业id (https://gitee.com/api/v8/swagger#/getList 的返回值的 id) |
  **accessToken** | **string**| 用户授权码 | [optional]
- **year** | **int**| 年份 | [optional] [default to 2023]
+ **year** | **int**| 年份 | [optional] [default to 2024]
 
 ### Return type
 
@@ -268,7 +268,7 @@ $apiInstance = new GiteeEnterprise\Api\WeekReportsApi(
     new GuzzleHttp\Client()
 );
 $enterpriseId = 56; // int | 企业id (https://gitee.com/api/v8/swagger#/getList 的返回值的 id)
-$year = 2023; // int | 年份
+$year = 2024; // int | 年份
 $accessToken = "accessToken_example"; // string | 用户授权码
 $weekIndex = 56; // int | 当前周数（默认当前周）
 $programId = 56; // int | 项目的 id
@@ -288,7 +288,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **enterpriseId** | **int**| 企业id (https://gitee.com/api/v8/swagger#/getList 的返回值的 id) |
- **year** | **int**| 年份 | [default to 2023]
+ **year** | **int**| 年份 | [default to 2024]
  **accessToken** | **string**| 用户授权码 | [optional]
  **weekIndex** | **int**| 当前周数（默认当前周） | [optional]
  **programId** | **int**| 项目的 id | [optional]

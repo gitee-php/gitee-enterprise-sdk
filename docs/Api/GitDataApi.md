@@ -17,9 +17,11 @@ Method | HTTP request | Description
 [**getEnterpriseIdProjectsProjectIdOperateAuths**](GitDataApi.md#getEnterpriseIdProjectsProjectIdOperateAuths) | **GET** /{enterprise_id}/projects/{project_id}/operate_auths | 获取仓库的操作权限
 [**getEnterpriseIdProjectsProjectIdPrograms**](GitDataApi.md#getEnterpriseIdProjectsProjectIdPrograms) | **GET** /{enterprise_id}/projects/{project_id}/programs | 获取仓库的关联项目列表
 [**getEnterpriseIdProjectsProjectIdPullRequests**](GitDataApi.md#getEnterpriseIdProjectsProjectIdPullRequests) | **GET** /{enterprise_id}/projects/{project_id}/pull_requests | 获取仓库的 Pull Request 列表
+[**getEnterpriseIdProjectsProjectIdReleaseDetail**](GitDataApi.md#getEnterpriseIdProjectsProjectIdReleaseDetail) | **GET** /{enterprise_id}/projects/{project_id}/release_detail | 查看发行版详情
 [**getEnterpriseIdProjectsProjectIdReleases**](GitDataApi.md#getEnterpriseIdProjectsProjectIdReleases) | **GET** /{enterprise_id}/projects/{project_id}/releases | 查看发行版列表
-[**getEnterpriseIdProjectsProjectIdReleasesTagVersion**](GitDataApi.md#getEnterpriseIdProjectsProjectIdReleasesTagVersion) | **GET** /{enterprise_id}/projects/{project_id}/releases/{tag_version} | 查看发行版详情
+[**getEnterpriseIdProjectsProjectIdReleasesTagVersion**](GitDataApi.md#getEnterpriseIdProjectsProjectIdReleasesTagVersion) | **GET** /{enterprise_id}/projects/{project_id}/releases/{tag_version} | 查看发行版详情（Deprecated）
 [**getEnterpriseIdProjectsProjectIdSettings**](GitDataApi.md#getEnterpriseIdProjectsProjectIdSettings) | **GET** /{enterprise_id}/projects/{project_id}/settings | 获取仓库基本设置
+[**getEnterpriseIdProjectsProjectIdSummary**](GitDataApi.md#getEnterpriseIdProjectsProjectIdSummary) | **GET** /{enterprise_id}/projects/{project_id}/summary | 获取仓库的概览数据
 [**getEnterpriseIdProjectsProjectIdUsers**](GitDataApi.md#getEnterpriseIdProjectsProjectIdUsers) | **GET** /{enterprise_id}/projects/{project_id}/users | 获取仓库的成员列表
 [**postEnterpriseIdProjects**](GitDataApi.md#postEnterpriseIdProjects) | **POST** /{enterprise_id}/projects | 新建仓库
 [**postEnterpriseIdProjectsCheckProjectCanImport**](GitDataApi.md#postEnterpriseIdProjectsCheckProjectCanImport) | **POST** /{enterprise_id}/projects/check_project_can_import | 新建仓库-导入仓库参数是否有效
@@ -88,7 +90,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEnterpriseIdProjects**
-> \GiteeEnterprise\Model\ProjectDetail getEnterpriseIdProjects($enterpriseId, $accessToken, $scope, $search, $type, $status, $creatorId, $parentId, $forkFilter, $outsourced, $groupId, $sort, $direction, $namespaceScope, $page, $perPage)
+> \GiteeEnterprise\Model\ProjectDetail getEnterpriseIdProjects($enterpriseId, $accessToken, $scope, $search, $type, $status, $creatorId, $parentId, $forkFilter, $outsourced, $settingTemplateId, $groupId, $sort, $direction, $namespaceScope, $page, $perPage)
 
 获取授权用户参与的仓库列表
 
@@ -112,8 +114,9 @@ $type = "type_example"; // string | 与我相关，created：我创建的，join
 $status = 56; // int | 状态: 0: 开始，1: 暂停，2: 关闭
 $creatorId = 56; // int | 负责人
 $parentId = 56; // int | form_from仓库id
-$forkFilter = "forkFilter_example"; // string | 非fork的(not_fork), 只看fork的(only_fork)
+$forkFilter = "forkFilter_example"; // string | 全部(all), 非fork的(not_fork), 只看fork的(only_fork), 我fork的(my_fork)
 $outsourced = 56; // int | 是否外包：0：内部，1：外包
+$settingTemplateId = 56; // int | 配置模版仓库ID
 $groupId = 56; // int | 团队id
 $sort = "sort_example"; // string | 排序字段(created_at、last_push_at)
 $direction = "direction_example"; // string | 排序方向(asc: 升序 desc: 倒序)
@@ -122,7 +125,7 @@ $page = 1; // int | 当前的页码
 $perPage = 56; // int | 每页的数量，最大为 100
 
 try {
-    $result = $apiInstance->getEnterpriseIdProjects($enterpriseId, $accessToken, $scope, $search, $type, $status, $creatorId, $parentId, $forkFilter, $outsourced, $groupId, $sort, $direction, $namespaceScope, $page, $perPage);
+    $result = $apiInstance->getEnterpriseIdProjects($enterpriseId, $accessToken, $scope, $search, $type, $status, $creatorId, $parentId, $forkFilter, $outsourced, $settingTemplateId, $groupId, $sort, $direction, $namespaceScope, $page, $perPage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GitDataApi->getEnterpriseIdProjects: ', $e->getMessage(), PHP_EOL;
@@ -142,8 +145,9 @@ Name | Type | Description  | Notes
  **status** | **int**| 状态: 0: 开始，1: 暂停，2: 关闭 | [optional]
  **creatorId** | **int**| 负责人 | [optional]
  **parentId** | **int**| form_from仓库id | [optional]
- **forkFilter** | **string**| 非fork的(not_fork), 只看fork的(only_fork) | [optional]
+ **forkFilter** | **string**| 全部(all), 非fork的(not_fork), 只看fork的(only_fork), 我fork的(my_fork) | [optional]
  **outsourced** | **int**| 是否外包：0：内部，1：外包 | [optional]
+ **settingTemplateId** | **int**| 配置模版仓库ID | [optional]
  **groupId** | **int**| 团队id | [optional]
  **sort** | **string**| 排序字段(created_at、last_push_at) | [optional]
  **direction** | **string**| 排序方向(asc: 升序 desc: 倒序) | [optional]
@@ -191,7 +195,7 @@ $type = "type_example"; // string | 与我相关，created：我创建的，join
 $status = 56; // int | 状态: 0: 开始，1: 暂停，2: 关闭
 $creatorId = 56; // int | 负责人
 $parentId = 56; // int | form_from仓库id
-$forkFilter = "forkFilter_example"; // string | 非fork的(not_fork), 只看fork的(only_fork)
+$forkFilter = "forkFilter_example"; // string | 全部(all), 非fork的(not_fork), 只看fork的(only_fork), 我fork的(my_fork)
 $outsourced = 56; // int | 是否外包：0：内部，1：外包
 $groupId = 56; // int | 团队id
 $sort = "sort_example"; // string | 排序字段(created_at、last_push_at)
@@ -220,7 +224,7 @@ Name | Type | Description  | Notes
  **status** | **int**| 状态: 0: 开始，1: 暂停，2: 关闭 | [optional]
  **creatorId** | **int**| 负责人 | [optional]
  **parentId** | **int**| form_from仓库id | [optional]
- **forkFilter** | **string**| 非fork的(not_fork), 只看fork的(only_fork) | [optional]
+ **forkFilter** | **string**| 全部(all), 非fork的(not_fork), 只看fork的(only_fork), 我fork的(my_fork) | [optional]
  **outsourced** | **int**| 是否外包：0：内部，1：外包 | [optional]
  **groupId** | **int**| 团队id | [optional]
  **sort** | **string**| 排序字段(created_at、last_push_at) | [optional]
@@ -880,6 +884,63 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **getEnterpriseIdProjectsProjectIdReleaseDetail**
+> \GiteeEnterprise\Model\Release getEnterpriseIdProjectsProjectIdReleaseDetail($enterpriseId, $projectId, $tagVersion, $accessToken, $qt)
+
+查看发行版详情
+
+查看发行版详情
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new GiteeEnterprise\Api\GitDataApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$enterpriseId = 56; // int | 企业id
+$projectId = "projectId_example"; // string | 仓库 id 或 path
+$tagVersion = "tagVersion_example"; // string | 发行版版本
+$accessToken = "accessToken_example"; // string | 用户授权码
+$qt = "qt_example"; // string | path类型（查询参数为path）, 空则表示查询参数为id
+
+try {
+    $result = $apiInstance->getEnterpriseIdProjectsProjectIdReleaseDetail($enterpriseId, $projectId, $tagVersion, $accessToken, $qt);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GitDataApi->getEnterpriseIdProjectsProjectIdReleaseDetail: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **enterpriseId** | **int**| 企业id |
+ **projectId** | **string**| 仓库 id 或 path |
+ **tagVersion** | **string**| 发行版版本 |
+ **accessToken** | **string**| 用户授权码 | [optional]
+ **qt** | **string**| path类型（查询参数为path）, 空则表示查询参数为id | [optional]
+
+### Return type
+
+[**\GiteeEnterprise\Model\Release**](../Model/Release.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **getEnterpriseIdProjectsProjectIdReleases**
 > \GiteeEnterprise\Model\Release getEnterpriseIdProjectsProjectIdReleases($enterpriseId, $projectId, $accessToken, $qt, $page, $perPage)
 
@@ -942,9 +1003,9 @@ No authorization required
 # **getEnterpriseIdProjectsProjectIdReleasesTagVersion**
 > \GiteeEnterprise\Model\Release getEnterpriseIdProjectsProjectIdReleasesTagVersion($enterpriseId, $projectId, $tagVersion, $accessToken, $qt)
 
-查看发行版详情
+查看发行版详情（Deprecated）
 
-查看发行版详情
+查看发行版详情（Deprecated）
 
 ### Example
 ```php
@@ -1051,6 +1112,63 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **getEnterpriseIdProjectsProjectIdSummary**
+> \GiteeEnterprise\Model\ProjectSummary getEnterpriseIdProjectsProjectIdSummary($enterpriseId, $projectId, $ref, $accessToken, $qt)
+
+获取仓库的概览数据
+
+获取仓库的概览数据
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new GiteeEnterprise\Api\GitDataApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$enterpriseId = 56; // int | 企业id
+$projectId = "projectId_example"; // string | 仓库 id 或 path
+$ref = "ref_example"; // string | 分支/标签名
+$accessToken = "accessToken_example"; // string | 用户授权码
+$qt = "qt_example"; // string | path类型（查询参数为path）, 空则表示查询参数为id
+
+try {
+    $result = $apiInstance->getEnterpriseIdProjectsProjectIdSummary($enterpriseId, $projectId, $ref, $accessToken, $qt);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling GitDataApi->getEnterpriseIdProjectsProjectIdSummary: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **enterpriseId** | **int**| 企业id |
+ **projectId** | **string**| 仓库 id 或 path |
+ **ref** | **string**| 分支/标签名 |
+ **accessToken** | **string**| 用户授权码 | [optional]
+ **qt** | **string**| path类型（查询参数为path）, 空则表示查询参数为id | [optional]
+
+### Return type
+
+[**\GiteeEnterprise\Model\ProjectSummary**](../Model/ProjectSummary.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **getEnterpriseIdProjectsProjectIdUsers**
 > \GiteeEnterprise\Model\UsersProjects getEnterpriseIdProjectsProjectIdUsers($enterpriseId, $projectId, $accessToken, $qt, $search, $page, $perPage)
 
@@ -1113,7 +1231,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postEnterpriseIdProjects**
-> \GiteeEnterprise\Model\ProjectDetail postEnterpriseIdProjects($projectName, $projectNamespacePath, $projectPath, $enterpriseId, $accessToken, $projectTemplateId, $projectDescription, $projectPublic, $projectOutsourced, $projectProgramIds, $projectMemberIds, $projectGroupIds, $projectImportUrl, $normalRefs, $importProgramUsers, $readme, $issueTemplate, $pullRequestTemplate, $userSyncCode, $passwordSyncCode, $language, $ignore, $license, $model, $customBranchesProd, $customBranchesDev, $customBranchesFeat, $customBranchesRel, $customBranchesBugfix, $customBranchesTag)
+> \GiteeEnterprise\Model\ProjectDetail postEnterpriseIdProjects($projectName, $projectNamespacePath, $projectPath, $enterpriseId, $accessToken, $projectTemplateId, $projectDescription, $projectPublic, $projectOutsourced, $projectProgramIds, $projectMemberIds, $projectGroupIds, $projectImportUrl, $projectSizeLimitEnabled, $projectQuotaSize, $templateApplyScope, $normalRefs, $importProgramUsers, $readme, $issueTemplate, $pullRequestTemplate, $userSyncCode, $passwordSyncCode, $language, $ignore, $license, $model, $customBranchesProd, $customBranchesDev, $customBranchesFeat, $customBranchesRel, $customBranchesBugfix, $customBranchesTag)
 
 新建仓库
 
@@ -1142,6 +1260,9 @@ $projectProgramIds = "projectProgramIds_example"; // string | 关联项目列表
 $projectMemberIds = "projectMemberIds_example"; // string | 关联成员列表，英文逗号分隔
 $projectGroupIds = "projectGroupIds_example"; // string | 授权团队列表，英文逗号分隔
 $projectImportUrl = "projectImportUrl_example"; // string | 导入已有仓库路径
+$projectSizeLimitEnabled = true; // bool | 是否开启仓库大小配额限制，默认不开启
+$projectQuotaSize = 3.4; // float | 仓库大小配额（MB）
+$templateApplyScope = "templateApplyScope_example"; // string | 模版仓库运用范围。code: 代码；setting: 配置；code,settings：代码和配置
 $normalRefs = true; // bool | 是否包含所有分支
 $importProgramUsers = 56; // int | 是否导入项目成员: 0:否，1:是
 $readme = 56; // int | 是否初始化readme: 0:否，1:是
@@ -1161,7 +1282,7 @@ $customBranchesBugfix = "customBranchesBugfix_example"; // string | Patch branch
 $customBranchesTag = "customBranchesTag_example"; // string | Version tag branch
 
 try {
-    $result = $apiInstance->postEnterpriseIdProjects($projectName, $projectNamespacePath, $projectPath, $enterpriseId, $accessToken, $projectTemplateId, $projectDescription, $projectPublic, $projectOutsourced, $projectProgramIds, $projectMemberIds, $projectGroupIds, $projectImportUrl, $normalRefs, $importProgramUsers, $readme, $issueTemplate, $pullRequestTemplate, $userSyncCode, $passwordSyncCode, $language, $ignore, $license, $model, $customBranchesProd, $customBranchesDev, $customBranchesFeat, $customBranchesRel, $customBranchesBugfix, $customBranchesTag);
+    $result = $apiInstance->postEnterpriseIdProjects($projectName, $projectNamespacePath, $projectPath, $enterpriseId, $accessToken, $projectTemplateId, $projectDescription, $projectPublic, $projectOutsourced, $projectProgramIds, $projectMemberIds, $projectGroupIds, $projectImportUrl, $projectSizeLimitEnabled, $projectQuotaSize, $templateApplyScope, $normalRefs, $importProgramUsers, $readme, $issueTemplate, $pullRequestTemplate, $userSyncCode, $passwordSyncCode, $language, $ignore, $license, $model, $customBranchesProd, $customBranchesDev, $customBranchesFeat, $customBranchesRel, $customBranchesBugfix, $customBranchesTag);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GitDataApi->postEnterpriseIdProjects: ', $e->getMessage(), PHP_EOL;
@@ -1186,6 +1307,9 @@ Name | Type | Description  | Notes
  **projectMemberIds** | **string**| 关联成员列表，英文逗号分隔 | [optional]
  **projectGroupIds** | **string**| 授权团队列表，英文逗号分隔 | [optional]
  **projectImportUrl** | **string**| 导入已有仓库路径 | [optional]
+ **projectSizeLimitEnabled** | **bool**| 是否开启仓库大小配额限制，默认不开启 | [optional]
+ **projectQuotaSize** | **float**| 仓库大小配额（MB） | [optional]
+ **templateApplyScope** | **string**| 模版仓库运用范围。code: 代码；setting: 配置；code,settings：代码和配置 | [optional]
  **normalRefs** | **bool**| 是否包含所有分支 | [optional]
  **importProgramUsers** | **int**| 是否导入项目成员: 0:否，1:是 | [optional]
  **readme** | **int**| 是否初始化readme: 0:否，1:是 | [optional]
@@ -1333,7 +1457,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postEnterpriseIdProjectsProjectIdReleases**
-> \GiteeEnterprise\Model\Release postEnterpriseIdProjectsProjectIdReleases($enterpriseId, $projectId, $releaseTagVersion, $releaseTitle, $accessToken, $qt, $releaseRef, $releaseDescription, $releaseReleaseType, $attachIds)
+> \GiteeEnterprise\Model\Release postEnterpriseIdProjectsProjectIdReleases($enterpriseId, $projectId, $releaseTagVersion, $releaseTitle, $accessToken, $qt, $releaseRef, $releaseDescription, $releaseReleaseType, $releaseCreatedAt, $releaseUpdatedAt, $attachIds)
 
 新建发行版
 
@@ -1358,10 +1482,12 @@ $qt = "qt_example"; // string | path类型（查询参数为path）, 空则表�
 $releaseRef = "master"; // string | 发行版所属分支
 $releaseDescription = "releaseDescription_example"; // string | 发行版描述
 $releaseReleaseType = "releaseReleaseType_example"; // string | 发行版类型, 0：发行版、1：预发行版
+$releaseCreatedAt = "releaseCreatedAt_example"; // string | 发行版创建时间
+$releaseUpdatedAt = "releaseUpdatedAt_example"; // string | 发行版更新时间
 $attachIds = "attachIds_example"; // string | 附件id列表，英文逗号分隔
 
 try {
-    $result = $apiInstance->postEnterpriseIdProjectsProjectIdReleases($enterpriseId, $projectId, $releaseTagVersion, $releaseTitle, $accessToken, $qt, $releaseRef, $releaseDescription, $releaseReleaseType, $attachIds);
+    $result = $apiInstance->postEnterpriseIdProjectsProjectIdReleases($enterpriseId, $projectId, $releaseTagVersion, $releaseTitle, $accessToken, $qt, $releaseRef, $releaseDescription, $releaseReleaseType, $releaseCreatedAt, $releaseUpdatedAt, $attachIds);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GitDataApi->postEnterpriseIdProjectsProjectIdReleases: ', $e->getMessage(), PHP_EOL;
@@ -1382,6 +1508,8 @@ Name | Type | Description  | Notes
  **releaseRef** | **string**| 发行版所属分支 | [optional] [default to master]
  **releaseDescription** | **string**| 发行版描述 | [optional]
  **releaseReleaseType** | **string**| 发行版类型, 0：发行版、1：预发行版 | [optional]
+ **releaseCreatedAt** | **string**| 发行版创建时间 | [optional]
+ **releaseUpdatedAt** | **string**| 发行版更新时间 | [optional]
  **attachIds** | **string**| 附件id列表，英文逗号分隔 | [optional]
 
 ### Return type
@@ -1450,7 +1578,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putEnterpriseIdProjectsProjectId**
-> \GiteeEnterprise\Model\ProjectBaseSetting putEnterpriseIdProjectsProjectId($enterpriseId, $projectId, $accessToken, $qt, $name, $path, $description, $homepage, $langId, $defaultBranch, $outsourced, $creatorId, $canComment, $issueComment, $issuesEnabled, $securityHoleEnabled, $forkEnabled, $onlineEditEnabled, $pullRequestsEnabled, $wikiEnabled, $lightweightPrEnabled, $prMasterOnly, $forbidForcePush, $importUrl, $forbidForceSync, $svnEnabled, $canReadonly, $programAddIds, $programRemoveIds, $giteeGoEnabled, $programPipelineEnabled, $templateEnabled, $mergeEnabled, $squashEnabled, $rebaseEnabled, $defaultMergeMethod)
+> \GiteeEnterprise\Model\ProjectBaseSetting putEnterpriseIdProjectsProjectId($enterpriseId, $projectId, $projectSyncTimeSettingSyncDay, $projectSyncTimeSettingSyncHour, $projectSyncTimeSettingSyncMinutes, $projectSyncTimeSettingStatus, $syncProjectAccountInfosUserName, $syncProjectAccountInfosPassword, $accessToken, $qt, $name, $path, $description, $homepage, $langId, $defaultBranch, $outsourced, $creatorId, $canComment, $issueComment, $issuesEnabled, $securityHoleEnabled, $forkEnabled, $onlineEditEnabled, $pullRequestsEnabled, $wikiEnabled, $lightweightPrEnabled, $prMasterOnly, $forbidForcePush, $importUrl, $forbidForceSync, $svnEnabled, $canReadonly, $programAddIds, $programRemoveIds, $giteeGoEnabled, $programPipelineEnabled, $templateEnabled, $mergeEnabled, $squashEnabled, $rebaseEnabled, $defaultMergeMethod, $projectSyncTimeSettingSyncWiki, $projectSyncTimeSettingSyncBranchAndTag, $customGitHook, $sizeLimitEnabled, $quotaSize)
 
 更新仓库设置
 
@@ -1468,6 +1596,12 @@ $apiInstance = new GiteeEnterprise\Api\GitDataApi(
 );
 $enterpriseId = 56; // int | 企业id
 $projectId = "projectId_example"; // string | 仓库 id 或 path
+$projectSyncTimeSettingSyncDay = 56; // int | 同步设置天数
+$projectSyncTimeSettingSyncHour = 56; // int | 同步设置小时
+$projectSyncTimeSettingSyncMinutes = 56; // int | 同步设置分钟
+$projectSyncTimeSettingStatus = 56; // int | 状态， 0： 关闭， 1：开启
+$syncProjectAccountInfosUserName = "syncProjectAccountInfosUserName_example"; // string | 账号名称
+$syncProjectAccountInfosPassword = "syncProjectAccountInfosPassword_example"; // string | 密码
 $accessToken = "accessToken_example"; // string | 用户授权码
 $qt = "qt_example"; // string | path类型（查询参数为path）, 空则表示查询参数为id
 $name = "name_example"; // string | 仓库名称
@@ -1502,9 +1636,14 @@ $mergeEnabled = true; // bool | 是否开启 merge 合并方式, 默认为开启
 $squashEnabled = true; // bool | 是否开启 squash 合并方式, 默认为开启
 $rebaseEnabled = true; // bool | 是否开启 rebase 合并方式, 默认为开启
 $defaultMergeMethod = "defaultMergeMethod_example"; // string | 选择默认合并 Pull Request 的方式,分别为 merge squash rebase
+$projectSyncTimeSettingSyncWiki = true; // bool | 是否同步wiki
+$projectSyncTimeSettingSyncBranchAndTag = true; // bool | 是否同步branch 与 tag
+$customGitHook = true; // bool | 是否开启仓库自定义钩子, 默认为开启
+$sizeLimitEnabled = true; // bool | 是否开启仓库大小配额限制，默认不开启
+$quotaSize = 3.4; // float | 仓库大小配额（MB）
 
 try {
-    $result = $apiInstance->putEnterpriseIdProjectsProjectId($enterpriseId, $projectId, $accessToken, $qt, $name, $path, $description, $homepage, $langId, $defaultBranch, $outsourced, $creatorId, $canComment, $issueComment, $issuesEnabled, $securityHoleEnabled, $forkEnabled, $onlineEditEnabled, $pullRequestsEnabled, $wikiEnabled, $lightweightPrEnabled, $prMasterOnly, $forbidForcePush, $importUrl, $forbidForceSync, $svnEnabled, $canReadonly, $programAddIds, $programRemoveIds, $giteeGoEnabled, $programPipelineEnabled, $templateEnabled, $mergeEnabled, $squashEnabled, $rebaseEnabled, $defaultMergeMethod);
+    $result = $apiInstance->putEnterpriseIdProjectsProjectId($enterpriseId, $projectId, $projectSyncTimeSettingSyncDay, $projectSyncTimeSettingSyncHour, $projectSyncTimeSettingSyncMinutes, $projectSyncTimeSettingStatus, $syncProjectAccountInfosUserName, $syncProjectAccountInfosPassword, $accessToken, $qt, $name, $path, $description, $homepage, $langId, $defaultBranch, $outsourced, $creatorId, $canComment, $issueComment, $issuesEnabled, $securityHoleEnabled, $forkEnabled, $onlineEditEnabled, $pullRequestsEnabled, $wikiEnabled, $lightweightPrEnabled, $prMasterOnly, $forbidForcePush, $importUrl, $forbidForceSync, $svnEnabled, $canReadonly, $programAddIds, $programRemoveIds, $giteeGoEnabled, $programPipelineEnabled, $templateEnabled, $mergeEnabled, $squashEnabled, $rebaseEnabled, $defaultMergeMethod, $projectSyncTimeSettingSyncWiki, $projectSyncTimeSettingSyncBranchAndTag, $customGitHook, $sizeLimitEnabled, $quotaSize);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GitDataApi->putEnterpriseIdProjectsProjectId: ', $e->getMessage(), PHP_EOL;
@@ -1518,6 +1657,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **enterpriseId** | **int**| 企业id |
  **projectId** | **string**| 仓库 id 或 path |
+ **projectSyncTimeSettingSyncDay** | **int**| 同步设置天数 |
+ **projectSyncTimeSettingSyncHour** | **int**| 同步设置小时 |
+ **projectSyncTimeSettingSyncMinutes** | **int**| 同步设置分钟 |
+ **projectSyncTimeSettingStatus** | **int**| 状态， 0： 关闭， 1：开启 |
+ **syncProjectAccountInfosUserName** | **string**| 账号名称 |
+ **syncProjectAccountInfosPassword** | **string**| 密码 |
  **accessToken** | **string**| 用户授权码 | [optional]
  **qt** | **string**| path类型（查询参数为path）, 空则表示查询参数为id | [optional]
  **name** | **string**| 仓库名称 | [optional]
@@ -1552,6 +1697,11 @@ Name | Type | Description  | Notes
  **squashEnabled** | **bool**| 是否开启 squash 合并方式, 默认为开启 | [optional]
  **rebaseEnabled** | **bool**| 是否开启 rebase 合并方式, 默认为开启 | [optional]
  **defaultMergeMethod** | **string**| 选择默认合并 Pull Request 的方式,分别为 merge squash rebase | [optional]
+ **projectSyncTimeSettingSyncWiki** | **bool**| 是否同步wiki | [optional]
+ **projectSyncTimeSettingSyncBranchAndTag** | **bool**| 是否同步branch 与 tag | [optional]
+ **customGitHook** | **bool**| 是否开启仓库自定义钩子, 默认为开启 | [optional]
+ **sizeLimitEnabled** | **bool**| 是否开启仓库大小配额限制，默认不开启 | [optional]
+ **quotaSize** | **float**| 仓库大小配额（MB） | [optional]
 
 ### Return type
 
@@ -1569,7 +1719,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putEnterpriseIdProjectsProjectIdReleasesReleaseId**
-> \GiteeEnterprise\Model\Release putEnterpriseIdProjectsProjectIdReleasesReleaseId($enterpriseId, $projectId, $releaseId, $releaseTagVersion, $releaseTitle, $accessToken, $qt, $releaseRef, $releaseDescription, $releaseReleaseType, $attachIds)
+> \GiteeEnterprise\Model\Release putEnterpriseIdProjectsProjectIdReleasesReleaseId($enterpriseId, $projectId, $releaseId, $releaseTagVersion, $releaseTitle, $accessToken, $qt, $releaseRef, $releaseDescription, $releaseReleaseType, $releaseCreatedAt, $releaseUpdatedAt, $attachIds)
 
 编辑发行版
 
@@ -1595,10 +1745,12 @@ $qt = "qt_example"; // string | path类型（查询参数为path）, 空则表�
 $releaseRef = "master"; // string | 发行版所属分支
 $releaseDescription = "releaseDescription_example"; // string | 发行版描述
 $releaseReleaseType = "releaseReleaseType_example"; // string | 发行版类型, 0：发行版、1：预发行版
+$releaseCreatedAt = "releaseCreatedAt_example"; // string | 发行版创建时间
+$releaseUpdatedAt = "releaseUpdatedAt_example"; // string | 发行版更新时间
 $attachIds = "attachIds_example"; // string | 附件id列表，英文逗号分隔
 
 try {
-    $result = $apiInstance->putEnterpriseIdProjectsProjectIdReleasesReleaseId($enterpriseId, $projectId, $releaseId, $releaseTagVersion, $releaseTitle, $accessToken, $qt, $releaseRef, $releaseDescription, $releaseReleaseType, $attachIds);
+    $result = $apiInstance->putEnterpriseIdProjectsProjectIdReleasesReleaseId($enterpriseId, $projectId, $releaseId, $releaseTagVersion, $releaseTitle, $accessToken, $qt, $releaseRef, $releaseDescription, $releaseReleaseType, $releaseCreatedAt, $releaseUpdatedAt, $attachIds);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GitDataApi->putEnterpriseIdProjectsProjectIdReleasesReleaseId: ', $e->getMessage(), PHP_EOL;
@@ -1620,6 +1772,8 @@ Name | Type | Description  | Notes
  **releaseRef** | **string**| 发行版所属分支 | [optional] [default to master]
  **releaseDescription** | **string**| 发行版描述 | [optional]
  **releaseReleaseType** | **string**| 发行版类型, 0：发行版、1：预发行版 | [optional]
+ **releaseCreatedAt** | **string**| 发行版创建时间 | [optional]
+ **releaseUpdatedAt** | **string**| 发行版更新时间 | [optional]
  **attachIds** | **string**| 附件id列表，英文逗号分隔 | [optional]
 
 ### Return type

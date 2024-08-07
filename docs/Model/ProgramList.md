@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **issuesCount** | **int** | 任务总数 | [optional] 
 **closedIssuesCount** | **int** | 已关闭的任务总数 | [optional] 
 **starStatus** | **bool** | 是否被当前用户收藏 | [optional] 
+**issueLatestDeadline** | **string** | 项目中最晚的工作项时间 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

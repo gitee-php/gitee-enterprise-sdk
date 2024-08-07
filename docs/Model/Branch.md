@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **pullRequest** | [**\GiteeEnterprise\Model\PullRequest**](PullRequest.md) | 向默认分支的pr | [optional] 
 **remark** | **string** | 分支备注 | [optional] 
 **owner** | **object** | 分支拥有者信息 | [optional] 
+**authorisations** | **object** | 分支授权成员 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

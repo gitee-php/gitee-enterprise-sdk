@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **isHistoryMember** | **bool** | 是否是已离职成员 | [optional] 
 **outsourced** | **bool** | 是否外包成员 | [optional] 
 **state** | **int** | 状态 | [optional] 
+**score** | **int** | 代表的分数 | [optional] 
+**currentScore** | **int** | 为pr打的分数 | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

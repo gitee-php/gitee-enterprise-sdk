@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** | 标签名称 | [optional] 
 **message** | **string** | 标签信息 | [optional] 
+**messageMarkdown** | **string** | 标签描述的markdown格式 | [optional] 
 **commit** | **object** | 标签对应 commit | [optional] 
 **operating** | **object** | 操作权限 | [optional] 
 

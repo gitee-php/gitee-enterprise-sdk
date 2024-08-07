@@ -11,17 +11,9 @@ PHP 5.5 and later
 ## Installation & Usage
 ### Composer
 
-To install the bindings via [Composer](http://getcomposer.org/), add the following to `composer.json`:
-
+```bash
+composer require gitee-php/gitee-enterprise-sdk
 ```
-{
-  "require": {
-    "gitee-php/gitee-enterprise-sdk": "^1.0"
-  }
-}
-```
-
-Then run `composer install`
 
 ### Manual Installation
 
@@ -104,6 +96,12 @@ Class | Method | HTTP request | Description
 *AdminLogsStatisticApi* | [**getEnterpriseIdLogStatisticsProjectsAccessLog**](docs/Api/AdminLogsStatisticApi.md#getenterpriseidlogstatisticsprojectsaccesslog) | **GET** /{enterprise_id}/log_statistics/projects_access_log | 仓库代码日志
 *AdminLogsStatisticApi* | [**getEnterpriseIdLogStatisticsProjectsLog**](docs/Api/AdminLogsStatisticApi.md#getenterpriseidlogstatisticsprojectslog) | **GET** /{enterprise_id}/log_statistics/projects_log | 仓库管理日志
 *AdminLogsStatisticApi* | [**getEnterpriseIdLogStatisticsSecuritySettingLog**](docs/Api/AdminLogsStatisticApi.md#getenterpriseidlogstatisticssecuritysettinglog) | **GET** /{enterprise_id}/log_statistics/security_setting_log | 安全与告警管理日志
+*AttachFilesApi* | [**deleteEnterpriseIdAttachFilesAttachFileList**](docs/Api/AttachFilesApi.md#deleteenterpriseidattachfilesattachfilelist) | **DELETE** /{enterprise_id}/attach_files/attach_file_list | 删除批量的attach_file
+*AttachFilesApi* | [**postEnterpriseIdAttachFiles**](docs/Api/AttachFilesApi.md#postenterpriseidattachfiles) | **POST** /{enterprise_id}/attach_files | 查看全部附件
+*CheckRunsApi* | [**getEnterpriseIdProjectsProjectIdCheckRunsList**](docs/Api/CheckRunsApi.md#getenterpriseidprojectsprojectidcheckrunslist) | **GET** /{enterprise_id}/projects/{project_id}/check_runs/list | 门禁列表
+*CheckRunsApi* | [**postEnterpriseIdProjectsProjectIdCheckRunsAnnotations**](docs/Api/CheckRunsApi.md#postenterpriseidprojectsprojectidcheckrunsannotations) | **POST** /{enterprise_id}/projects/{project_id}/check_runs/annotations | 门禁详情翻页
+*CheckRunsApi* | [**postEnterpriseIdProjectsProjectIdCheckRunsFixCheckRun**](docs/Api/CheckRunsApi.md#postenterpriseidprojectsprojectidcheckrunsfixcheckrun) | **POST** /{enterprise_id}/projects/{project_id}/check_runs/fix_check_run | 重新执行门禁或fix失败门禁
+*CheckRunsApi* | [**postEnterpriseIdProjectsProjectIdCheckRunsSearch**](docs/Api/CheckRunsApi.md#postenterpriseidprojectsprojectidcheckrunssearch) | **POST** /{enterprise_id}/projects/{project_id}/check_runs/search | 设置门禁检查项查询接口
 *CustomizeIssueApi* | [**getEnterpriseIdCustomizeList**](docs/Api/CustomizeIssueApi.md#getenterpriseidcustomizelist) | **GET** /{enterprise_id}/customize/list | 获取管理界面的字段列表
 *DeployKeyApi* | [**deleteEnterpriseIdDeployKeysDeployKeyIdProjects**](docs/Api/DeployKeyApi.md#deleteenterpriseiddeploykeysdeploykeyidprojects) | **DELETE** /{enterprise_id}/deploy_keys/{deploy_key_id}/projects | 部署公钥移除仓库
 *DeployKeyApi* | [**getEnterpriseIdDeployKeys**](docs/Api/DeployKeyApi.md#getenterpriseiddeploykeys) | **GET** /{enterprise_id}/deploy_keys | 查看企业部署公钥
@@ -121,12 +119,14 @@ Class | Method | HTTP request | Description
 *DocNodesApi* | [**getEnterpriseIdDocNodesDocNodeIdAuth**](docs/Api/DocNodesApi.md#getenterpriseiddocnodesdocnodeidauth) | **GET** /{enterprise_id}/doc_nodes/{doc_node_id}/auth | 查看文件节点的权限
 *DocNodesApi* | [**getEnterpriseIdDocNodesDocNodeIdFileVersions**](docs/Api/DocNodesApi.md#getenterpriseiddocnodesdocnodeidfileversions) | **GET** /{enterprise_id}/doc_nodes/{doc_node_id}/file_versions | 查看历史版本
 *DocNodesApi* | [**getEnterpriseIdDocNodesDocNodeIdOperateAuths**](docs/Api/DocNodesApi.md#getenterpriseiddocnodesdocnodeidoperateauths) | **GET** /{enterprise_id}/doc_nodes/{doc_node_id}/operate_auths | 获取文件节点的权限
+*DocNodesApi* | [**getEnterpriseIdDocNodesFetchBackupFolderProgress**](docs/Api/DocNodesApi.md#getenterpriseiddocnodesfetchbackupfolderprogress) | **GET** /{enterprise_id}/doc_nodes/fetch_backup_folder_progress | 获取当前用户文件夹备份进度
 *DocNodesApi* | [**getEnterpriseIdDocNodesLevel**](docs/Api/DocNodesApi.md#getenterpriseiddocnodeslevel) | **GET** /{enterprise_id}/doc_nodes/level | 获取文件节点列表（层级）
 *DocNodesApi* | [**getEnterpriseIdDocNodesPrograms**](docs/Api/DocNodesApi.md#getenterpriseiddocnodesprograms) | **GET** /{enterprise_id}/doc_nodes/programs | 获取与文档有关的项目
 *DocNodesApi* | [**getEnterpriseIdDocNodesProgramsDirectories**](docs/Api/DocNodesApi.md#getenterpriseiddocnodesprogramsdirectories) | **GET** /{enterprise_id}/doc_nodes/programs_directories | 获取项目类型文件夹
 *DocNodesApi* | [**getEnterpriseIdDocNodesRecent**](docs/Api/DocNodesApi.md#getenterpriseiddocnodesrecent) | **GET** /{enterprise_id}/doc_nodes/recent | 获取最近编辑的文件
 *DocNodesApi* | [**getEnterpriseIdDocNodesRecentDoc**](docs/Api/DocNodesApi.md#getenterpriseiddocnodesrecentdoc) | **GET** /{enterprise_id}/doc_nodes/recent_doc | 获取最近编辑的文档
 *DocNodesApi* | [**getEnterpriseIdDocNodesRecycle**](docs/Api/DocNodesApi.md#getenterpriseiddocnodesrecycle) | **GET** /{enterprise_id}/doc_nodes/recycle | 获取回收站的内容列表
+*DocNodesApi* | [**getEnterpriseIdDocNodesShared**](docs/Api/DocNodesApi.md#getenterpriseiddocnodesshared) | **GET** /{enterprise_id}/doc_nodes/shared | 获取分享给我的文档
 *DocNodesApi* | [**getEnterpriseIdDocNodesTile**](docs/Api/DocNodesApi.md#getenterpriseiddocnodestile) | **GET** /{enterprise_id}/doc_nodes/tile | 获取文件节点列表（平铺）
 *DocNodesApi* | [**postEnterpriseIdDocNodesAttachFile**](docs/Api/DocNodesApi.md#postenterpriseiddocnodesattachfile) | **POST** /{enterprise_id}/doc_nodes/attach_file | 上传附件
 *DocNodesApi* | [**postEnterpriseIdDocNodesBatchRecycle**](docs/Api/DocNodesApi.md#postenterpriseiddocnodesbatchrecycle) | **POST** /{enterprise_id}/doc_nodes/batch_recycle | 批量移除到回收站
@@ -143,7 +143,9 @@ Class | Method | HTTP request | Description
 *DocNodesApi* | [**putEnterpriseIdDocNodesDocNodeIdAuth**](docs/Api/DocNodesApi.md#putenterpriseiddocnodesdocnodeidauth) | **PUT** /{enterprise_id}/doc_nodes/{doc_node_id}/auth | 更新文件节点的权限
 *DocNodesApi* | [**putEnterpriseIdDocNodesDocNodeIdCollection**](docs/Api/DocNodesApi.md#putenterpriseiddocnodesdocnodeidcollection) | **PUT** /{enterprise_id}/doc_nodes/{doc_node_id}/collection | 收藏/取消收藏文件节点
 *DocNodesApi* | [**putEnterpriseIdDocNodesDocNodeIdIsTop**](docs/Api/DocNodesApi.md#putenterpriseiddocnodesdocnodeidistop) | **PUT** /{enterprise_id}/doc_nodes/{doc_node_id}/is_top | 置顶节点
+*DocNodesApi* | [**putEnterpriseIdDocNodesDocNodeIdLock**](docs/Api/DocNodesApi.md#putenterpriseiddocnodesdocnodeidlock) | **PUT** /{enterprise_id}/doc_nodes/{doc_node_id}/lock | 锁定附件
 *DocNodesApi* | [**putEnterpriseIdDocNodesDocNodeIdMove**](docs/Api/DocNodesApi.md#putenterpriseiddocnodesdocnodeidmove) | **PUT** /{enterprise_id}/doc_nodes/{doc_node_id}/move | 移动文件节点
+*DocNodesApi* | [**putEnterpriseIdDocNodesDocNodeIdUnlock**](docs/Api/DocNodesApi.md#putenterpriseiddocnodesdocnodeidunlock) | **PUT** /{enterprise_id}/doc_nodes/{doc_node_id}/unlock | 解锁附件
 *DocsApi* | [**deleteEnterpriseIdDocsDocIdFilesFileId**](docs/Api/DocsApi.md#deleteenterpriseiddocsdocidfilesfileid) | **DELETE** /{enterprise_id}/docs/{doc_id}/files/{file_id} | 删除文件
 *DocsApi* | [**getEnterpriseIdDocsDocIdBackupProgress**](docs/Api/DocsApi.md#getenterpriseiddocsdocidbackupprogress) | **GET** /{enterprise_id}/docs/{doc_id}/backup_progress | 获取文档备份进度
 *DocsApi* | [**getEnterpriseIdDocsDocIdCommit**](docs/Api/DocsApi.md#getenterpriseiddocsdocidcommit) | **GET** /{enterprise_id}/docs/{doc_id}/commit | 获取版本历史详情
@@ -160,6 +162,7 @@ Class | Method | HTTP request | Description
 *EnterpriseRolesApi* | [**deleteEnterpriseIdEnterpriseRolesEnterpriseRoleId**](docs/Api/EnterpriseRolesApi.md#deleteenterpriseidenterpriserolesenterpriseroleid) | **DELETE** /{enterprise_id}/enterprise_roles/{enterprise_role_id} | 删除角色
 *EnterpriseRolesApi* | [**getEnterpriseIdEnterpriseRoles**](docs/Api/EnterpriseRolesApi.md#getenterpriseidenterpriseroles) | **GET** /{enterprise_id}/enterprise_roles | 获取企业角色列表
 *EnterpriseRolesApi* | [**getEnterpriseIdEnterpriseRolesEnterpriseRoleId**](docs/Api/EnterpriseRolesApi.md#getenterpriseidenterpriserolesenterpriseroleid) | **GET** /{enterprise_id}/enterprise_roles/{enterprise_role_id} | 获取企业角色详情
+*EnterpriseRolesApi* | [**getEnterpriseIdEnterpriseRolesExportRolesPermission**](docs/Api/EnterpriseRolesApi.md#getenterpriseidenterpriserolesexportrolespermission) | **GET** /{enterprise_id}/enterprise_roles/export_roles_permission | 导出企业角色
 *EnterpriseRolesApi* | [**postEnterpriseIdEnterpriseRoles**](docs/Api/EnterpriseRolesApi.md#postenterpriseidenterpriseroles) | **POST** /{enterprise_id}/enterprise_roles | 新增企业角色
 *EnterpriseRolesApi* | [**putEnterpriseIdEnterpriseRolesEnterpriseRoleId**](docs/Api/EnterpriseRolesApi.md#putenterpriseidenterpriserolesenterpriseroleid) | **PUT** /{enterprise_id}/enterprise_roles/{enterprise_role_id} | 更新企业角色
 *EnterprisesApi* | [**getEnterpriseId**](docs/Api/EnterprisesApi.md#getenterpriseid) | **GET** /{enterprise_id} | 获取企业基础信息
@@ -183,9 +186,11 @@ Class | Method | HTTP request | Description
 *GitDataApi* | [**getEnterpriseIdProjectsProjectIdOperateAuths**](docs/Api/GitDataApi.md#getenterpriseidprojectsprojectidoperateauths) | **GET** /{enterprise_id}/projects/{project_id}/operate_auths | 获取仓库的操作权限
 *GitDataApi* | [**getEnterpriseIdProjectsProjectIdPrograms**](docs/Api/GitDataApi.md#getenterpriseidprojectsprojectidprograms) | **GET** /{enterprise_id}/projects/{project_id}/programs | 获取仓库的关联项目列表
 *GitDataApi* | [**getEnterpriseIdProjectsProjectIdPullRequests**](docs/Api/GitDataApi.md#getenterpriseidprojectsprojectidpullrequests) | **GET** /{enterprise_id}/projects/{project_id}/pull_requests | 获取仓库的 Pull Request 列表
+*GitDataApi* | [**getEnterpriseIdProjectsProjectIdReleaseDetail**](docs/Api/GitDataApi.md#getenterpriseidprojectsprojectidreleasedetail) | **GET** /{enterprise_id}/projects/{project_id}/release_detail | 查看发行版详情
 *GitDataApi* | [**getEnterpriseIdProjectsProjectIdReleases**](docs/Api/GitDataApi.md#getenterpriseidprojectsprojectidreleases) | **GET** /{enterprise_id}/projects/{project_id}/releases | 查看发行版列表
-*GitDataApi* | [**getEnterpriseIdProjectsProjectIdReleasesTagVersion**](docs/Api/GitDataApi.md#getenterpriseidprojectsprojectidreleasestagversion) | **GET** /{enterprise_id}/projects/{project_id}/releases/{tag_version} | 查看发行版详情
+*GitDataApi* | [**getEnterpriseIdProjectsProjectIdReleasesTagVersion**](docs/Api/GitDataApi.md#getenterpriseidprojectsprojectidreleasestagversion) | **GET** /{enterprise_id}/projects/{project_id}/releases/{tag_version} | 查看发行版详情（Deprecated）
 *GitDataApi* | [**getEnterpriseIdProjectsProjectIdSettings**](docs/Api/GitDataApi.md#getenterpriseidprojectsprojectidsettings) | **GET** /{enterprise_id}/projects/{project_id}/settings | 获取仓库基本设置
+*GitDataApi* | [**getEnterpriseIdProjectsProjectIdSummary**](docs/Api/GitDataApi.md#getenterpriseidprojectsprojectidsummary) | **GET** /{enterprise_id}/projects/{project_id}/summary | 获取仓库的概览数据
 *GitDataApi* | [**getEnterpriseIdProjectsProjectIdUsers**](docs/Api/GitDataApi.md#getenterpriseidprojectsprojectidusers) | **GET** /{enterprise_id}/projects/{project_id}/users | 获取仓库的成员列表
 *GitDataApi* | [**postEnterpriseIdProjects**](docs/Api/GitDataApi.md#postenterpriseidprojects) | **POST** /{enterprise_id}/projects | 新建仓库
 *GitDataApi* | [**postEnterpriseIdProjectsCheckProjectCanImport**](docs/Api/GitDataApi.md#postenterpriseidprojectscheckprojectcanimport) | **POST** /{enterprise_id}/projects/check_project_can_import | 新建仓库-导入仓库参数是否有效
@@ -198,10 +203,14 @@ Class | Method | HTTP request | Description
 *GroupsApi* | [**deleteEnterpriseIdGroupsGroupIdMembers**](docs/Api/GroupsApi.md#deleteenterpriseidgroupsgroupidmembers) | **DELETE** /{enterprise_id}/groups/{group_id}/members | 移除团队成员
 *GroupsApi* | [**getEnterpriseIdGroups**](docs/Api/GroupsApi.md#getenterpriseidgroups) | **GET** /{enterprise_id}/groups | 获取企业团队列表
 *GroupsApi* | [**getEnterpriseIdGroupsGroupId**](docs/Api/GroupsApi.md#getenterpriseidgroupsgroupid) | **GET** /{enterprise_id}/groups/{group_id} | 获取团队详情
+*GroupsApi* | [**getEnterpriseIdGroupsGroupIdComplement**](docs/Api/GroupsApi.md#getenterpriseidgroupsgroupidcomplement) | **GET** /{enterprise_id}/groups/{group_id}/complement | 获取某一仓库不在本组织的仓库成员列表
+*GroupsApi* | [**getEnterpriseIdGroupsGroupIdGroupMembers**](docs/Api/GroupsApi.md#getenterpriseidgroupsgroupidgroupmembers) | **GET** /{enterprise_id}/groups/{group_id}/group_members | 获取团队成员列表（根组形式）
 *GroupsApi* | [**getEnterpriseIdGroupsGroupIdMembers**](docs/Api/GroupsApi.md#getenterpriseidgroupsgroupidmembers) | **GET** /{enterprise_id}/groups/{group_id}/members | 获取企业团队下的成员列表
 *GroupsApi* | [**getEnterpriseIdGroupsGroupIdProjects**](docs/Api/GroupsApi.md#getenterpriseidgroupsgroupidprojects) | **GET** /{enterprise_id}/groups/{group_id}/projects | 企业团队下仓库列表
 *GroupsApi* | [**postEnterpriseIdGroups**](docs/Api/GroupsApi.md#postenterpriseidgroups) | **POST** /{enterprise_id}/groups | 新建企业团队
+*GroupsApi* | [**postEnterpriseIdGroupsGroupIdMembers**](docs/Api/GroupsApi.md#postenterpriseidgroupsgroupidmembers) | **POST** /{enterprise_id}/groups/{group_id}/members | 添加团队成员
 *GroupsApi* | [**putEnterpriseIdGroupsGroupId**](docs/Api/GroupsApi.md#putenterpriseidgroupsgroupid) | **PUT** /{enterprise_id}/groups/{group_id} | 更新企业团队
+*GroupsApi* | [**putEnterpriseIdGroupsGroupIdMembersAccessLevel**](docs/Api/GroupsApi.md#putenterpriseidgroupsgroupidmembersaccesslevel) | **PUT** /{enterprise_id}/groups/{group_id}/members/access_level | 变更团队成员角色
 *IssueStatesApi* | [**deleteEnterpriseIdIssueStatesIssueStateId**](docs/Api/IssueStatesApi.md#deleteenterpriseidissuestatesissuestateid) | **DELETE** /{enterprise_id}/issue_states/{issue_state_id} | 删除任务状态
 *IssueStatesApi* | [**getEnterpriseIdIssueStates**](docs/Api/IssueStatesApi.md#getenterpriseidissuestates) | **GET** /{enterprise_id}/issue_states | 获取任务状态列表
 *IssueStatesApi* | [**getEnterpriseIdIssueStatesIssueStateId**](docs/Api/IssueStatesApi.md#getenterpriseidissuestatesissuestateid) | **GET** /{enterprise_id}/issue_states/{issue_state_id} | 任务状态详情
@@ -239,21 +248,25 @@ Class | Method | HTTP request | Description
 *IssuesApi* | [**deleteEnterpriseIdIssuesIssueIdRelatedIssueLinkIssueId**](docs/Api/IssuesApi.md#deleteenterpriseidissuesissueidrelatedissuelinkissueid) | **DELETE** /{enterprise_id}/issues/{issue_id}/related_issue/{link_issue_id} | 移除任务的关联关系
 *IssuesApi* | [**deleteEnterpriseIdIssuesIssueIdStar**](docs/Api/IssuesApi.md#deleteenterpriseidissuesissueidstar) | **DELETE** /{enterprise_id}/issues/{issue_id}/star | 取消星标任务
 *IssuesApi* | [**getEnterpriseIdIssues**](docs/Api/IssuesApi.md#getenterpriseidissues) | **GET** /{enterprise_id}/issues | 获取任务列表
+*IssuesApi* | [**getEnterpriseIdIssuesAttachFileIssues**](docs/Api/IssuesApi.md#getenterpriseidissuesattachfileissues) | **GET** /{enterprise_id}/issues/attach_file_issues | 显示全部有附件的issue
 *IssuesApi* | [**getEnterpriseIdIssuesBoardMembers**](docs/Api/IssuesApi.md#getenterpriseidissuesboardmembers) | **GET** /{enterprise_id}/issues/board_members | 获取成员看板的成员列表
 *IssuesApi* | [**getEnterpriseIdIssuesIssueId**](docs/Api/IssuesApi.md#getenterpriseidissuesissueid) | **GET** /{enterprise_id}/issues/{issue_id} | 获取任务详情
 *IssuesApi* | [**getEnterpriseIdIssuesIssueIdAttachFiles**](docs/Api/IssuesApi.md#getenterpriseidissuesissueidattachfiles) | **GET** /{enterprise_id}/issues/{issue_id}/attach_files | 获取任务附件
 *IssuesApi* | [**getEnterpriseIdIssuesIssueIdAuths**](docs/Api/IssuesApi.md#getenterpriseidissuesissueidauths) | **GET** /{enterprise_id}/issues/{issue_id}/auths | 获取授权用户对任务的权限
+*IssuesApi* | [**getEnterpriseIdIssuesIssueIdIssueScheduleUpdateCheck**](docs/Api/IssuesApi.md#getenterpriseidissuesissueidissuescheduleupdatecheck) | **GET** /{enterprise_id}/issues/{issue_id}/issue_schedule_update_check | 查询当前工作项的排期是否可以更新
 *IssuesApi* | [**getEnterpriseIdIssuesIssueIdIssueStates**](docs/Api/IssuesApi.md#getenterpriseidissuesissueidissuestates) | **GET** /{enterprise_id}/issues/{issue_id}/issue_states | 获取当前任务可流转的下一状态
 *IssuesApi* | [**getEnterpriseIdIssuesIssueIdLinkIssues**](docs/Api/IssuesApi.md#getenterpriseidissuesissueidlinkissues) | **GET** /{enterprise_id}/issues/{issue_id}/link_issues | 获取任务的关联任务
 *IssuesApi* | [**getEnterpriseIdIssuesIssueIdLinkPullRequest**](docs/Api/IssuesApi.md#getenterpriseidissuesissueidlinkpullrequest) | **GET** /{enterprise_id}/issues/{issue_id}/link_pull_request | 获取任务关联的 Pull Request
 *IssuesApi* | [**getEnterpriseIdIssuesIssueIdNotes**](docs/Api/IssuesApi.md#getenterpriseidissuesissueidnotes) | **GET** /{enterprise_id}/issues/{issue_id}/notes | 获取任务下的评论列表
 *IssuesApi* | [**getEnterpriseIdIssuesIssueIdOperateLogs**](docs/Api/IssuesApi.md#getenterpriseidissuesissueidoperatelogs) | **GET** /{enterprise_id}/issues/{issue_id}/operate_logs | 获取任务的操作日志列表
+*IssuesApi* | [**getEnterpriseIdIssuesIssueIdProgramGanttIssues**](docs/Api/IssuesApi.md#getenterpriseidissuesissueidprogramganttissues) | **GET** /{enterprise_id}/issues/{issue_id}/program_gantt_issues | 查询指定工作项所在项目的工作项列表
 *IssuesApi* | [**getEnterpriseIdIssuesIssueStats**](docs/Api/IssuesApi.md#getenterpriseidissuesissuestats) | **GET** /{enterprise_id}/issues/issue_stats | 获取企业下用户任务相关数量数据
 *IssuesApi* | [**getEnterpriseIdIssuesLinkIssues**](docs/Api/IssuesApi.md#getenterpriseidissueslinkissues) | **GET** /{enterprise_id}/issues/link_issues | 可选的关联任务集
 *IssuesApi* | [**getEnterpriseIdIssuesMemberSelect**](docs/Api/IssuesApi.md#getenterpriseidissuesmemberselect) | **GET** /{enterprise_id}/issues/member_select | 获取任务指派的成员列表
 *IssuesApi* | [**postEnterpriseIdIssues**](docs/Api/IssuesApi.md#postenterpriseidissues) | **POST** /{enterprise_id}/issues | 新建任务
 *IssuesApi* | [**postEnterpriseIdIssuesFilter**](docs/Api/IssuesApi.md#postenterpriseidissuesfilter) | **POST** /{enterprise_id}/issues/filter | 获取任务列表-筛选器查询
 *IssuesApi* | [**postEnterpriseIdIssuesIssueIdLinkPullRequestPullRequestId**](docs/Api/IssuesApi.md#postenterpriseidissuesissueidlinkpullrequestpullrequestid) | **POST** /{enterprise_id}/issues/{issue_id}/link_pull_request/{pull_request_id} | 任务关联 Pull Request
+*IssuesApi* | [**postEnterpriseIdIssuesIssueIdMultiLinkIssues**](docs/Api/IssuesApi.md#postenterpriseidissuesissueidmultilinkissues) | **POST** /{enterprise_id}/issues/{issue_id}/multi_link_issues | 给指定工作项批量更新关联工作项
 *IssuesApi* | [**postEnterpriseIdIssuesIssueIdNotes**](docs/Api/IssuesApi.md#postenterpriseidissuesissueidnotes) | **POST** /{enterprise_id}/issues/{issue_id}/notes | 评论任务
 *IssuesApi* | [**postEnterpriseIdIssuesIssueIdReaction**](docs/Api/IssuesApi.md#postenterpriseidissuesissueidreaction) | **POST** /{enterprise_id}/issues/{issue_id}/reaction | 新增任务表态
 *IssuesApi* | [**postEnterpriseIdIssuesIssueIdRelatedIssue**](docs/Api/IssuesApi.md#postenterpriseidissuesissueidrelatedissue) | **POST** /{enterprise_id}/issues/{issue_id}/related_issue | 为指定任务添加关联任务
@@ -345,7 +358,9 @@ Class | Method | HTTP request | Description
 *ProjectCommitsApi* | [**getEnterpriseIdProjectsProjectIdCommitCommitIdDiffForPath**](docs/Api/ProjectCommitsApi.md#getenterpriseidprojectsprojectidcommitcommitiddiffforpath) | **GET** /{enterprise_id}/projects/{project_id}/commit/{commit_id}/diff_for_path | 获取 commit 详情中差异较大的文件内容
 *ProjectCommitsApi* | [**getEnterpriseIdProjectsProjectIdCommitCommitIdNotes**](docs/Api/ProjectCommitsApi.md#getenterpriseidprojectsprojectidcommitcommitidnotes) | **GET** /{enterprise_id}/projects/{project_id}/commit/{commit_id}/notes | Commit 评论列表
 *ProjectCommitsApi* | [**getEnterpriseIdProjectsProjectIdCommitCommitIdNotesTrees**](docs/Api/ProjectCommitsApi.md#getenterpriseidprojectsprojectidcommitcommitidnotestrees) | **GET** /{enterprise_id}/projects/{project_id}/commit/{commit_id}/notes/trees | Commit 评论列表树
+*ProjectCommitsApi* | [**getEnterpriseIdProjectsProjectIdCommitCommitIdPullRequests**](docs/Api/ProjectCommitsApi.md#getenterpriseidprojectsprojectidcommitcommitidpullrequests) | **GET** /{enterprise_id}/projects/{project_id}/commit/{commit_id}/pull_requests | commit的相关的pull request列表
 *ProjectCommitsApi* | [**getEnterpriseIdProjectsProjectIdCommitsRef**](docs/Api/ProjectCommitsApi.md#getenterpriseidprojectsprojectidcommitsref) | **GET** /{enterprise_id}/projects/{project_id}/commits/{ref} | commits列表
+*ProjectCommitsApi* | [**getEnterpriseIdProjectsProjectIdCompareDiffForPath**](docs/Api/ProjectCommitsApi.md#getenterpriseidprojectsprojectidcomparediffforpath) | **GET** /{enterprise_id}/projects/{project_id}/compare/diff_for_path | 获取 commit 对比中差异较大的文件内容
 *ProjectCommitsApi* | [**getEnterpriseIdProjectsProjectIdCompareFromTo**](docs/Api/ProjectCommitsApi.md#getenterpriseidprojectsprojectidcomparefromto) | **GET** /{enterprise_id}/projects/{project_id}/compare/{from}...{to} | 对比commit
 *ProjectCommitsApi* | [**postEnterpriseIdProjectsProjectIdCommitCommitIdNotes**](docs/Api/ProjectCommitsApi.md#postenterpriseidprojectsprojectidcommitcommitidnotes) | **POST** /{enterprise_id}/projects/{project_id}/commit/{commit_id}/notes | 评论 Commit
 *ProjectCommitsApi* | [**postEnterpriseIdProjectsProjectIdCommitCommitIdNotesTrees**](docs/Api/ProjectCommitsApi.md#postenterpriseidprojectsprojectidcommitcommitidnotestrees) | **POST** /{enterprise_id}/projects/{project_id}/commit/{commit_id}/notes/trees | 评论、回复 Commit
@@ -354,6 +369,19 @@ Class | Method | HTTP request | Description
 *ProjectEnvApi* | [**getEnterpriseIdProjectsProjectIdEnvVariables**](docs/Api/ProjectEnvApi.md#getenterpriseidprojectsprojectidenvvariables) | **GET** /{enterprise_id}/projects/{project_id}/env_variables | 环境变量列表
 *ProjectEnvApi* | [**postEnterpriseIdProjectsProjectIdEnvVariables**](docs/Api/ProjectEnvApi.md#postenterpriseidprojectsprojectidenvvariables) | **POST** /{enterprise_id}/projects/{project_id}/env_variables | 新建环境变量
 *ProjectEnvApi* | [**putEnterpriseIdProjectsProjectIdEnvVariablesEnvVariableId**](docs/Api/ProjectEnvApi.md#putenterpriseidprojectsprojectidenvvariablesenvvariableid) | **PUT** /{enterprise_id}/projects/{project_id}/env_variables/{env_variable_id} | 修改环境变量
+*ProjectGroupsApi* | [**deleteEnterpriseIdProjectGroupsProjectGroupId**](docs/Api/ProjectGroupsApi.md#deleteenterpriseidprojectgroupsprojectgroupid) | **DELETE** /{enterprise_id}/project_groups/{project_group_id} | 删除仓库组（包括子仓库组、仓库，两步验证）
+*ProjectGroupsApi* | [**deleteEnterpriseIdProjectGroupsProjectGroupIdMembersMemberId**](docs/Api/ProjectGroupsApi.md#deleteenterpriseidprojectgroupsprojectgroupidmembersmemberid) | **DELETE** /{enterprise_id}/project_groups/{project_group_id}/members/{member_id} | 移除仓库组成员
+*ProjectGroupsApi* | [**getEnterpriseIdProjectGroups**](docs/Api/ProjectGroupsApi.md#getenterpriseidprojectgroups) | **GET** /{enterprise_id}/project_groups | 获取仓库组列表
+*ProjectGroupsApi* | [**getEnterpriseIdProjectGroupsProjectGroupIdDeleteInfo**](docs/Api/ProjectGroupsApi.md#getenterpriseidprojectgroupsprojectgroupiddeleteinfo) | **GET** /{enterprise_id}/project_groups/{project_group_id}/delete_info | 仓库组删除前的确认数据
+*ProjectGroupsApi* | [**getEnterpriseIdProjectGroupsProjectGroupIdMembers**](docs/Api/ProjectGroupsApi.md#getenterpriseidprojectgroupsprojectgroupidmembers) | **GET** /{enterprise_id}/project_groups/{project_group_id}/members | 仓库组成员列表
+*ProjectGroupsApi* | [**getEnterpriseIdProjectGroupsProjectGroupIdMembersComplement**](docs/Api/ProjectGroupsApi.md#getenterpriseidprojectgroupsprojectgroupidmemberscomplement) | **GET** /{enterprise_id}/project_groups/{project_group_id}/members/complement | 获取同一企业某个仓库不在本仓库组的成员列表
+*ProjectGroupsApi* | [**getEnterpriseIdProjectGroupsProjectGroupIdOperateAuths**](docs/Api/ProjectGroupsApi.md#getenterpriseidprojectgroupsprojectgroupidoperateauths) | **GET** /{enterprise_id}/project_groups/{project_group_id}/operate_auths | 获取仓库组的操作权限
+*ProjectGroupsApi* | [**postEnterpriseIdProjectGroups**](docs/Api/ProjectGroupsApi.md#postenterpriseidprojectgroups) | **POST** /{enterprise_id}/project_groups | 新建仓库组
+*ProjectGroupsApi* | [**postEnterpriseIdProjectGroupsProjectGroupIdMembers**](docs/Api/ProjectGroupsApi.md#postenterpriseidprojectgroupsprojectgroupidmembers) | **POST** /{enterprise_id}/project_groups/{project_group_id}/members | 添加仓库组成员
+*ProjectGroupsApi* | [**putEnterpriseIdProjectGroupsProjectGroupId**](docs/Api/ProjectGroupsApi.md#putenterpriseidprojectgroupsprojectgroupid) | **PUT** /{enterprise_id}/project_groups/{project_group_id} | 更新仓库组
+*ProjectGroupsApi* | [**putEnterpriseIdProjectGroupsProjectGroupIdChangeParent**](docs/Api/ProjectGroupsApi.md#putenterpriseidprojectgroupsprojectgroupidchangeparent) | **PUT** /{enterprise_id}/project_groups/{project_group_id}/change_parent | 转移仓库组（需要二次验证）
+*ProjectGroupsApi* | [**putEnterpriseIdProjectGroupsProjectGroupIdChangePath**](docs/Api/ProjectGroupsApi.md#putenterpriseidprojectgroupsprojectgroupidchangepath) | **PUT** /{enterprise_id}/project_groups/{project_group_id}/change_path | 修改仓库组路径（需要二次验证）
+*ProjectGroupsApi* | [**putEnterpriseIdProjectGroupsProjectGroupIdMembersMemberId**](docs/Api/ProjectGroupsApi.md#putenterpriseidprojectgroupsprojectgroupidmembersmemberid) | **PUT** /{enterprise_id}/project_groups/{project_group_id}/members/{member_id} | 修改仓库组成员信息
 *ProjectMembersApi* | [**deleteEnterpriseIdProjectsProjectIdAuthGroups**](docs/Api/ProjectMembersApi.md#deleteenterpriseidprojectsprojectidauthgroups) | **DELETE** /{enterprise_id}/projects/{project_id}/auth_groups | 撤销团队授权
 *ProjectMembersApi* | [**deleteEnterpriseIdProjectsProjectIdMembersApplyApplyId**](docs/Api/ProjectMembersApi.md#deleteenterpriseidprojectsprojectidmembersapplyapplyid) | **DELETE** /{enterprise_id}/projects/{project_id}/members/apply/{apply_id} | 删除仓库成员申请
 *ProjectMembersApi* | [**deleteEnterpriseIdProjectsProjectIdMembersMemberId**](docs/Api/ProjectMembersApi.md#deleteenterpriseidprojectsprojectidmembersmemberid) | **DELETE** /{enterprise_id}/projects/{project_id}/members/{member_id} | 移除仓库成员
@@ -366,6 +394,8 @@ Class | Method | HTTP request | Description
 *ProjectMembersApi* | [**postEnterpriseIdProjectsProjectIdMembers**](docs/Api/ProjectMembersApi.md#postenterpriseidprojectsprojectidmembers) | **POST** /{enterprise_id}/projects/{project_id}/members | 添加仓库成员
 *ProjectMembersApi* | [**putEnterpriseIdProjectsProjectIdAuthGroups**](docs/Api/ProjectMembersApi.md#putenterpriseidprojectsprojectidauthgroups) | **PUT** /{enterprise_id}/projects/{project_id}/auth_groups | 调整团队授权
 *ProjectMembersApi* | [**putEnterpriseIdProjectsProjectIdMembersMemberId**](docs/Api/ProjectMembersApi.md#putenterpriseidprojectsprojectidmembersmemberid) | **PUT** /{enterprise_id}/projects/{project_id}/members/{member_id} | 修改仓库成员权限
+*ProjectPushConfigApi* | [**getEnterpriseIdProjectsProjectIdPushConfig**](docs/Api/ProjectPushConfigApi.md#getenterpriseidprojectsprojectidpushconfig) | **GET** /{enterprise_id}/projects/{project_id}/push_config | 查看推送规则详情
+*ProjectPushConfigApi* | [**postEnterpriseIdProjectsProjectIdPushConfigValidate**](docs/Api/ProjectPushConfigApi.md#postenterpriseidprojectsprojectidpushconfigvalidate) | **POST** /{enterprise_id}/projects/{project_id}/push_config/validate | 验证commit信息样式，并返回一个合理的样式
 *ProjectTagsApi* | [**deleteEnterpriseIdProjectsProjectIdTagsDestroy**](docs/Api/ProjectTagsApi.md#deleteenterpriseidprojectsprojectidtagsdestroy) | **DELETE** /{enterprise_id}/projects/{project_id}/tags/destroy | 删除标签
 *ProjectTagsApi* | [**getEnterpriseIdProjectsProjectIdTags**](docs/Api/ProjectTagsApi.md#getenterpriseidprojectsprojectidtags) | **GET** /{enterprise_id}/projects/{project_id}/tags | 获取仓库的标签列表
 *ProjectTagsApi* | [**postEnterpriseIdProjectsProjectIdTags**](docs/Api/ProjectTagsApi.md#postenterpriseidprojectsprojectidtags) | **POST** /{enterprise_id}/projects/{project_id}/tags | 新建标签
@@ -396,7 +426,7 @@ Class | Method | HTTP request | Description
 *PullRequestsApi* | [**postEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdNotes**](docs/Api/PullRequestsApi.md#postenterpriseidprojectsprojectidpullrequestspullrequestidnotes) | **POST** /{enterprise_id}/projects/{project_id}/pull_requests/{pull_request_id}/notes | 评论 Pull Request
 *PullRequestsApi* | [**postEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdReactions**](docs/Api/PullRequestsApi.md#postenterpriseidprojectsprojectidpullrequestspullrequestidreactions) | **POST** /{enterprise_id}/projects/{project_id}/pull_requests/{pull_request_id}/reactions | 新增PR表态
 *PullRequestsApi* | [**putEnterpriseIdProjectsProjectIdPullRequestsPullRequestId**](docs/Api/PullRequestsApi.md#putenterpriseidprojectsprojectidpullrequestspullrequestid) | **PUT** /{enterprise_id}/projects/{project_id}/pull_requests/{pull_request_id} | 更新 Pull Request
-*PullRequestsApi* | [**putEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdAssign**](docs/Api/PullRequestsApi.md#putenterpriseidprojectsprojectidpullrequestspullrequestidassign) | **PUT** /{enterprise_id}/projects/{project_id}/pull_requests/{pull_request_id}/assign | PR 审查通过
+*PullRequestsApi* | [**putEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdAssign**](docs/Api/PullRequestsApi.md#putenterpriseidprojectsprojectidpullrequestspullrequestidassign) | **PUT** /{enterprise_id}/projects/{project_id}/pull_requests/{pull_request_id}/assign | 审查 PR
 *PullRequestsApi* | [**putEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdDraft**](docs/Api/PullRequestsApi.md#putenterpriseidprojectsprojectidpullrequestspullrequestiddraft) | **PUT** /{enterprise_id}/projects/{project_id}/pull_requests/{pull_request_id}/draft | PR 标记与取消草稿
 *PullRequestsApi* | [**putEnterpriseIdProjectsProjectIdPullRequestsPullRequestIdTest**](docs/Api/PullRequestsApi.md#putenterpriseidprojectsprojectidpullrequestspullrequestidtest) | **PUT** /{enterprise_id}/projects/{project_id}/pull_requests/{pull_request_id}/test | PR 测试通过
 *ReactionApi* | [**deleteEnterpriseIdReactionsReactionId**](docs/Api/ReactionApi.md#deleteenterpriseidreactionsreactionid) | **DELETE** /{enterprise_id}/reactions/{reaction_id} | 删除表态
@@ -430,15 +460,24 @@ Class | Method | HTTP request | Description
 *WeekReportsApi* | [**putEnterpriseIdWeekReportsTemplatesTemplateId**](docs/Api/WeekReportsApi.md#putenterpriseidweekreportstemplatestemplateid) | **PUT** /{enterprise_id}/week_reports/templates/{template_id} | 编辑周报模版
 *WeekReportsApi* | [**putEnterpriseIdWeekReportsUsernameYearWeekIndex**](docs/Api/WeekReportsApi.md#putenterpriseidweekreportsusernameyearweekindex) | **PUT** /{enterprise_id}/week_reports/{username}/{year}/{week_index} | 新建/编辑周报
 *WorkflowApi* | [**getEnterpriseIdWorkflowList**](docs/Api/WorkflowApi.md#getenterpriseidworkflowlist) | **GET** /{enterprise_id}/workflow/list | 获取任务类型的工作流列表
-*WorkloadsApi* | [**getEnterpriseIdWorkloads**](docs/Api/WorkloadsApi.md#getenterpriseidworkloads) | **GET** /{enterprise_id}/workloads | 查询成员工时明细
+*WorkloadsApi* | [**getEnterpriseIdWorkloads**](docs/Api/WorkloadsApi.md#getenterpriseidworkloads) | **GET** /{enterprise_id}/workloads | 查询成员工时明细（Deprecated）
+*WorkloadsApi* | [**getEnterpriseIdWorkloadsV2**](docs/Api/WorkloadsApi.md#getenterpriseidworkloadsv2) | **GET** /{enterprise_id}/workloads/v2 | 查询成员工时明细
 
 
 ## Documentation For Models
 
+ - [Annotation](docs/Model/Annotation.md)
+ - [Annotations](docs/Model/Annotations.md)
  - [AttachFile](docs/Model/AttachFile.md)
+ - [AttachFileIssue](docs/Model/AttachFileIssue.md)
  - [Branch](docs/Model/Branch.md)
  - [BulkResponseWithKey](docs/Model/BulkResponseWithKey.md)
+ - [CheckRun](docs/Model/CheckRun.md)
+ - [CheckRunOutOut](docs/Model/CheckRunOutOut.md)
+ - [CheckRunSummary](docs/Model/CheckRunSummary.md)
+ - [CheckRuns](docs/Model/CheckRuns.md)
  - [CherryPick](docs/Model/CherryPick.md)
+ - [Commit](docs/Model/Commit.md)
  - [CommitBase](docs/Model/CommitBase.md)
  - [CommitBranch](docs/Model/CommitBranch.md)
  - [CommitCompare](docs/Model/CommitCompare.md)
@@ -479,13 +518,18 @@ Class | Method | HTTP request | Description
  - [FileVersion](docs/Model/FileVersion.md)
  - [GiteegoPipeline](docs/Model/GiteegoPipeline.md)
  - [Group](docs/Model/Group.md)
+ - [GroupDetail](docs/Model/GroupDetail.md)
  - [GroupManageLog](docs/Model/GroupManageLog.md)
+ - [GroupMember](docs/Model/GroupMember.md)
  - [GroupWithAuth](docs/Model/GroupWithAuth.md)
+ - [InviteGroupMember](docs/Model/InviteGroupMember.md)
+ - [InviteProjectGroupMember](docs/Model/InviteProjectGroupMember.md)
  - [Issue](docs/Model/Issue.md)
  - [IssueAuth](docs/Model/IssueAuth.md)
  - [IssueDetail](docs/Model/IssueDetail.md)
  - [IssueDetailWithRelatedInfos](docs/Model/IssueDetailWithRelatedInfos.md)
  - [IssueField](docs/Model/IssueField.md)
+ - [IssueGantt](docs/Model/IssueGantt.md)
  - [IssueMain](docs/Model/IssueMain.md)
  - [IssueMemberSelect](docs/Model/IssueMemberSelect.md)
  - [IssueNote](docs/Model/IssueNote.md)
@@ -537,12 +581,19 @@ Class | Method | HTTP request | Description
  - [ProjectGroup](docs/Model/ProjectGroup.md)
  - [ProjectGroupDetail](docs/Model/ProjectGroupDetail.md)
  - [ProjectGroupManageLog](docs/Model/ProjectGroupManageLog.md)
+ - [ProjectGroupMember](docs/Model/ProjectGroupMember.md)
+ - [ProjectGroupOperateAuths](docs/Model/ProjectGroupOperateAuths.md)
+ - [ProjectGroupRoot](docs/Model/ProjectGroupRoot.md)
  - [ProjectManageLog](docs/Model/ProjectManageLog.md)
  - [ProjectMember](docs/Model/ProjectMember.md)
  - [ProjectMemberAdd](docs/Model/ProjectMemberAdd.md)
+ - [ProjectMemberList](docs/Model/ProjectMemberList.md)
  - [ProjectMemberOverview](docs/Model/ProjectMemberOverview.md)
  - [ProjectOverview](docs/Model/ProjectOverview.md)
+ - [ProjectPushConfig](docs/Model/ProjectPushConfig.md)
  - [ProjectRole](docs/Model/ProjectRole.md)
+ - [ProjectSummary](docs/Model/ProjectSummary.md)
+ - [ProjectSyncSetting](docs/Model/ProjectSyncSetting.md)
  - [ProjectTagBase](docs/Model/ProjectTagBase.md)
  - [ProjectWithAuth](docs/Model/ProjectWithAuth.md)
  - [ProjectsList](docs/Model/ProjectsList.md)
@@ -552,9 +603,12 @@ Class | Method | HTTP request | Description
  - [PullRequestFiles](docs/Model/PullRequestFiles.md)
  - [PullRequestNote](docs/Model/PullRequestNote.md)
  - [PullRequestNoteTree](docs/Model/PullRequestNoteTree.md)
+ - [PullRuns](docs/Model/PullRuns.md)
  - [Reaction](docs/Model/Reaction.md)
  - [Release](docs/Model/Release.md)
  - [ResultResponse](docs/Model/ResultResponse.md)
+ - [RevertedPullRequest](docs/Model/RevertedPullRequest.md)
+ - [RootGroupMember](docs/Model/RootGroupMember.md)
  - [ScrumDocNode](docs/Model/ScrumDocNode.md)
  - [ScrumSprint](docs/Model/ScrumSprint.md)
  - [ScrumStage](docs/Model/ScrumStage.md)
@@ -579,4 +633,5 @@ Class | Method | HTTP request | Description
  - [WikiInfo](docs/Model/WikiInfo.md)
  - [WikiSort](docs/Model/WikiSort.md)
  - [WikiSortDetail](docs/Model/WikiSortDetail.md)
+ - [WithAttachFiles](docs/Model/WithAttachFiles.md)
  - [WithWorkload](docs/Model/WithWorkload.md)

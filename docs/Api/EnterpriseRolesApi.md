@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**deleteEnterpriseIdEnterpriseRolesEnterpriseRoleId**](EnterpriseRolesApi.md#deleteEnterpriseIdEnterpriseRolesEnterpriseRoleId) | **DELETE** /{enterprise_id}/enterprise_roles/{enterprise_role_id} | 删除角色
 [**getEnterpriseIdEnterpriseRoles**](EnterpriseRolesApi.md#getEnterpriseIdEnterpriseRoles) | **GET** /{enterprise_id}/enterprise_roles | 获取企业角色列表
 [**getEnterpriseIdEnterpriseRolesEnterpriseRoleId**](EnterpriseRolesApi.md#getEnterpriseIdEnterpriseRolesEnterpriseRoleId) | **GET** /{enterprise_id}/enterprise_roles/{enterprise_role_id} | 获取企业角色详情
+[**getEnterpriseIdEnterpriseRolesExportRolesPermission**](EnterpriseRolesApi.md#getEnterpriseIdEnterpriseRolesExportRolesPermission) | **GET** /{enterprise_id}/enterprise_roles/export_roles_permission | 导出企业角色
 [**postEnterpriseIdEnterpriseRoles**](EnterpriseRolesApi.md#postEnterpriseIdEnterpriseRoles) | **POST** /{enterprise_id}/enterprise_roles | 新增企业角色
 [**putEnterpriseIdEnterpriseRolesEnterpriseRoleId**](EnterpriseRolesApi.md#putEnterpriseIdEnterpriseRolesEnterpriseRoleId) | **PUT** /{enterprise_id}/enterprise_roles/{enterprise_role_id} | 更新企业角色
 
@@ -167,6 +168,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\GiteeEnterprise\Model\EnterpriseRoleDetail[]**](../Model/EnterpriseRoleDetail.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getEnterpriseIdEnterpriseRolesExportRolesPermission**
+> getEnterpriseIdEnterpriseRolesExportRolesPermission($enterpriseId, $accessToken)
+
+导出企业角色
+
+导出企业角色
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new GiteeEnterprise\Api\EnterpriseRolesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$enterpriseId = 56; // int | 
+$accessToken = "accessToken_example"; // string | 用户授权码
+
+try {
+    $apiInstance->getEnterpriseIdEnterpriseRolesExportRolesPermission($enterpriseId, $accessToken);
+} catch (Exception $e) {
+    echo 'Exception when calling EnterpriseRolesApi->getEnterpriseIdEnterpriseRolesExportRolesPermission: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **enterpriseId** | **int**|  |
+ **accessToken** | **string**| 用户授权码 | [optional]
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 

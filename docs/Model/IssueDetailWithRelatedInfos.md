@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **author** | [**\GiteeEnterprise\Model\UserWithRemark**](UserWithRemark.md) | 任务创建者 | [optional] 
 **milestone** | [**\GiteeEnterprise\Model\Milestone**](Milestone.md) | 关联的里程碑 | [optional] 
 **issueState** | [**\GiteeEnterprise\Model\IssueState**](IssueState.md) | 任务状态 | [optional] 
-**issueType** | [**\GiteeEnterprise\Model\IssueType**](IssueType.md) | 任务类型 | [optional] 
+**issueType** | [**\GiteeEnterprise\Model\IssueType[]**](IssueType.md) | 任务类型 | [optional] 
 **labels** | [**\GiteeEnterprise\Model\Label[]**](Label.md) | 任务关联的标签 | [optional] 
 **issueExtra** | **null[]** | 任务自定义字段值 | [optional] 
 **planStartedAt** | **string** | 计划开始时间 | [optional] 

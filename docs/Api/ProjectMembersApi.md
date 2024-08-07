@@ -548,7 +548,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postEnterpriseIdProjectsProjectIdMembers**
-> \GiteeEnterprise\Model\ProjectMemberAdd postEnterpriseIdProjectsProjectIdMembers($enterpriseId, $projectId, $accessToken, $qt, $users, $groups, $accessLevel)
+> \GiteeEnterprise\Model\ProjectMemberAdd postEnterpriseIdProjectsProjectIdMembers($enterpriseId, $projectId, $groupsInfoAccessLevel, $groupsInfoGroupId, $accessToken, $qt, $users, $groups, $accessLevel)
 
 添加仓库成员
 
@@ -566,6 +566,8 @@ $apiInstance = new GiteeEnterprise\Api\ProjectMembersApi(
 );
 $enterpriseId = 56; // int | 企业id
 $projectId = "projectId_example"; // string | 仓库 id 或 path
+$groupsInfoAccessLevel = array(56); // int[] | 授权团队的成员在仓库的权限
+$groupsInfoGroupId = array(56); // int[] | 授权团队ID
 $accessToken = "accessToken_example"; // string | 用户授权码
 $qt = "qt_example"; // string | path类型（查询参数为path）, 空则表示查询参数为id
 $users = "users_example"; // string | 要添加的成员信息,例如[{\"id\":\"13\", \"access\":\"30\", \"name\":\"真喜洋洋 (xiyangyang)\", \"username\":\"xiyangyang\"}]
@@ -573,7 +575,7 @@ $groups = "groups_example"; // string | 授权团队的id，多个ID通过英文
 $accessLevel = 56; // int | 授权团队的成员在仓库的权限
 
 try {
-    $result = $apiInstance->postEnterpriseIdProjectsProjectIdMembers($enterpriseId, $projectId, $accessToken, $qt, $users, $groups, $accessLevel);
+    $result = $apiInstance->postEnterpriseIdProjectsProjectIdMembers($enterpriseId, $projectId, $groupsInfoAccessLevel, $groupsInfoGroupId, $accessToken, $qt, $users, $groups, $accessLevel);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProjectMembersApi->postEnterpriseIdProjectsProjectIdMembers: ', $e->getMessage(), PHP_EOL;
@@ -587,6 +589,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **enterpriseId** | **int**| 企业id |
  **projectId** | **string**| 仓库 id 或 path |
+ **groupsInfoAccessLevel** | [**int[]**](../Model/int.md)| 授权团队的成员在仓库的权限 |
+ **groupsInfoGroupId** | [**int[]**](../Model/int.md)| 授权团队ID |
  **accessToken** | **string**| 用户授权码 | [optional]
  **qt** | **string**| path类型（查询参数为path）, 空则表示查询参数为id | [optional]
  **users** | **string**| 要添加的成员信息,例如[{\&quot;id\&quot;:\&quot;13\&quot;, \&quot;access\&quot;:\&quot;30\&quot;, \&quot;name\&quot;:\&quot;真喜洋洋 (xiyangyang)\&quot;, \&quot;username\&quot;:\&quot;xiyangyang\&quot;}] | [optional]

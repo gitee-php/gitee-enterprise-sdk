@@ -48,6 +48,12 @@ Name | Type | Description | Notes
 **squashEnabled** | **bool** | 是否开启 squash 合并选项 | [optional] 
 **rebaseEnabled** | **bool** | 是否开启 rebase 合并选项 | [optional] 
 **defaultMergeMethod** | **string** | 选择默认合并 Pull Request 的方法，0表示merge（合并所有提交）、1表示squash（扁平化分支合并）和2表示rebase（变基并合并）。默认为0merge | [optional] 
+**projectSyncTimeSetting** | [**\GiteeEnterprise\Model\ProjectSyncSetting**](ProjectSyncSetting.md) | 仓库同步设置 | [optional] 
+**syncProjectAccountInfos** | **object** | 账号信息 | [optional] 
+**branchAuthorisationEnabled** | **bool** | 是否开启了分支权限 | [optional] 
+**parentBranchAuthorisationEnabled** | **bool** | 原仓库是否开启了分支权限 | [optional] 
+**customGitHook** | **bool** | 是否开启自定义钩子 | [optional] 
+**prCommitReviewCheckEnabled** | **bool** | 是否开启 Commit Review | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
